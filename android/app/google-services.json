@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1096509774968",
+    "project_id": "bliss-menopause",
+    "storage_bucket": "bliss-menopause.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096509774968:android:e5d383f7f01add4f20618d",
+        "android_client_info": {
+          "package_name": "com.mycompany.blissmenopause"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuvlSBz2ozq9XrQf5Fu7IhgBi4EJZOLoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
