@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'quiz_option_model.dart';
 export 'quiz_option_model.dart';
 
@@ -59,10 +56,10 @@ class _QuizOptionWidgetState extends State<QuizOptionWidget> {
             borderRadius: BorderRadius.circular(24.0),
             shape: BoxShape.rectangle,
             border: Border.all(
-              color: widget!.selected
+              color: widget.selected
                   ? FlutterFlowTheme.of(context).primary
                   : FlutterFlowTheme.of(context).alternate,
-              width: widget!.selected ? 1.5 : 1.5,
+              width: widget.selected ? 1.5 : 1.5,
             ),
           ),
           child: Padding(
@@ -80,16 +77,16 @@ class _QuizOptionWidgetState extends State<QuizOptionWidget> {
                       borderRadius: BorderRadius.circular(9999.0),
                       shape: BoxShape.rectangle,
                       border: Border.all(
-                        color: widget!.selected
+                        color: widget.selected
                             ? FlutterFlowTheme.of(context).primary
                             : FlutterFlowTheme.of(context).alternate,
-                        width: widget!.selected ? 2.0 : 2.0,
+                        width: widget.selected ? 2.0 : 2.0,
                       ),
                     ),
                     alignment: AlignmentDirectional(0.0, 0.0),
                     child: Visibility(
                       visible: valueOrDefault<bool>(
-                        widget!.selected,
+                        widget.selected,
                         false,
                       ),
                       child: Container(
@@ -107,7 +104,7 @@ class _QuizOptionWidgetState extends State<QuizOptionWidget> {
                     flex: 1,
                     child: Text(
                       valueOrDefault<String>(
-                        widget!.label,
+                        widget.label,
                         'I sleep like a baby',
                       ),
                       style: FlutterFlowTheme.of(context).bodyLarge.override(

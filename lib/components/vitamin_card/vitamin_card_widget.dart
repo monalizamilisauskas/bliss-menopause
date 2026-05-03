@@ -1,12 +1,9 @@
 import '/components/button/button_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'vitamin_card_model.dart';
 export 'vitamin_card_model.dart';
 
@@ -93,7 +90,7 @@ class _VitaminCardWidgetState extends State<VitaminCardWidget> {
                       fadeInDuration: Duration(milliseconds: 0),
                       fadeOutDuration: Duration(milliseconds: 0),
                       imageUrl: valueOrDefault<String>(
-                        widget!.img_desc,
+                        widget.img_desc,
                         'https://dimg.dreamflow.cloud/v1/image/bottle%20of%20magnesium%20supplements',
                       ),
                       width: 60.0,
@@ -111,7 +108,7 @@ class _VitaminCardWidgetState extends State<VitaminCardWidget> {
                       children: [
                         Text(
                           valueOrDefault<String>(
-                            widget!.category,
+                            widget.category,
                             'Sleep & Anxiety',
                           ),
                           style: FlutterFlowTheme.of(context)
@@ -139,7 +136,7 @@ class _VitaminCardWidgetState extends State<VitaminCardWidget> {
                         ),
                         Text(
                           valueOrDefault<String>(
-                            widget!.name,
+                            widget.name,
                             'Magnesium Glycinate',
                           ),
                           maxLines: 1,
@@ -174,7 +171,7 @@ class _VitaminCardWidgetState extends State<VitaminCardWidget> {
                             ),
                             Text(
                               valueOrDefault<String>(
-                                widget!.rating,
+                                widget.rating,
                                 '4.9',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -201,7 +198,7 @@ class _VitaminCardWidgetState extends State<VitaminCardWidget> {
                                   ),
                             ),
                             Text(
-                              ' • ${widget!.price}',
+                              ' • ${widget.price}',
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(

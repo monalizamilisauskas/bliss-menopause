@@ -15,7 +15,7 @@ class TrendStatCardWidget extends StatefulWidget {
     Color? icon_color,
     String? label,
     String? value,
-  })    : this.icon_color = icon_color ?? const Color(0xFF1D9E75),
+  })  : this.icon_color = icon_color ?? FlutterFlowTheme.of(context).success,
         this.label = label ?? 'Sleep Quality',
         this.value = value ?? '68%';
 
@@ -72,7 +72,7 @@ class _TrendStatCardWidgetState extends State<TrendStatCardWidget> {
             children: [
               Text(
                 valueOrDefault<String>(
-                  widget!.label,
+                  widget.label,
                   'Sleep Quality',
                 ),
                 style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -98,7 +98,7 @@ class _TrendStatCardWidgetState extends State<TrendStatCardWidget> {
                 children: [
                   Text(
                     valueOrDefault<String>(
-                      widget!.value,
+                      widget.value,
                       '68%',
                     ),
                     style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -116,7 +116,7 @@ class _TrendStatCardWidgetState extends State<TrendStatCardWidget> {
                           lineHeight: 1.27,
                         ),
                   ),
-                  widget!.icon!,
+                  widget.icon!,
                 ].divide(SizedBox(width: 4.0)),
               ),
             ].divide(SizedBox(height: 4.0)),

@@ -1,12 +1,9 @@
 import '/components/button/button_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'wellness_card_model.dart';
 export 'wellness_card_model.dart';
 
@@ -89,7 +86,7 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
                           fadeInDuration: Duration(milliseconds: 0),
                           fadeOutDuration: Duration(milliseconds: 0),
                           imageUrl: valueOrDefault<String>(
-                            widget!.img_desc,
+                            widget.img_desc,
                             'https://dimg.dreamflow.cloud/v1/image/woman%20with%20glowing%20skin%20applying%20serum',
                           ),
                           height: 160.0,
@@ -127,7 +124,7 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
                                       children: [
                                         Text(
                                           valueOrDefault<String>(
-                                            widget!.tag,
+                                            widget.tag,
                                             'Skin Care',
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -183,7 +180,7 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
                     children: [
                       Text(
                         valueOrDefault<String>(
-                          widget!.title,
+                          widget.title,
                           'Hydration & Skin Elasticity',
                         ),
                         maxLines: 1,
@@ -208,7 +205,7 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
                       ),
                       Text(
                         valueOrDefault<String>(
-                          widget!.description,
+                          widget.description,
                           'How to maintain your glow as estrogen levels shift during menopause.',
                         ),
                         maxLines: 2,
@@ -251,7 +248,7 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
                               ),
                               Text(
                                 valueOrDefault<String>(
-                                  widget!.duration,
+                                  widget.duration,
                                   '5 min read',
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -287,7 +284,7 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
                               icon_present: false,
                               icon_end_present: false,
                               on_tap: valueOrDefault<String>(
-                                widget!.nav_target,
+                                widget.nav_target,
                                 'Nav Target',
                               ),
                               color: FlutterFlowTheme.of(context).primary,

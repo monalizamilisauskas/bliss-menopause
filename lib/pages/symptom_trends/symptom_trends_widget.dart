@@ -5,11 +5,8 @@ import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'symptom_trends_model.dart';
 export 'symptom_trends_model.dart';
 
@@ -470,7 +467,7 @@ class _SymptomTrendsWidgetState extends State<SymptomTrendsWidget> {
                                         4.0,
                                         5.0,
                                         6.0
-                                      ])!,
+                                      ]),
                                       yData: ([
                                         3.0,
                                         5.0,
@@ -479,7 +476,7 @@ class _SymptomTrendsWidgetState extends State<SymptomTrendsWidget> {
                                         4.0,
                                         3.0,
                                         5.0
-                                      ])!,
+                                      ]),
                                       settings: LineChartBarData(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -511,7 +508,7 @@ class _SymptomTrendsWidgetState extends State<SymptomTrendsWidget> {
                                     'Fri',
                                     'Sat',
                                     'Sun'
-                                  ])!,
+                                  ]),
                                   xAxisLabelInfo: AxisLabelInfo(
                                     showLabels: true,
                                     labelTextStyle: FlutterFlowTheme.of(context)
@@ -650,7 +647,7 @@ class _SymptomTrendsWidgetState extends State<SymptomTrendsWidget> {
                                     height: 140.0,
                                     child: FlutterFlowPieChart(
                                       data: FFPieChartData(
-                                        values: ([45.0, 25.0, 20.0, 10.0])!,
+                                        values: ([45.0, 25.0, 20.0, 10.0]),
                                         colors: pieChartPieChartColorsList,
                                         radius: [25.0],
                                       ),

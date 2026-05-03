@@ -2,17 +2,9 @@ import '/components/button/button_widget.dart';
 import '/components/category_chip/category_chip_widget.dart';
 import '/components/text_field/text_field_widget.dart';
 import '/components/wellness_card/wellness_card_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'wellness_hub_widget.dart' show WellnessHubWidget;
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 
 class WellnessHubModel extends FlutterFlowModel<WellnessHubWidget> {
   ///  State fields for stateful widgets in this page.

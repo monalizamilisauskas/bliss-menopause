@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'settings_item_model.dart';
 export 'settings_item_model.dart';
 
@@ -78,7 +75,7 @@ class _SettingsItemWidgetState extends State<SettingsItemWidget> {
                       shape: BoxShape.rectangle,
                     ),
                     alignment: AlignmentDirectional(0.0, 0.0),
-                    child: widget!.icon!,
+                    child: widget.icon!,
                   ),
                   Expanded(
                     flex: 1,
@@ -89,7 +86,7 @@ class _SettingsItemWidgetState extends State<SettingsItemWidget> {
                       children: [
                         Text(
                           valueOrDefault<String>(
-                            widget!.title,
+                            widget.title,
                             'Hormonal Profile',
                           ),
                           style: FlutterFlowTheme.of(context)
@@ -117,7 +114,7 @@ class _SettingsItemWidgetState extends State<SettingsItemWidget> {
                         ),
                         Text(
                           valueOrDefault<String>(
-                            widget!.subtitle,
+                            widget.subtitle,
                             'Updated 2 weeks ago',
                           ),
                           maxLines: 1,

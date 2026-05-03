@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'severity_slider_model.dart';
 export 'severity_slider_model.dart';
 
@@ -64,7 +61,7 @@ class _SeveritySliderWidgetState extends State<SeveritySliderWidget> {
           children: [
             Text(
               valueOrDefault<String>(
-                widget!.label,
+                widget.label,
                 'Intensity',
               ),
               style: FlutterFlowTheme.of(context).titleSmall.override(
@@ -82,7 +79,7 @@ class _SeveritySliderWidgetState extends State<SeveritySliderWidget> {
             ),
             Text(
               valueOrDefault<String>(
-                widget!.value_text,
+                widget.value_text,
                 'Moderate',
               ),
               style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -107,7 +104,7 @@ class _SeveritySliderWidgetState extends State<SeveritySliderWidget> {
           min: 0.0,
           max: 10.0,
           value: _model.sliderValue ??= valueOrDefault<double>(
-            widget!.value,
+            widget.value,
             4.0,
           ),
           divisions: 10,

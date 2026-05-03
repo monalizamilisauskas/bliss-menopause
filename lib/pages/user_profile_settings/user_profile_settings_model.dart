@@ -2,16 +2,9 @@ import '/components/button/button_widget.dart';
 import '/components/profile_stat/profile_stat_widget.dart';
 import '/components/settings_item/settings_item_widget.dart';
 import '/components/switch_component/switch_component_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'user_profile_settings_widget.dart' show UserProfileSettingsWidget;
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class UserProfileSettingsModel
     extends FlutterFlowModel<UserProfileSettingsWidget> {

@@ -2,15 +2,9 @@ import '/components/button/button_widget.dart';
 import '/components/mood_chip/mood_chip_widget.dart';
 import '/components/severity_slider/severity_slider_widget.dart';
 import '/components/symptom_selector/symptom_selector_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'daily_symptom_tracker_widget.dart' show DailySymptomTrackerWidget;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class DailySymptomTrackerModel
     extends FlutterFlowModel<DailySymptomTrackerWidget> {

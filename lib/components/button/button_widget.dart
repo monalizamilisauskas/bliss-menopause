@@ -28,7 +28,7 @@ class ButtonWidget extends StatefulWidget {
         this.icon_present = icon_present ?? false,
         this.icon_end_present = icon_end_present ?? false,
         this.on_tap = on_tap ?? 'navigate:HomeDashboard',
-        this.color = color ?? const Color(0xFFC4973A),
+        this.color = color ?? FlutterFlowTheme.of(context).primary,
         this.variant = variant ?? 'ghost',
         this.size = size ?? 'small',
         this.full_width = full_width ?? false,
@@ -77,17 +77,17 @@ class _ButtonWidgetState extends State<ButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return Opacity(
-      opacity: widget!.disabled ? 0.56 : 1.0,
+      opacity: widget.disabled ? 0.56 : 1.0,
       child: Container(
         decoration: BoxDecoration(
           color: () {
-            if (widget!.variant == 'secondary') {
+            if (widget.variant == 'secondary') {
               return FlutterFlowTheme.of(context).secondary;
-            } else if (widget!.variant == 'outline') {
+            } else if (widget.variant == 'outline') {
               return Colors.transparent;
-            } else if (widget!.variant == 'ghost') {
+            } else if (widget.variant == 'ghost') {
               return Colors.transparent;
-            } else if (widget!.variant == 'destructive') {
+            } else if (widget.variant == 'destructive') {
               return FlutterFlowTheme.of(context).error;
             } else {
               return FlutterFlowTheme.of(context).primary;
@@ -96,9 +96,9 @@ class _ButtonWidgetState extends State<ButtonWidget> {
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(valueOrDefault<double>(
               () {
-                if (widget!.size == 'small') {
+                if (widget.size == 'small') {
                   return 8.0;
-                } else if (widget!.size == 'large') {
+                } else if (widget.size == 'large') {
                   return 24.0;
                 } else {
                   return 16.0;
@@ -108,9 +108,9 @@ class _ButtonWidgetState extends State<ButtonWidget> {
             )),
             topRight: Radius.circular(valueOrDefault<double>(
               () {
-                if (widget!.size == 'small') {
+                if (widget.size == 'small') {
                   return 8.0;
-                } else if (widget!.size == 'large') {
+                } else if (widget.size == 'large') {
                   return 24.0;
                 } else {
                   return 16.0;
@@ -120,9 +120,9 @@ class _ButtonWidgetState extends State<ButtonWidget> {
             )),
             bottomLeft: Radius.circular(valueOrDefault<double>(
               () {
-                if (widget!.size == 'small') {
+                if (widget.size == 'small') {
                   return 8.0;
-                } else if (widget!.size == 'large') {
+                } else if (widget.size == 'large') {
                   return 24.0;
                 } else {
                   return 16.0;
@@ -132,9 +132,9 @@ class _ButtonWidgetState extends State<ButtonWidget> {
             )),
             bottomRight: Radius.circular(valueOrDefault<double>(
               () {
-                if (widget!.size == 'small') {
+                if (widget.size == 'small') {
                   return 8.0;
-                } else if (widget!.size == 'large') {
+                } else if (widget.size == 'large') {
                   return 24.0;
                 } else {
                   return 16.0;
@@ -145,24 +145,24 @@ class _ButtonWidgetState extends State<ButtonWidget> {
           ),
           shape: BoxShape.rectangle,
           border: Border.all(
-            color: widget!.variant == 'outline'
+            color: widget.variant == 'outline'
                 ? FlutterFlowTheme.of(context).alternate
                 : Colors.transparent,
-            width: widget!.variant == 'outline' ? 1.0 : 0.0,
+            width: widget.variant == 'outline' ? 1.0 : 0.0,
           ),
         ),
         child: Stack(
           alignment: AlignmentDirectional(0.0, 0.0),
           children: [
             Opacity(
-              opacity: widget!.loading ? 0.0 : 1.0,
+              opacity: widget.loading ? 0.0 : 1.0,
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(
                     valueOrDefault<double>(
                       () {
-                        if (widget!.size == 'small') {
+                        if (widget.size == 'small') {
                           return 16.0;
-                        } else if (widget!.size == 'large') {
+                        } else if (widget.size == 'large') {
                           return 32.0;
                         } else {
                           return 24.0;
@@ -172,9 +172,9 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                     ),
                     valueOrDefault<double>(
                       () {
-                        if (widget!.size == 'small') {
+                        if (widget.size == 'small') {
                           return 4.0;
-                        } else if (widget!.size == 'large') {
+                        } else if (widget.size == 'large') {
                           return 16.0;
                         } else {
                           return 8.0;
@@ -184,9 +184,9 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                     ),
                     valueOrDefault<double>(
                       () {
-                        if (widget!.size == 'small') {
+                        if (widget.size == 'small') {
                           return 16.0;
-                        } else if (widget!.size == 'large') {
+                        } else if (widget.size == 'large') {
                           return 32.0;
                         } else {
                           return 24.0;
@@ -196,9 +196,9 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                     ),
                     valueOrDefault<double>(
                       () {
-                        if (widget!.size == 'small') {
+                        if (widget.size == 'small') {
                           return 4.0;
-                        } else if (widget!.size == 'large') {
+                        } else if (widget.size == 'large') {
                           return 16.0;
                         } else {
                           return 8.0;
@@ -212,13 +212,13 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     if (valueOrDefault<bool>(
-                      widget!.icon_present,
+                      widget.icon_present,
                       false,
                     ))
-                      widget!.icon!,
+                      widget.icon!,
                     Text(
                       valueOrDefault<String>(
-                        widget!.content,
+                        widget.content,
                         'Skip',
                       ),
                       maxLines: 1,
@@ -232,13 +232,13 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                                   .fontStyle,
                             ),
                             color: () {
-                              if (widget!.variant == 'secondary') {
+                              if (widget.variant == 'secondary') {
                                 return FlutterFlowTheme.of(context).onSecondary;
-                              } else if (widget!.variant == 'outline') {
+                              } else if (widget.variant == 'outline') {
                                 return FlutterFlowTheme.of(context).primaryText;
-                              } else if (widget!.variant == 'ghost') {
+                              } else if (widget.variant == 'ghost') {
                                 return FlutterFlowTheme.of(context).primary;
-                              } else if (widget!.variant == 'destructive') {
+                              } else if (widget.variant == 'destructive') {
                                 return FlutterFlowTheme.of(context).onError;
                               } else {
                                 return FlutterFlowTheme.of(context).onPrimary;
@@ -256,15 +256,15 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                       overflow: TextOverflow.clip,
                     ),
                     if (valueOrDefault<bool>(
-                      widget!.icon_end_present,
+                      widget.icon_end_present,
                       false,
                     ))
-                      widget!.icon_end!,
+                      widget.icon_end!,
                   ].divide(SizedBox(width: 8.0)),
                 ),
               ),
             ),
-            if (widget!.loading ? true : false)
+            if (widget.loading ? true : false)
               CircularPercentIndicator(
                 percent: 0.0,
                 radius: 7.0,
@@ -272,13 +272,13 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                 animation: true,
                 animateFromLastPercent: true,
                 progressColor: () {
-                  if (widget!.variant == 'secondary') {
+                  if (widget.variant == 'secondary') {
                     return FlutterFlowTheme.of(context).onSecondary;
-                  } else if (widget!.variant == 'outline') {
+                  } else if (widget.variant == 'outline') {
                     return FlutterFlowTheme.of(context).primaryText;
-                  } else if (widget!.variant == 'ghost') {
+                  } else if (widget.variant == 'ghost') {
                     return FlutterFlowTheme.of(context).primary;
-                  } else if (widget!.variant == 'destructive') {
+                  } else if (widget.variant == 'destructive') {
                     return FlutterFlowTheme.of(context).onError;
                   } else {
                     return FlutterFlowTheme.of(context).onPrimary;

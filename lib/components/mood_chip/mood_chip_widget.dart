@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'mood_chip_model.dart';
 export 'mood_chip_model.dart';
 
@@ -52,16 +49,16 @@ class _MoodChipWidgetState extends State<MoodChipWidget> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: widget!.active
+        color: widget.active
             ? FlutterFlowTheme.of(context).primary
             : FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.circular(24.0),
         shape: BoxShape.rectangle,
         border: Border.all(
-          color: widget!.active
+          color: widget.active
               ? FlutterFlowTheme.of(context).primary
               : FlutterFlowTheme.of(context).alternate,
-          width: widget!.active ? 1.0 : 1.0,
+          width: widget.active ? 1.0 : 1.0,
         ),
       ),
       child: Padding(
@@ -76,7 +73,7 @@ class _MoodChipWidgetState extends State<MoodChipWidget> {
               children: [
                 Text(
                   valueOrDefault<String>(
-                    widget!.emoji,
+                    widget.emoji,
                     '😊',
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -98,7 +95,7 @@ class _MoodChipWidgetState extends State<MoodChipWidget> {
                 ),
                 Text(
                   valueOrDefault<String>(
-                    widget!.label,
+                    widget.label,
                     'Calm',
                   ),
                   style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -107,7 +104,7 @@ class _MoodChipWidgetState extends State<MoodChipWidget> {
                           fontStyle:
                               FlutterFlowTheme.of(context).labelSmall.fontStyle,
                         ),
-                        color: widget!.active
+                        color: widget.active
                             ? FlutterFlowTheme.of(context).onPrimary
                             : FlutterFlowTheme.of(context).primaryText,
                         letterSpacing: 0.0,

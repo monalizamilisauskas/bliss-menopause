@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'quick_action_model.dart';
 export 'quick_action_model.dart';
 
@@ -74,18 +71,18 @@ class _QuickActionWidgetState extends State<QuickActionWidget> {
                 height: 48.0,
                 decoration: BoxDecoration(
                   color: valueOrDefault<Color>(
-                    widget!.bg_icon,
+                    widget.bg_icon,
                     Color(0xFFFFF0F3),
                   ),
                   borderRadius: BorderRadius.circular(9999.0),
                   shape: BoxShape.rectangle,
                 ),
                 alignment: AlignmentDirectional(0.0, 0.0),
-                child: widget!.icon!,
+                child: widget.icon!,
               ),
               Text(
                 valueOrDefault<String>(
-                  widget!.label,
+                  widget.label,
                   'Track\nSymptoms',
                 ),
                 textAlign: TextAlign.center,

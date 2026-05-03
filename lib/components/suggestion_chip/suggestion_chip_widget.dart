@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'suggestion_chip_model.dart';
 export 'suggestion_chip_model.dart';
 
@@ -64,10 +61,10 @@ class _SuggestionChipWidgetState extends State<SuggestionChipWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              widget!.icon!,
+              widget.icon!,
               Text(
                 valueOrDefault<String>(
-                  widget!.label,
+                  widget.label,
                   'Nutrition tips',
                 ),
                 style: FlutterFlowTheme.of(context).labelLarge.override(

@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'symptom_selector_model.dart';
 export 'symptom_selector_model.dart';
 
@@ -61,10 +58,10 @@ class _SymptomSelectorWidgetState extends State<SymptomSelectorWidget> {
             borderRadius: BorderRadius.circular(24.0),
             shape: BoxShape.rectangle,
             border: Border.all(
-              color: widget!.selected
+              color: widget.selected
                   ? FlutterFlowTheme.of(context).primary
                   : FlutterFlowTheme.of(context).alternate,
-              width: widget!.selected ? 1.0 : 1.0,
+              width: widget.selected ? 1.0 : 1.0,
             ),
           ),
           child: Padding(
@@ -79,14 +76,14 @@ class _SymptomSelectorWidgetState extends State<SymptomSelectorWidget> {
                     width: 48.0,
                     height: 48.0,
                     decoration: BoxDecoration(
-                      color: widget!.selected
+                      color: widget.selected
                           ? FlutterFlowTheme.of(context).primary10
                           : FlutterFlowTheme.of(context).primaryBackground,
                       borderRadius: BorderRadius.circular(9999.0),
                       shape: BoxShape.rectangle,
                     ),
                     alignment: AlignmentDirectional(0.0, 0.0),
-                    child: widget!.icon!,
+                    child: widget.icon!,
                   ),
                   Expanded(
                     flex: 1,
@@ -97,7 +94,7 @@ class _SymptomSelectorWidgetState extends State<SymptomSelectorWidget> {
                       children: [
                         Text(
                           valueOrDefault<String>(
-                            widget!.label,
+                            widget.label,
                             'Night Sweats',
                           ),
                           style: FlutterFlowTheme.of(context)
@@ -120,7 +117,7 @@ class _SymptomSelectorWidgetState extends State<SymptomSelectorWidget> {
                         ),
                         Text(
                           valueOrDefault<String>(
-                            widget!.desc,
+                            widget.desc,
                             'Heavy perspiration during sleep',
                           ),
                           style: FlutterFlowTheme.of(context)
@@ -155,18 +152,18 @@ class _SymptomSelectorWidgetState extends State<SymptomSelectorWidget> {
                     child: Stack(
                       alignment: AlignmentDirectional(0.0, 0.0),
                       children: [
-                        if (widget!.selected ? true : false)
+                        if (widget.selected ? true : false)
                           Icon(
                             Icons.check_circle_rounded,
-                            color: widget!.selected
+                            color: widget.selected
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).alternate,
                             size: 24.0,
                           ),
-                        if (widget!.selected ? false : true)
+                        if (widget.selected ? false : true)
                           Icon(
                             Icons.add_circle_outline_rounded,
-                            color: widget!.selected
+                            color: widget.selected
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).alternate,
                             size: 24.0,

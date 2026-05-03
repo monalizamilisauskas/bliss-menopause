@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'coach_message_model.dart';
 export 'coach_message_model.dart';
 
@@ -56,7 +53,7 @@ class _CoachMessageWidgetState extends State<CoachMessageWidget> {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        if (widget!.is_user ? false : true)
+        if (widget.is_user ? false : true)
           Container(
             child: Container(
               width: 32.0,
@@ -93,7 +90,7 @@ class _CoachMessageWidgetState extends State<CoachMessageWidget> {
             maxWidth: 300.0,
           ),
           decoration: BoxDecoration(
-            color: widget!.is_user
+            color: widget.is_user
                 ? FlutterFlowTheme.of(context).primary
                 : FlutterFlowTheme.of(context).secondaryBackground,
             borderRadius: BorderRadius.only(
@@ -112,7 +109,7 @@ class _CoachMessageWidgetState extends State<CoachMessageWidget> {
                 children: [
                   Text(
                     valueOrDefault<String>(
-                      widget!.message,
+                      widget.message,
                       'I\'ve been having trouble sleeping because of night sweats.',
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -124,7 +121,7 @@ class _CoachMessageWidgetState extends State<CoachMessageWidget> {
                                 .bodyMedium
                                 .fontStyle,
                           ),
-                          color: widget!.is_user
+                          color: widget.is_user
                               ? FlutterFlowTheme.of(context).onPrimary
                               : FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
@@ -138,7 +135,7 @@ class _CoachMessageWidgetState extends State<CoachMessageWidget> {
                   ),
                   Text(
                     valueOrDefault<String>(
-                      widget!.time,
+                      widget.time,
                       '9:41 AM',
                     ),
                     style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -150,7 +147,7 @@ class _CoachMessageWidgetState extends State<CoachMessageWidget> {
                                 .labelSmall
                                 .fontStyle,
                           ),
-                          color: widget!.is_user
+                          color: widget.is_user
                               ? FlutterFlowTheme.of(context).onPrimary70
                               : FlutterFlowTheme.of(context).secondaryText,
                           letterSpacing: 0.0,

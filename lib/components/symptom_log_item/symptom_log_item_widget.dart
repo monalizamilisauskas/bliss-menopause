@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'symptom_log_item_model.dart';
 export 'symptom_log_item_model.dart';
 
@@ -82,7 +79,7 @@ class _SymptomLogItemWidgetState extends State<SymptomLogItemWidget> {
                       shape: BoxShape.rectangle,
                     ),
                     alignment: AlignmentDirectional(0.0, 0.0),
-                    child: widget!.icon!,
+                    child: widget.icon!,
                   ),
                   Expanded(
                     flex: 1,
@@ -93,7 +90,7 @@ class _SymptomLogItemWidgetState extends State<SymptomLogItemWidget> {
                       children: [
                         Text(
                           valueOrDefault<String>(
-                            widget!.name,
+                            widget.name,
                             'Hot Flash',
                           ),
                           style: FlutterFlowTheme.of(context)
@@ -115,7 +112,7 @@ class _SymptomLogItemWidgetState extends State<SymptomLogItemWidget> {
                         ),
                         Text(
                           valueOrDefault<String>(
-                            widget!.time,
+                            widget.time,
                             'Today, 2:15 PM',
                           ),
                           style: FlutterFlowTheme.of(context)
@@ -151,7 +148,7 @@ class _SymptomLogItemWidgetState extends State<SymptomLogItemWidget> {
                     children: [
                       Text(
                         valueOrDefault<String>(
-                          widget!.severity,
+                          widget.severity,
                           'high',
                         ),
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -161,7 +158,7 @@ class _SymptomLogItemWidgetState extends State<SymptomLogItemWidget> {
                                     .labelLarge
                                     .fontStyle,
                               ),
-                              color: widget!.severity == 'medium'
+                              color: widget.severity == 'medium'
                                   ? Color(0x00000000)
                                   : FlutterFlowTheme.of(context).error,
                               letterSpacing: 0.0,
