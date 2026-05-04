@@ -41,6 +41,8 @@ class _TrendStatCardWidgetState extends State<TrendStatCardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TrendStatCardModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

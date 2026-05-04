@@ -29,6 +29,8 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => VitaminShopModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

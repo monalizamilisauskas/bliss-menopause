@@ -36,6 +36,8 @@ class _MoodChipWidgetState extends State<MoodChipWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MoodChipModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

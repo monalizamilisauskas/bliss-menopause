@@ -29,6 +29,8 @@ class _OnboardingQuizWidgetState extends State<OnboardingQuizWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OnboardingQuizModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

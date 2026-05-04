@@ -31,6 +31,8 @@ class _AIHealthCoachWidgetState extends State<AIHealthCoachWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AIHealthCoachModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

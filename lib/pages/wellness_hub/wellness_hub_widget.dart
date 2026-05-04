@@ -31,6 +31,8 @@ class _WellnessHubWidgetState extends State<WellnessHubWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => WellnessHubModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -547,18 +549,28 @@ class _WellnessHubWidgetState extends State<WellnessHubWidget> {
                                       title: 'Hydration & Skin Elasticity',
                                     ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.wellnessCardModel2,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: WellnessCardWidget(
-                                      description:
-                                          'Struggling with insomnia? Discover why magnesium is your new best friend.',
-                                      duration: '4 min read',
-                                      img_desc:
-                                          'https://dimg.dreamflow.cloud/v1/image/close%20up%20of%20healthy%20nuts%20and%20seeds',
-                                      nav_target: 'Nav Target',
-                                      tag: 'Nutrition',
-                                      title: 'Magnesium: The Sleep Mineral',
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                          WellnessHubWidget.routeName);
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.wellnessCardModel2,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: WellnessCardWidget(
+                                        description:
+                                            'Struggling with insomnia? Discover why magnesium is your new best friend.',
+                                        duration: '4 min read',
+                                        img_desc:
+                                            'https://dimg.dreamflow.cloud/v1/image/close%20up%20of%20healthy%20nuts%20and%20seeds',
+                                        nav_target: 'Nav Target',
+                                        tag: 'Nutrition',
+                                        title: 'Magnesium: The Sleep Mineral',
+                                      ),
                                     ),
                                   ),
                                   wrapWithModel(

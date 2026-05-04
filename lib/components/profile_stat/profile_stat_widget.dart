@@ -33,6 +33,8 @@ class _ProfileStatWidgetState extends State<ProfileStatWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ProfileStatModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

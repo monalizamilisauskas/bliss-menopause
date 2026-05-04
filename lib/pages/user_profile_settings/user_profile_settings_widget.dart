@@ -31,6 +31,8 @@ class _UserProfileSettingsWidgetState extends State<UserProfileSettingsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => UserProfileSettingsModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

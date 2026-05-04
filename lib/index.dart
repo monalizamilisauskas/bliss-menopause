@@ -13,3 +13,4 @@ export '/pages/symptom_trends/symptom_trends_widget.dart'
     show SymptomTrendsWidget;
 export '/pages/user_profile_settings/user_profile_settings_widget.dart'
     show UserProfileSettingsWidget;
+export '/article01/article01_widget.dart' show Article01Widget;

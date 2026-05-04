@@ -28,6 +28,8 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomeDashboardModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

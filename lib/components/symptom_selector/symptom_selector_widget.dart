@@ -38,6 +38,8 @@ class _SymptomSelectorWidgetState extends State<SymptomSelectorWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SymptomSelectorModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

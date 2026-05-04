@@ -1,8 +1,10 @@
 import '/components/button/button_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'wellness_card_model.dart';
 export 'wellness_card_model.dart';
@@ -49,6 +51,13 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => WellnessCardModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      context.pushNamed(Article01Widget.routeName);
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -276,23 +285,32 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
                               ),
                             ].divide(SizedBox(width: 4.0)),
                           ),
-                          wrapWithModel(
-                            model: _model.buttonModel,
-                            updateCallback: () => safeSetState(() {}),
-                            child: ButtonWidget(
-                              content: 'Read More',
-                              icon_present: false,
-                              icon_end_present: false,
-                              on_tap: valueOrDefault<String>(
-                                widget.nav_target,
-                                'Nav Target',
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(Article01Widget.routeName);
+                            },
+                            child: wrapWithModel(
+                              model: _model.buttonModel,
+                              updateCallback: () => safeSetState(() {}),
+                              child: ButtonWidget(
+                                content: 'Read More',
+                                icon_present: false,
+                                icon_end_present: false,
+                                on_tap: valueOrDefault<String>(
+                                  widget.nav_target,
+                                  'Nav Target',
+                                ),
+                                color: FlutterFlowTheme.of(context).primary,
+                                variant: 'ghost',
+                                size: 'small',
+                                full_width: false,
+                                loading: false,
+                                disabled: false,
                               ),
-                              color: FlutterFlowTheme.of(context).primary,
-                              variant: 'ghost',
-                              size: 'small',
-                              full_width: false,
-                              loading: false,
-                              disabled: false,
                             ),
                           ),
                         ],

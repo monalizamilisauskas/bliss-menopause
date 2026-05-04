@@ -45,6 +45,8 @@ class _VitaminCardWidgetState extends State<VitaminCardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => VitaminCardModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
