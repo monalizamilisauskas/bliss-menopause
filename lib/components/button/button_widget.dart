@@ -10,7 +10,7 @@ import 'button_model.dart';
 export 'button_model.dart';
 
 class ButtonWidget extends StatefulWidget {
-  const ButtonWidget({
+  ButtonWidget({
     super.key,
     String? content,
     this.icon,

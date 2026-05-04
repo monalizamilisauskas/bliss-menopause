@@ -9,7 +9,7 @@ import 'trend_stat_card_model.dart';
 export 'trend_stat_card_model.dart';
 
 class TrendStatCardWidget extends StatefulWidget {
-  const TrendStatCardWidget({
+  TrendStatCardWidget({
     super.key,
     this.icon,
     Color? icon_color,
