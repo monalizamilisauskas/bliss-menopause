@@ -1,3 +1,5 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/components/button/button_widget.dart';
 import '/components/mood_chip/mood_chip_widget.dart';
 import '/components/severity_slider/severity_slider_widget.dart';
@@ -5,6 +7,7 @@ import '/components/symptom_selector/symptom_selector_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'daily_symptom_tracker_model.dart';
@@ -83,8 +86,8 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                               color: FlutterFlowTheme.of(context).primaryText,
                               size: 24.0,
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
+                            onPressed: () async {
+                              context.pushNamed(HomeDashboardWidget.routeName);
                             },
                           ),
                           Text(
@@ -117,8 +120,8 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                               color: FlutterFlowTheme.of(context).primaryText,
                               size: 24.0,
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
+                            onPressed: () async {
+                              context.pushNamed(SymptomTrendsWidget.routeName);
                             },
                           ),
                         ],
@@ -239,7 +242,7 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                       Expanded(
                                         flex: 1,
                                         child: wrapWithModel(
-                                          model: _model.moodChipModel1,
+                                          model: _model.moodCalmModel,
                                           updateCallback: () =>
                                               safeSetState(() {}),
                                           child: MoodChipWidget(
@@ -252,7 +255,7 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                       Expanded(
                                         flex: 1,
                                         child: wrapWithModel(
-                                          model: _model.moodChipModel2,
+                                          model: _model.moodLowModel,
                                           updateCallback: () =>
                                               safeSetState(() {}),
                                           child: MoodChipWidget(
@@ -265,7 +268,7 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                       Expanded(
                                         flex: 1,
                                         child: wrapWithModel(
-                                          model: _model.moodChipModel3,
+                                          model: _model.moodAnxiousModel,
                                           updateCallback: () =>
                                               safeSetState(() {}),
                                           child: MoodChipWidget(
@@ -278,7 +281,7 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                       Expanded(
                                         flex: 1,
                                         child: wrapWithModel(
-                                          model: _model.moodChipModel4,
+                                          model: _model.moodTiredModel,
                                           updateCallback: () =>
                                               safeSetState(() {}),
                                           child: MoodChipWidget(
@@ -381,14 +384,24 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                             ),
                                           ],
                                         ),
-                                        wrapWithModel(
-                                          model: _model.severitySliderModel1,
-                                          updateCallback: () =>
-                                              safeSetState(() {}),
-                                          child: SeveritySliderWidget(
-                                            label: 'Intensity',
-                                            value: 4.0,
-                                            value_text: 'Moderate',
+                                        InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            _model.hotFlashesValue = 50;
+                                            safeSetState(() {});
+                                          },
+                                          child: wrapWithModel(
+                                            model: _model.intensityModel,
+                                            updateCallback: () =>
+                                                safeSetState(() {}),
+                                            child: SeveritySliderWidget(
+                                              label: 'Intensity',
+                                              value: 4.0,
+                                              value_text: 'Moderate',
+                                            ),
                                           ),
                                         ),
                                         Row(
@@ -598,15 +611,25 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            wrapWithModel(
-                                              model:
-                                                  _model.severitySliderModel2,
-                                              updateCallback: () =>
-                                                  safeSetState(() {}),
-                                              child: SeveritySliderWidget(
-                                                label: 'Sleep Quality',
-                                                value: 7.0,
-                                                value_text: 'Good',
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                _model.energyLevelValue = 50;
+                                                safeSetState(() {});
+                                              },
+                                              child: wrapWithModel(
+                                                model: _model.sleepQualityModel,
+                                                updateCallback: () =>
+                                                    safeSetState(() {}),
+                                                child: SeveritySliderWidget(
+                                                  label: 'Sleep Quality',
+                                                  value: 7.0,
+                                                  value_text: 'Good',
+                                                ),
                                               ),
                                             ),
                                             Divider(
@@ -618,15 +641,25 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .alternate,
                                             ),
-                                            wrapWithModel(
-                                              model:
-                                                  _model.severitySliderModel3,
-                                              updateCallback: () =>
-                                                  safeSetState(() {}),
-                                              child: SeveritySliderWidget(
-                                                label: 'Energy Level',
-                                                value: 5.0,
-                                                value_text: 'Steady',
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                _model.energyLevelValue = 50;
+                                                safeSetState(() {});
+                                              },
+                                              child: wrapWithModel(
+                                                model: _model.energyLevelModel,
+                                                updateCallback: () =>
+                                                    safeSetState(() {}),
+                                                child: SeveritySliderWidget(
+                                                  label: 'Energy Level',
+                                                  value: 5.0,
+                                                  value_text: 'Steady',
+                                                ),
                                               ),
                                             ),
                                           ].divide(SizedBox(height: 24.0)),
@@ -662,50 +695,187 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                           lineHeight: 1.35,
                                         ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.symptomSelectorModel1,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: SymptomSelectorWidget(
-                                      desc: 'Heavy perspiration during sleep',
-                                      icon: Icon(
-                                        Icons.water_drop_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 24.0,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.nightSweats = !_model.nightSweats;
+                                      safeSetState(() {});
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.nightSweatsModel,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: SymptomSelectorWidget(
+                                        key: ValueKey('nightsweats'),
+                                        desc: 'Heavy perspiration during sleep',
+                                        icon: Icon(
+                                          Icons.water_drop_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 24.0,
+                                        ),
+                                        label: 'Night Sweats',
+                                        selected: true,
                                       ),
-                                      label: 'Night Sweats',
-                                      selected: true,
                                     ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.symptomSelectorModel2,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: SymptomSelectorWidget(
-                                      desc:
-                                          'Difficulty concentrating or remembering',
-                                      icon: Icon(
-                                        Icons.psychology_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 24.0,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.brainFog = !_model.brainFog;
+                                      safeSetState(() {});
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.brainFogModel,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: SymptomSelectorWidget(
+                                        key: ValueKey('brainFog'),
+                                        desc:
+                                            'Difficulty concentrating or remembering',
+                                        icon: Icon(
+                                          Icons.psychology_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        label: 'Brain Fog',
+                                        selected: false,
                                       ),
-                                      label: 'Brain Fog',
-                                      selected: false,
                                     ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.symptomSelectorModel3,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: SymptomSelectorWidget(
-                                      desc: 'Aches in knees, hips, or hands',
-                                      icon: Icon(
-                                        Icons.fitness_center_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 24.0,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.jointPain = !_model.jointPain;
+                                      safeSetState(() {});
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.jointPainModel,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: SymptomSelectorWidget(
+                                        key: ValueKey('jointpain'),
+                                        desc: 'Aches in knees, hips, or hands',
+                                        icon: Icon(
+                                          Icons.fitness_center_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        label: 'Joint Pain',
+                                        selected: false,
                                       ),
-                                      label: 'Joint Pain',
-                                      selected: false,
+                                    ),
+                                  ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.fatigue = !_model.fatigue;
+                                      safeSetState(() {});
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.fatigueModel,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: SymptomSelectorWidget(
+                                        key: ValueKey(' fatigue'),
+                                        desc: 'Feeling of extreme tiredness',
+                                        icon: Icon(
+                                          Icons.face_5_outlined,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        label: 'Fatigue',
+                                        selected: false,
+                                      ),
+                                    ),
+                                  ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.bloating = !_model.bloating;
+                                      safeSetState(() {});
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.bloatingModel,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: SymptomSelectorWidget(
+                                        key: ValueKey('bloating'),
+                                        desc: 'Feeling of abdominal fullness',
+                                        icon: Icon(
+                                          Icons.face_5_outlined,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        label: 'Bloating',
+                                        selected: false,
+                                      ),
+                                    ),
+                                  ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.anxiety = !_model.anxiety;
+                                      safeSetState(() {});
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.anxietyModel,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: SymptomSelectorWidget(
+                                        key: ValueKey('anxiety'),
+                                        desc: 'Feeling of worry or nervousness',
+                                        icon: Icon(
+                                          Icons.face_5_outlined,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        label: 'Anxiety',
+                                        selected: false,
+                                      ),
+                                    ),
+                                  ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.headache = !_model.headache;
+                                      safeSetState(() {});
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.headacheModel,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: SymptomSelectorWidget(
+                                        key: ValueKey('headache'),
+                                        desc: 'Pain or pressure in the head',
+                                        icon: Icon(
+                                          Icons.face_5_outlined,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        label: 'Headache',
+                                        selected: false,
+                                      ),
                                     ),
                                   ),
                                 ].divide(SizedBox(height: 16.0)),
@@ -881,25 +1051,48 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                     Padding(
                       padding: EdgeInsets.all(24.0),
                       child: Container(
-                        child: wrapWithModel(
-                          model: _model.buttonModel3,
-                          updateCallback: () => safeSetState(() {}),
-                          child: ButtonWidget(
-                            content: 'Save Daily Log',
-                            icon: Icon(
-                              Icons.check_circle_rounded,
-                              color: FlutterFlowTheme.of(context).onPrimary,
-                              size: 16.0,
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await SymptomLogsRecord.collection
+                                .doc()
+                                .set(createSymptomLogsRecordData(
+                                  userId: currentUserUid,
+                                  date: getCurrentTimestamp,
+                                  hotFlashes: _model.hotFlashesValue,
+                                  sleepQuality: _model.sleepQualityValue,
+                                  energyLevel: _model.energyLevelValue,
+                                  nightSweats: false,
+                                  brainFog: _model.brainFog,
+                                  fatigue: _model.fatigue,
+                                  headache: _model.headache,
+                                  bloating: _model.bloating,
+                                  anxiety: _model.anxiety,
+                                ));
+                          },
+                          child: wrapWithModel(
+                            model: _model.buttonModel3,
+                            updateCallback: () => safeSetState(() {}),
+                            child: ButtonWidget(
+                              content: 'Save Daily Log',
+                              icon: Icon(
+                                Icons.check_circle_rounded,
+                                color: FlutterFlowTheme.of(context).onPrimary,
+                                size: 16.0,
+                              ),
+                              icon_present: true,
+                              icon_end_present: false,
+                              on_tap: 'navigate:HomeDashboard',
+                              color: FlutterFlowTheme.of(context).primary,
+                              variant: 'primary',
+                              size: 'large',
+                              full_width: true,
+                              loading: false,
+                              disabled: false,
                             ),
-                            icon_present: true,
-                            icon_end_present: false,
-                            on_tap: 'navigate:HomeDashboard',
-                            color: FlutterFlowTheme.of(context).primary,
-                            variant: 'primary',
-                            size: 'large',
-                            full_width: true,
-                            loading: false,
-                            disabled: false,
                           ),
                         ),
                       ),

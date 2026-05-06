@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>1096509774968-e05dd70rvs9g8jfcp1i2ko8f7t0mt2jg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1096509774968-e05dd70rvs9g8jfcp1i2ko8f7t0mt2jg</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1096509774968-jv0e9qjd12ien644rlrpi2jutcpq5dri.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBkH0ugCQ9zhpZ63muzOo68kIUsR-8wQpY</string>
 	<key>GCM_SENDER_ID</key>
@@ -9,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mycompany.blissmenopause</string>
+	<string>com.bliss.menopause</string>
 	<key>PROJECT_ID</key>
 	<string>bliss-menopause</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1096509774968:ios:fc927fc31f6bff7920618d</string>
+	<string>1:1096509774968:ios:65d43fae95f2da9e20618d</string>
 </dict>
 </plist>

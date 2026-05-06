@@ -4,31 +4,32 @@ import '/components/quiz_option/quiz_option_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'onboarding_quiz_model.dart';
-export 'onboarding_quiz_model.dart';
+import 'onboarding_quiz2_model.dart';
+export 'onboarding_quiz2_model.dart';
 
-class OnboardingQuizWidget extends StatefulWidget {
-  const OnboardingQuizWidget({super.key});
+class OnboardingQuiz2Widget extends StatefulWidget {
+  const OnboardingQuiz2Widget({super.key});
 
-  static String routeName = 'OnboardingQuiz';
-  static String routePath = '/onboardingQuiz';
+  static String routeName = 'OnboardingQuiz2';
+  static String routePath = '/onboardingQuiz2';
 
   @override
-  State<OnboardingQuizWidget> createState() => _OnboardingQuizWidgetState();
+  State<OnboardingQuiz2Widget> createState() => _OnboardingQuiz2WidgetState();
 }
 
-class _OnboardingQuizWidgetState extends State<OnboardingQuizWidget> {
-  late OnboardingQuizModel _model;
+class _OnboardingQuiz2WidgetState extends State<OnboardingQuiz2Widget> {
+  late OnboardingQuiz2Model _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => OnboardingQuizModel());
+    _model = createModel(context, () => OnboardingQuiz2Model());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -60,6 +61,7 @@ class _OnboardingQuizWidgetState extends State<OnboardingQuizWidget> {
               Padding(
                 padding: EdgeInsets.all(24.0),
                 child: Container(
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -85,24 +87,35 @@ class _OnboardingQuizWidgetState extends State<OnboardingQuizWidget> {
                                       FlutterFlowTheme.of(context).primaryText,
                                   size: 24.0,
                                 ),
-                                onPressed: () {
-                                  print('IconButton pressed ...');
+                                onPressed: () async {
+                                  context
+                                      .pushNamed(HomeDashboardWidget.routeName);
                                 },
                               ),
-                              wrapWithModel(
-                                model: _model.buttonModel1,
-                                updateCallback: () => safeSetState(() {}),
-                                child: ButtonWidget(
-                                  content: 'Skip',
-                                  icon_present: false,
-                                  icon_end_present: false,
-                                  on_tap: 'navigate:HomeDashboard',
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  variant: 'ghost',
-                                  size: 'small',
-                                  full_width: false,
-                                  loading: false,
-                                  disabled: false,
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context
+                                      .pushNamed(HomeDashboardWidget.routeName);
+                                },
+                                child: wrapWithModel(
+                                  model: _model.buttonModel1,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: ButtonWidget(
+                                    content: 'Skip',
+                                    icon_present: false,
+                                    icon_end_present: false,
+                                    on_tap: 'navigate:HomeDashboard',
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    variant: 'ghost',
+                                    size: 'small',
+                                    full_width: false,
+                                    loading: false,
+                                    disabled: false,
+                                  ),
                                 ),
                               ),
                             ],
@@ -197,15 +210,15 @@ class _OnboardingQuizWidgetState extends State<OnboardingQuizWidget> {
                           width: 120.0,
                           height: 120.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).primary10,
-                            borderRadius: BorderRadius.circular(60.0),
-                            shape: BoxShape.rectangle,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            shape: BoxShape.circle,
                           ),
                           alignment: AlignmentDirectional(0.0, 0.0),
-                          child: Lottie.network(
-                            'https://dimg.dreamflow.cloud/v1/lottie/sparkling+stars+and+moon+animation',
-                            width: 80.0,
-                            height: 80.0,
+                          child: Lottie.asset(
+                            'assets/jsons/Depressed.json',
+                            width: 105.6,
+                            height: 85.97,
                             fit: BoxFit.contain,
                             animate: true,
                           ),
@@ -220,7 +233,7 @@ class _OnboardingQuizWidgetState extends State<OnboardingQuizWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'How has your sleep been lately?',
+                            'What symptoms are affecting you most?',
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
@@ -241,7 +254,7 @@ class _OnboardingQuizWidgetState extends State<OnboardingQuizWidget> {
                                 ),
                           ),
                           Text(
-                            'This helps us tailor your wellness hub and vitamin recommendations.',
+                            'This helps us focus on what matters most to you.',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -276,37 +289,37 @@ class _OnboardingQuizWidgetState extends State<OnboardingQuizWidget> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           wrapWithModel(
-                            model: _model.quizOptionModel1,
+                            model: _model.quizOption1Model1,
                             updateCallback: () => safeSetState(() {}),
                             child: QuizOptionWidget(
-                              label: 'I sleep like a baby',
+                              label: ' Hot flashes & night sweats',
                               on_tap: 'On Tap',
                               selected: false,
                             ),
                           ),
                           wrapWithModel(
-                            model: _model.quizOptionModel2,
+                            model: _model.quizOption1Model2,
                             updateCallback: () => safeSetState(() {}),
                             child: QuizOptionWidget(
-                              label: 'Occasional night sweats',
+                              label: 'Sleep problems',
                               on_tap: 'On Tap',
                               selected: true,
                             ),
                           ),
                           wrapWithModel(
-                            model: _model.quizOptionModel3,
+                            model: _model.quizOption1Model3,
                             updateCallback: () => safeSetState(() {}),
                             child: QuizOptionWidget(
-                              label: 'Difficulty falling asleep',
+                              label: ' Mood swings & anxiety',
                               on_tap: 'On Tap',
                               selected: false,
                             ),
                           ),
                           wrapWithModel(
-                            model: _model.quizOptionModel4,
+                            model: _model.quizOption1Model4,
                             updateCallback: () => safeSetState(() {}),
                             child: QuizOptionWidget(
-                              label: 'Frequent waking / Insomnia',
+                              label: 'Brain fog & memory issues',
                               on_tap: 'On Tap',
                               selected: false,
                             ),
@@ -315,26 +328,37 @@ class _OnboardingQuizWidgetState extends State<OnboardingQuizWidget> {
                       ),
                       Container(
                         height: 32.0,
+                        decoration: BoxDecoration(),
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          wrapWithModel(
-                            model: _model.buttonModel2,
-                            updateCallback: () => safeSetState(() {}),
-                            child: ButtonWidget(
-                              content: 'Continue',
-                              icon_present: false,
-                              icon_end_present: false,
-                              on_tap: 'navigate:HomeDashboard',
-                              color: FlutterFlowTheme.of(context).primary,
-                              variant: 'primary',
-                              size: 'large',
-                              full_width: false,
-                              loading: false,
-                              disabled: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context
+                                  .pushNamed(OnboardingQuiz3Widget.routeName);
+                            },
+                            child: wrapWithModel(
+                              model: _model.buttonModel2,
+                              updateCallback: () => safeSetState(() {}),
+                              child: ButtonWidget(
+                                content: 'Continue',
+                                icon_present: false,
+                                icon_end_present: false,
+                                on_tap: 'navigate:HomeDashboard',
+                                color: FlutterFlowTheme.of(context).primary,
+                                variant: 'primary',
+                                size: 'large',
+                                full_width: false,
+                                loading: false,
+                                disabled: false,
+                              ),
                             ),
                           ),
                           Container(
@@ -351,6 +375,7 @@ class _OnboardingQuizWidgetState extends State<OnboardingQuizWidget> {
                             child: Padding(
                               padding: EdgeInsets.all(16.0),
                               child: Container(
+                                decoration: BoxDecoration(),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,

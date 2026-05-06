@@ -5,6 +5,7 @@ import '/components/switch_component/switch_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -90,8 +91,9 @@ class _UserProfileSettingsWidgetState extends State<UserProfileSettingsWidget> {
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 size: 24.0,
                               ),
-                              onPressed: () {
-                                print('IconButton pressed ...');
+                              onPressed: () async {
+                                context
+                                    .pushNamed(HomeDashboardWidget.routeName);
                               },
                             ),
                             Text(
@@ -392,46 +394,73 @@ class _UserProfileSettingsWidgetState extends State<UserProfileSettingsWidget> {
                                 lineHeight: 1.33,
                               ),
                         ),
-                        wrapWithModel(
-                          model: _model.settingsItemModel1,
-                          updateCallback: () => safeSetState(() {}),
-                          child: SettingsItemWidget(
-                            icon: Icon(
-                              Icons.female_rounded,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 22.0,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(SymptomTrendsWidget.routeName);
+                          },
+                          child: wrapWithModel(
+                            model: _model.settingsItemModel1,
+                            updateCallback: () => safeSetState(() {}),
+                            child: SettingsItemWidget(
+                              icon: Icon(
+                                Icons.female_rounded,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 22.0,
+                              ),
+                              on_tap: 'navigate:OnboardingQuiz',
+                              title: 'Hormonal Profile',
+                              subtitle: 'Updated 2 weeks ago',
                             ),
-                            on_tap: 'navigate:OnboardingQuiz',
-                            title: 'Hormonal Profile',
-                            subtitle: 'Updated 2 weeks ago',
                           ),
                         ),
-                        wrapWithModel(
-                          model: _model.settingsItemModel2,
-                          updateCallback: () => safeSetState(() {}),
-                          child: SettingsItemWidget(
-                            icon: Icon(
-                              Icons.analytics_rounded,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 22.0,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(SymptomTrendsWidget.routeName);
+                          },
+                          child: wrapWithModel(
+                            model: _model.settingsItemModel2,
+                            updateCallback: () => safeSetState(() {}),
+                            child: SettingsItemWidget(
+                              icon: Icon(
+                                Icons.analytics_rounded,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 22.0,
+                              ),
+                              on_tap: 'navigate:SymptomTrends',
+                              title: 'Symptom History',
+                              subtitle: 'View trends & patterns',
                             ),
-                            on_tap: 'navigate:SymptomTrends',
-                            title: 'Symptom History',
-                            subtitle: 'View trends & patterns',
                           ),
                         ),
-                        wrapWithModel(
-                          model: _model.settingsItemModel3,
-                          updateCallback: () => safeSetState(() {}),
-                          child: SettingsItemWidget(
-                            icon: Icon(
-                              Icons.medical_services_rounded,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 22.0,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(VitaminShopWidget.routeName);
+                          },
+                          child: wrapWithModel(
+                            model: _model.settingsItemModel3,
+                            updateCallback: () => safeSetState(() {}),
+                            child: SettingsItemWidget(
+                              icon: Icon(
+                                Icons.medical_services_rounded,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 22.0,
+                              ),
+                              on_tap: 'navigate:VitaminShop',
+                              title: 'Vitamin Protocol',
+                              subtitle: 'Daily recommendations',
                             ),
-                            on_tap: 'navigate:VitaminShop',
-                            title: 'Vitamin Protocol',
-                            subtitle: 'Daily recommendations',
                           ),
                         ),
                       ].divide(SizedBox(height: 16.0)),
@@ -511,18 +540,27 @@ class _UserProfileSettingsWidgetState extends State<UserProfileSettingsWidget> {
                             ),
                           ),
                         ),
-                        wrapWithModel(
-                          model: _model.settingsItemModel4,
-                          updateCallback: () => safeSetState(() {}),
-                          child: SettingsItemWidget(
-                            icon: Icon(
-                              Icons.psychology_rounded,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 22.0,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(AIHealthCoachWidget.routeName);
+                          },
+                          child: wrapWithModel(
+                            model: _model.settingsItemModel4,
+                            updateCallback: () => safeSetState(() {}),
+                            child: SettingsItemWidget(
+                              icon: Icon(
+                                Icons.psychology_rounded,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 22.0,
+                              ),
+                              on_tap: 'navigate:AIHealthCoach',
+                              title: 'AI Coach Settings',
+                              subtitle: 'Personalize your Bliss bot',
                             ),
-                            on_tap: 'navigate:AIHealthCoach',
-                            title: 'AI Coach Settings',
-                            subtitle: 'Personalize your Bliss bot',
                           ),
                         ),
                         wrapWithModel(

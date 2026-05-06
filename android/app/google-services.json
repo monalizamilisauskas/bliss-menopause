@@ -7,12 +7,25 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1096509774968:android:e5d383f7f01add4f20618d",
+        "mobilesdk_app_id": "1:1096509774968:android:2d5deee64df987be20618d",
         "android_client_info": {
-          "package_name": "com.mycompany.blissmenopause"
+          "package_name": "com.bliss.menopause"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1096509774968-jv0e9qjd12ien644rlrpi2jutcpq5dri.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bliss.menopause",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "1096509774968-h6kid5ktvke2h018e3flftr1kjbnk0a1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBuvlSBz2ozq9XrQf5Fu7IhgBi4EJZOLoE"
@@ -20,7 +33,63 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1096509774968-h6kid5ktvke2h018e3flftr1kjbnk0a1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1096509774968-e05dd70rvs9g8jfcp1i2ko8f7t0mt2jg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bliss.menopause"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096509774968:android:e5d383f7f01add4f20618d",
+        "android_client_info": {
+          "package_name": "com.mycompany.blissmenopause"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1096509774968-qt3pjb5a72qv9ck93qmkcv9jgh5ke43t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.blissmenopause",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "1096509774968-h6kid5ktvke2h018e3flftr1kjbnk0a1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuvlSBz2ozq9XrQf5Fu7IhgBi4EJZOLoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1096509774968-h6kid5ktvke2h018e3flftr1kjbnk0a1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1096509774968-e05dd70rvs9g8jfcp1i2ko8f7t0mt2jg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bliss.menopause"
+              }
+            }
+          ]
         }
       }
     }

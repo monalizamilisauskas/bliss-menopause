@@ -5,6 +5,7 @@ import '/components/wellness_card/wellness_card_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -208,18 +209,29 @@ class _WellnessHubWidgetState extends State<WellnessHubWidget> {
                                         selected: true,
                                       ),
                                     ),
-                                    wrapWithModel(
-                                      model: _model.categoryChipModel2,
-                                      updateCallback: () => safeSetState(() {}),
-                                      child: CategoryChipWidget(
-                                        icon: Icon(
-                                          Icons.restaurant_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          size: 18.0,
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed(
+                                            NutritionGuidePageWidget.routeName);
+                                      },
+                                      child: wrapWithModel(
+                                        model: _model.categoryChipModel2,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: CategoryChipWidget(
+                                          icon: Icon(
+                                            Icons.restaurant_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            size: 18.0,
+                                          ),
+                                          label: 'Nutrition',
+                                          selected: false,
                                         ),
-                                        label: 'Nutrition',
-                                        selected: false,
                                       ),
                                     ),
                                     wrapWithModel(

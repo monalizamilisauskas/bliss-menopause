@@ -54,7 +54,7 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      context.pushNamed(Article01Widget.routeName);
+      context.pushNamed(ArticleDetail01Widget.routeName);
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -291,7 +291,8 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed(Article01Widget.routeName);
+                              context
+                                  .pushNamed(ArticleDetail01Widget.routeName);
                             },
                             child: wrapWithModel(
                               model: _model.buttonModel,

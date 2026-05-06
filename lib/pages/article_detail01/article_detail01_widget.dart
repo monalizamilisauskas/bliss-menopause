@@ -6,28 +6,28 @@ import 'dart:ui';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'article01_model.dart';
-export 'article01_model.dart';
+import 'article_detail01_model.dart';
+export 'article_detail01_model.dart';
 
-class Article01Widget extends StatefulWidget {
-  const Article01Widget({super.key});
+class ArticleDetail01Widget extends StatefulWidget {
+  const ArticleDetail01Widget({super.key});
 
-  static String routeName = 'article01';
-  static String routePath = '/article01';
+  static String routeName = 'ArticleDetail01';
+  static String routePath = '/ArticleDetail01';
 
   @override
-  State<Article01Widget> createState() => _Article01WidgetState();
+  State<ArticleDetail01Widget> createState() => _ArticleDetail01WidgetState();
 }
 
-class _Article01WidgetState extends State<Article01Widget> {
-  late Article01Model _model;
+class _ArticleDetail01WidgetState extends State<ArticleDetail01Widget> {
+  late ArticleDetail01Model _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Article01Model());
+    _model = createModel(context, () => ArticleDetail01Model());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }

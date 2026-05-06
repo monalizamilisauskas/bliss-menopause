@@ -3,6 +3,7 @@ import '/components/profile_stat/profile_stat_widget.dart';
 import '/components/settings_item/settings_item_widget.dart';
 import '/components/switch_component/switch_component_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'user_profile_settings_widget.dart' show UserProfileSettingsWidget;
 import 'package:flutter/material.dart';
 

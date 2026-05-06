@@ -2,6 +2,7 @@ import '/components/button/button_widget.dart';
 import '/components/symptom_log_item/symptom_log_item_widget.dart';
 import '/components/trend_stat_card/trend_stat_card_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'symptom_trends_widget.dart' show SymptomTrendsWidget;
 import 'package:flutter/material.dart';
 

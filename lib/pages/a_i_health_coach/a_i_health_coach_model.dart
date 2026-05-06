@@ -2,6 +2,7 @@ import '/components/coach_message/coach_message_widget.dart';
 import '/components/suggestion_chip/suggestion_chip_widget.dart';
 import '/components/text_field/text_field_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'a_i_health_coach_widget.dart' show AIHealthCoachWidget;
 import 'package:flutter/material.dart';
 

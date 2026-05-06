@@ -5,6 +5,7 @@ import '/components/vitamin_card/vitamin_card_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'vitamin_shop_model.dart';
@@ -88,8 +89,9 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 size: 24.0,
                               ),
-                              onPressed: () {
-                                print('IconButton pressed ...');
+                              onPressed: () async {
+                                context
+                                    .pushNamed(HomeDashboardWidget.routeName);
                               },
                             ),
                             FlutterFlowIconButton(

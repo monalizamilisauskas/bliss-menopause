@@ -1,4 +1,4 @@
-package com.mycompany.blissmenopause
+package com.bliss.menopause
 
 import io.flutter.embedding.android.FlutterActivity
 

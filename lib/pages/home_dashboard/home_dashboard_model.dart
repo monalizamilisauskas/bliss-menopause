@@ -2,6 +2,7 @@ import '/components/button/button_widget.dart';
 import '/components/quick_action/quick_action_widget.dart';
 import '/components/symptom_stat/symptom_stat_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'home_dashboard_widget.dart' show HomeDashboardWidget;
 import 'package:flutter/material.dart';
 

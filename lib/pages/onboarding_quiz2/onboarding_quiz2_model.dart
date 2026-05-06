@@ -2,10 +2,11 @@ import '/components/button/button_widget.dart';
 import '/components/progress_step/progress_step_widget.dart';
 import '/components/quiz_option/quiz_option_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'onboarding_quiz_widget.dart' show OnboardingQuizWidget;
+import '/index.dart';
+import 'onboarding_quiz2_widget.dart' show OnboardingQuiz2Widget;
 import 'package:flutter/material.dart';
 
-class OnboardingQuizModel extends FlutterFlowModel<OnboardingQuizWidget> {
+class OnboardingQuiz2Model extends FlutterFlowModel<OnboardingQuiz2Widget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for Button.
@@ -18,14 +19,14 @@ class OnboardingQuizModel extends FlutterFlowModel<OnboardingQuizWidget> {
   late ProgressStepModel progressStepModel3;
   // Model for ProgressStep.
   late ProgressStepModel progressStepModel4;
-  // Model for QuizOption.
-  late QuizOptionModel quizOptionModel1;
-  // Model for QuizOption.
-  late QuizOptionModel quizOptionModel2;
-  // Model for QuizOption.
-  late QuizOptionModel quizOptionModel3;
-  // Model for QuizOption.
-  late QuizOptionModel quizOptionModel4;
+  // Model for QuizOption1.
+  late QuizOptionModel quizOption1Model1;
+  // Model for QuizOption1.
+  late QuizOptionModel quizOption1Model2;
+  // Model for QuizOption1.
+  late QuizOptionModel quizOption1Model3;
+  // Model for QuizOption1.
+  late QuizOptionModel quizOption1Model4;
   // Model for Button.
   late ButtonModel buttonModel2;
 
@@ -36,10 +37,10 @@ class OnboardingQuizModel extends FlutterFlowModel<OnboardingQuizWidget> {
     progressStepModel2 = createModel(context, () => ProgressStepModel());
     progressStepModel3 = createModel(context, () => ProgressStepModel());
     progressStepModel4 = createModel(context, () => ProgressStepModel());
-    quizOptionModel1 = createModel(context, () => QuizOptionModel());
-    quizOptionModel2 = createModel(context, () => QuizOptionModel());
-    quizOptionModel3 = createModel(context, () => QuizOptionModel());
-    quizOptionModel4 = createModel(context, () => QuizOptionModel());
+    quizOption1Model1 = createModel(context, () => QuizOptionModel());
+    quizOption1Model2 = createModel(context, () => QuizOptionModel());
+    quizOption1Model3 = createModel(context, () => QuizOptionModel());
+    quizOption1Model4 = createModel(context, () => QuizOptionModel());
     buttonModel2 = createModel(context, () => ButtonModel());
   }
 
@@ -50,10 +51,10 @@ class OnboardingQuizModel extends FlutterFlowModel<OnboardingQuizWidget> {
     progressStepModel2.dispose();
     progressStepModel3.dispose();
     progressStepModel4.dispose();
-    quizOptionModel1.dispose();
-    quizOptionModel2.dispose();
-    quizOptionModel3.dispose();
-    quizOptionModel4.dispose();
+    quizOption1Model1.dispose();
+    quizOption1Model2.dispose();
+    quizOption1Model3.dispose();
+    quizOption1Model4.dispose();
     buttonModel2.dispose();
   }
 }

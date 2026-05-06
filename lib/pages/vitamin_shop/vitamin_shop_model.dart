@@ -3,6 +3,7 @@ import '/components/category_chip2/category_chip2_widget.dart';
 import '/components/text_field/text_field_widget.dart';
 import '/components/vitamin_card/vitamin_card_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'vitamin_shop_widget.dart' show VitaminShopWidget;
 import 'package:flutter/material.dart';
 

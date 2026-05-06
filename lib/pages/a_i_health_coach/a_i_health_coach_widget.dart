@@ -5,7 +5,7 @@ import '/components/text_field/text_field_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -84,17 +84,14 @@ class _AIHealthCoachWidgetState extends State<AIHealthCoachWidget> {
                               color: FlutterFlowTheme.of(context).primaryText,
                               size: 24.0,
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
+                            onPressed: () async {
+                              context.pushNamed(HomeDashboardWidget.routeName);
                             },
                           ),
                           ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
-                            child: CachedNetworkImage(
-                              fadeInDuration: Duration(milliseconds: 0),
-                              fadeOutDuration: Duration(milliseconds: 0),
-                              imageUrl:
-                                  'https://dimg.dreamflow.cloud/v1/image/friendly%20mature%20female%20health%20coach%20avatar',
+                            child: Image.asset(
+                              'assets/images/logo_app.png',
                               width: 40.0,
                               height: 40.0,
                               fit: BoxFit.cover,
