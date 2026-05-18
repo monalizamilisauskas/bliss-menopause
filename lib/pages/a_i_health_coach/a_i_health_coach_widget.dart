@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/ai_agents/ai_agent.dart';
 import '/components/coach_message/coach_message_widget.dart';
 import '/components/suggestion_chip/suggestion_chip_widget.dart';
@@ -537,37 +538,37 @@ class _AIHealthCoachWidgetState extends State<AIHealthCoachWidget> {
                                   ),
                                 ),
                               ),
-                              Container(
-                                width: 48.0,
-                                height: 48.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  borderRadius: BorderRadius.circular(9999.0),
-                                  shape: BoxShape.rectangle,
-                                ),
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    await callAiAgent(
-                                      context: context,
-                                      prompt: _model.textFieldModel
-                                          .inputTextController.text,
-                                      threadId: 'Current User',
-                                      agentCloudFunctionName: 'blissCoach',
-                                      provider: 'ANTHROPIC',
-                                      agentJson: null,
-                                      responseType: 'PLAINTEXT',
-                                    ).then((generatedText) {
-                                      safeSetState(() =>
-                                          _model.blissResponse = generatedText);
-                                    });
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  await callAiAgent(
+                                    context: context,
+                                    prompt: _model.textFieldModel
+                                        .inputTextController.text,
+                                    threadId: currentUserUid,
+                                    agentCloudFunctionName: 'blissCoach',
+                                    provider: 'ANTHROPIC',
+                                    agentJson: null,
+                                    responseType: 'PLAINTEXT',
+                                  ).then((generatedText) {
+                                    safeSetState(() =>
+                                        _model.blissReply = generatedText);
+                                  });
 
-                                    safeSetState(() {});
-                                  },
+                                  safeSetState(() {});
+                                },
+                                child: Container(
+                                  width: 48.0,
+                                  height: 48.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    borderRadius: BorderRadius.circular(9999.0),
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Icon(
                                     Icons.send_rounded,
                                     color: FlutterFlowTheme.of(context)

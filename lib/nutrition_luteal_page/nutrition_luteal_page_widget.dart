@@ -1881,27 +1881,14 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontStyle,
-                                                          ),
+                                                          fontFamily:
+                                                              'Inter Tight',
                                                           color:
                                                               Color(0xFF2D1B0E),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -2042,27 +2029,14 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontStyle,
-                                                          ),
+                                                          fontFamily:
+                                                              'Inter Tight',
                                                           color:
                                                               Color(0xFF2D1B0E),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -2203,27 +2177,14 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontStyle,
-                                                          ),
+                                                          fontFamily:
+                                                              'Inter Tight',
                                                           color:
                                                               Color(0xFF2D1B0E),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),

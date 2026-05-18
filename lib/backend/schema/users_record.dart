@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -75,6 +76,51 @@ class UsersRecord extends FirestoreRecord {
   int get streak => _streak ?? 0;
   bool hasStreak() => _streak != null;
 
+  // "totalDaysLogged" field.
+  int? _totalDaysLogged;
+  int get totalDaysLogged => _totalDaysLogged ?? 0;
+  bool hasTotalDaysLogged() => _totalDaysLogged != null;
+
+  // "bestStreak" field.
+  int? _bestStreak;
+  int get bestStreak => _bestStreak ?? 0;
+  bool hasBestStreak() => _bestStreak != null;
+
+  // "consistencyPercent" field.
+  int? _consistencyPercent;
+  int get consistencyPercent => _consistencyPercent ?? 0;
+  bool hasConsistencyPercent() => _consistencyPercent != null;
+
+  // "remindersEnabled" field.
+  bool? _remindersEnabled;
+  bool get remindersEnabled => _remindersEnabled ?? false;
+  bool hasRemindersEnabled() => _remindersEnabled != null;
+
+  // "reminderFrequency" field.
+  String? _reminderFrequency;
+  String get reminderFrequency => _reminderFrequency ?? '';
+  bool hasReminderFrequency() => _reminderFrequency != null;
+
+  // "reminderTime" field.
+  DateTime? _reminderTime;
+  DateTime? get reminderTime => _reminderTime;
+  bool hasReminderTime() => _reminderTime != null;
+
+  // "reminderDays" field.
+  List<String>? _reminderDays;
+  List<String> get reminderDays => _reminderDays ?? const [];
+  bool hasReminderDays() => _reminderDays != null;
+
+  // "reminderMessage" field.
+  String? _reminderMessage;
+  String get reminderMessage => _reminderMessage ?? '';
+  bool hasReminderMessage() => _reminderMessage != null;
+
+  // "lastSeen" field.
+  DateTime? _lastSeen;
+  DateTime? get lastSeen => _lastSeen;
+  bool hasLastSeen() => _lastSeen != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -88,6 +134,15 @@ class UsersRecord extends FirestoreRecord {
     _progesteroneLevel = castToType<int>(snapshotData['progesteroneLevel']);
     _fshLevel = castToType<int>(snapshotData['fshLevel']);
     _streak = castToType<int>(snapshotData['streak']);
+    _totalDaysLogged = castToType<int>(snapshotData['totalDaysLogged']);
+    _bestStreak = castToType<int>(snapshotData['bestStreak']);
+    _consistencyPercent = castToType<int>(snapshotData['consistencyPercent']);
+    _remindersEnabled = snapshotData['remindersEnabled'] as bool?;
+    _reminderFrequency = snapshotData['reminderFrequency'] as String?;
+    _reminderTime = snapshotData['reminderTime'] as DateTime?;
+    _reminderDays = getDataList(snapshotData['reminderDays']);
+    _reminderMessage = snapshotData['reminderMessage'] as String?;
+    _lastSeen = snapshotData['lastSeen'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -136,6 +191,14 @@ Map<String, dynamic> createUsersRecordData({
   int? progesteroneLevel,
   int? fshLevel,
   int? streak,
+  int? totalDaysLogged,
+  int? bestStreak,
+  int? consistencyPercent,
+  bool? remindersEnabled,
+  String? reminderFrequency,
+  DateTime? reminderTime,
+  String? reminderMessage,
+  DateTime? lastSeen,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -151,6 +214,14 @@ Map<String, dynamic> createUsersRecordData({
       'progesteroneLevel': progesteroneLevel,
       'fshLevel': fshLevel,
       'streak': streak,
+      'totalDaysLogged': totalDaysLogged,
+      'bestStreak': bestStreak,
+      'consistencyPercent': consistencyPercent,
+      'remindersEnabled': remindersEnabled,
+      'reminderFrequency': reminderFrequency,
+      'reminderTime': reminderTime,
+      'reminderMessage': reminderMessage,
+      'lastSeen': lastSeen,
     }.withoutNulls,
   );
 
@@ -162,6 +233,7 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
 
   @override
   bool equals(UsersRecord? e1, UsersRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.email == e2?.email &&
         e1?.displayName == e2?.displayName &&
         e1?.photoUrl == e2?.photoUrl &&
@@ -173,7 +245,16 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.estrogenLevel == e2?.estrogenLevel &&
         e1?.progesteroneLevel == e2?.progesteroneLevel &&
         e1?.fshLevel == e2?.fshLevel &&
-        e1?.streak == e2?.streak;
+        e1?.streak == e2?.streak &&
+        e1?.totalDaysLogged == e2?.totalDaysLogged &&
+        e1?.bestStreak == e2?.bestStreak &&
+        e1?.consistencyPercent == e2?.consistencyPercent &&
+        e1?.remindersEnabled == e2?.remindersEnabled &&
+        e1?.reminderFrequency == e2?.reminderFrequency &&
+        e1?.reminderTime == e2?.reminderTime &&
+        listEquality.equals(e1?.reminderDays, e2?.reminderDays) &&
+        e1?.reminderMessage == e2?.reminderMessage &&
+        e1?.lastSeen == e2?.lastSeen;
   }
 
   @override
@@ -189,7 +270,16 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.estrogenLevel,
         e?.progesteroneLevel,
         e?.fshLevel,
-        e?.streak
+        e?.streak,
+        e?.totalDaysLogged,
+        e?.bestStreak,
+        e?.consistencyPercent,
+        e?.remindersEnabled,
+        e?.reminderFrequency,
+        e?.reminderTime,
+        e?.reminderDays,
+        e?.reminderMessage,
+        e?.lastSeen
       ]);
 
   @override

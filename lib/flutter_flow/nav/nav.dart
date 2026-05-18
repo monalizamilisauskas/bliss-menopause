@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
+import '/backend/push_notifications/push_notifications_handler.dart'
+    show PushNotificationsHandler;
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -240,6 +242,51 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: MedicalReportPageWidget.routeName,
           path: MedicalReportPageWidget.routePath,
           builder: (context, params) => MedicalReportPageWidget(),
+        ),
+        FFRoute(
+          name: OurStoryWidget.routeName,
+          path: OurStoryWidget.routePath,
+          builder: (context, params) => OurStoryWidget(),
+        ),
+        FFRoute(
+          name: DailyReminderPageWidget.routeName,
+          path: DailyReminderPageWidget.routePath,
+          builder: (context, params) => DailyReminderPageWidget(),
+        ),
+        FFRoute(
+          name: WeeklyInsightPageWidget.routeName,
+          path: WeeklyInsightPageWidget.routePath,
+          builder: (context, params) => WeeklyInsightPageWidget(),
+        ),
+        FFRoute(
+          name: CommunityForumPageWidget.routeName,
+          path: CommunityForumPageWidget.routePath,
+          builder: (context, params) => CommunityForumPageWidget(),
+        ),
+        FFRoute(
+          name: StreakTrackerPageWidget.routeName,
+          path: StreakTrackerPageWidget.routePath,
+          builder: (context, params) => StreakTrackerPageWidget(),
+        ),
+        FFRoute(
+          name: SymptomDetailPageWidget.routeName,
+          path: SymptomDetailPageWidget.routePath,
+          builder: (context, params) => SymptomDetailPageWidget(),
+        ),
+        FFRoute(
+          name: SubscriptionWinBackPagWidget.routeName,
+          path: SubscriptionWinBackPagWidget.routePath,
+          builder: (context, params) => SubscriptionWinBackPagWidget(),
+        ),
+        FFRoute(
+          name: PersonalizedRecommendationsPagWidget.routeName,
+          path: PersonalizedRecommendationsPagWidget.routePath,
+          builder: (context, params) => PersonalizedRecommendationsPagWidget(),
+        ),
+        FFRoute(
+          name: CreatePostPageWidget.routeName,
+          path: CreatePostPageWidget.routePath,
+          builder: (context, params) => CreatePostPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -435,7 +482,7 @@ class FFRoute {
                     ),
                   ),
                 )
-              : page;
+              : PushNotificationsHandler(child: page);
 
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition

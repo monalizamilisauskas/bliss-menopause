@@ -65,16 +65,10 @@ class _SeveritySliderWidgetState extends State<SeveritySliderWidget> {
                 'Intensity',
               ),
               style: FlutterFlowTheme.of(context).titleSmall.override(
-                    font: GoogleFonts.interTight(
-                      fontWeight: FontWeight.w600,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                    ),
+                    fontFamily: 'Inter Tight',
                     color: FlutterFlowTheme.of(context).primaryText,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).titleSmall.fontStyle,
                   ),
             ),
             Text(

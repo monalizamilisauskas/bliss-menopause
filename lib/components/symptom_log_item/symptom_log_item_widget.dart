@@ -98,18 +98,10 @@ class _SymptomLogItemWidgetState extends State<SymptomLogItemWidget> {
                           style: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
+                                fontFamily: 'Inter Tight',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.bold,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
                               ),
                         ),
                         Text(

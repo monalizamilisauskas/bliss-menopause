@@ -244,22 +244,25 @@ class ThemeTypography extends Typography {
   final FlutterFlowTheme theme;
 
   String get displayLargeFamily => 'Inter Tight';
-  bool get displayLargeIsCustom => false;
-  TextStyle get displayLarge => GoogleFonts.interTight(
+  bool get displayLargeIsCustom => true;
+  TextStyle get displayLarge => TextStyle(
+        fontFamily: 'Inter Tight',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 64.0,
       );
   String get displayMediumFamily => 'Inter Tight';
-  bool get displayMediumIsCustom => false;
-  TextStyle get displayMedium => GoogleFonts.interTight(
+  bool get displayMediumIsCustom => true;
+  TextStyle get displayMedium => TextStyle(
+        fontFamily: 'Inter Tight',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 44.0,
       );
   String get displaySmallFamily => 'Inter Tight';
-  bool get displaySmallIsCustom => false;
-  TextStyle get displaySmall => GoogleFonts.interTight(
+  bool get displaySmallIsCustom => true;
+  TextStyle get displaySmall => TextStyle(
+        fontFamily: 'Inter Tight',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
@@ -281,8 +284,9 @@ class ThemeTypography extends Typography {
         height: 1.25,
       );
   String get headlineSmallFamily => 'Inter Tight';
-  bool get headlineSmallIsCustom => false;
-  TextStyle get headlineSmall => GoogleFonts.interTight(
+  bool get headlineSmallIsCustom => true;
+  TextStyle get headlineSmall => TextStyle(
+        fontFamily: 'Inter Tight',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 24.0,
@@ -304,8 +308,9 @@ class ThemeTypography extends Typography {
         height: 1.35,
       );
   String get titleSmallFamily => 'Inter Tight';
-  bool get titleSmallIsCustom => false;
-  TextStyle get titleSmall => GoogleFonts.interTight(
+  bool get titleSmallIsCustom => true;
+  TextStyle get titleSmall => TextStyle(
+        fontFamily: 'Inter Tight',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 16.0,

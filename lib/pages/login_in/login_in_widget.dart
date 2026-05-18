@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'login_in_model.dart';
 export 'login_in_model.dart';
@@ -381,19 +382,11 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  font: GoogleFonts.interTight(
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: 'Inter Tight',
                                   color: Colors.white,
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
                                 ),
                             elevation: 0.0,
                             borderSide: BorderSide(
@@ -490,8 +483,8 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                           HomeDashboardWidget.routeName, context.mounted);
                     },
                     text: 'Continue with Google',
-                    icon: Icon(
-                      Icons.google,
+                    icon: FaIcon(
+                      FontAwesomeIcons.googlePlus,
                       size: 20.0,
                     ),
                     options: FFButtonOptions(
@@ -504,19 +497,11 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                       color: Colors.white,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FontWeight.w500,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
+                                fontFamily: 'Inter Tight',
                                 color: Color(0xFF2D1B0E),
                                 fontSize: 15.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
                               ),
                       elevation: 0.0,
                       borderSide: BorderSide(

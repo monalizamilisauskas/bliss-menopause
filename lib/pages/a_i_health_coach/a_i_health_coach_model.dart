@@ -23,8 +23,8 @@ class AIHealthCoachModel extends FlutterFlowModel<AIHealthCoachWidget> {
   late SuggestionChipModel suggestionChipModel3;
   // Model for TextField.
   late TextFieldModel textFieldModel;
-  // Stores action output result for [AI Agent - Send Message to Bliss Coach] action in Icon widget.
-  String? blissResponse;
+  // Stores action output result for [AI Agent - Send Message to Bliss Coach] action in Container widget.
+  String? blissReply;
 
   @override
   void initState(BuildContext context) {

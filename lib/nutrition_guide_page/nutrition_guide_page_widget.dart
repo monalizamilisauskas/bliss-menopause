@@ -383,21 +383,11 @@ class _NutritionGuidePageWidgetState extends State<NutritionGuidePageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          font: GoogleFonts.interTight(
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily: 'Inter Tight',
                                           color: Color(0xFF2D1B0E),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontStyle,
                                         ),
                                   ),
                                   Padding(
@@ -1690,25 +1680,11 @@ class _NutritionGuidePageWidgetState extends State<NutritionGuidePageWidget> {
                                                       context)
                                                   .titleSmall
                                                   .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
-                                                    ),
+                                                    fontFamily: 'Inter Tight',
                                                     color: Color(0xFF2D1B0E),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.bold,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .fontStyle,
                                                   ),
                                             ),
                                           ),
@@ -1842,25 +1818,11 @@ class _NutritionGuidePageWidgetState extends State<NutritionGuidePageWidget> {
                                                       context)
                                                   .titleSmall
                                                   .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
-                                                    ),
+                                                    fontFamily: 'Inter Tight',
                                                     color: Color(0xFF2D1B0E),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.bold,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .fontStyle,
                                                   ),
                                             ),
                                           ),
@@ -1994,25 +1956,11 @@ class _NutritionGuidePageWidgetState extends State<NutritionGuidePageWidget> {
                                                       context)
                                                   .titleSmall
                                                   .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
-                                                    ),
+                                                    fontFamily: 'Inter Tight',
                                                     color: Color(0xFF2D1B0E),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.bold,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .fontStyle,
                                                   ),
                                             ),
                                           ),

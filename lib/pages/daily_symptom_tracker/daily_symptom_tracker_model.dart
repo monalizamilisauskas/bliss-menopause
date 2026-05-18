@@ -31,6 +31,8 @@ class DailySymptomTrackerModel
 
   int? energyLevelValue;
 
+  String selectedMood = 'Calm';
+
   ///  State fields for stateful widgets in this page.
 
   // Model for MoodCalm.

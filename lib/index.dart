@@ -6,7 +6,7 @@ export '/pages/home_dashboard/home_dashboard_widget.dart'
 export '/pages/daily_symptom_tracker/daily_symptom_tracker_widget.dart'
     show DailySymptomTrackerWidget;
 export '/pages/wellness_hub/wellness_hub_widget.dart' show WellnessHubWidget;
-export '/pages/vitamin_shop/vitamin_shop_widget.dart' show VitaminShopWidget;
+export '/vitamin_shop/vitamin_shop_widget.dart' show VitaminShopWidget;
 export '/pages/a_i_health_coach/a_i_health_coach_widget.dart'
     show AIHealthCoachWidget;
 export '/pages/symptom_trends/symptom_trends_widget.dart'
@@ -28,8 +28,7 @@ export '/pages/forgot_password/forgot_password_widget.dart'
     show ForgotPasswordWidget;
 export '/pages/hormonal_profile/hormonal_profile_widget.dart'
     show HormonalProfileWidget;
-export '/pages/product_detail/product_detail_widget.dart'
-    show ProductDetailWidget;
+export '/product_detail/product_detail_widget.dart' show ProductDetailWidget;
 export '/pages/subscription_planpage/subscription_planpage_widget.dart'
     show SubscriptionPlanpageWidget;
 export '/pages/plan_comparison/plan_comparison_widget.dart'
@@ -37,13 +36,13 @@ export '/pages/plan_comparison/plan_comparison_widget.dart'
 export '/pages/subscription_success_page/subscription_success_page_widget.dart'
     show SubscriptionSuccessPageWidget;
 export '/pages/quiz_intro/quiz_intro_widget.dart' show QuizIntroWidget;
-export '/pages/nutrition_guide_page/nutrition_guide_page_widget.dart'
+export '/nutrition_guide_page/nutrition_guide_page_widget.dart'
     show NutritionGuidePageWidget;
-export '/pages/nutrition_follicular_page/nutrition_follicular_page_widget.dart'
+export '/nutrition_follicular_page/nutrition_follicular_page_widget.dart'
     show NutritionFollicularPageWidget;
-export '/pages/nutrition_ovulatory_page/nutrition_ovulatory_page_widget.dart'
+export '/nutrition_ovulatory_page/nutrition_ovulatory_page_widget.dart'
     show NutritionOvulatoryPageWidget;
-export '/pages/nutrition_luteal_page/nutrition_luteal_page_widget.dart'
+export '/nutrition_luteal_page/nutrition_luteal_page_widget.dart'
     show NutritionLutealPageWidget;
 export '/pages/skin_hair_guide_page/skin_hair_guide_page_widget.dart'
     show SkinHairGuidePageWidget;
@@ -55,3 +54,20 @@ export '/pages/skin_hair_luteal_page/skin_hair_luteal_page_widget.dart'
     show SkinHairLutealPageWidget;
 export '/pages/medical_report_page/medical_report_page_widget.dart'
     show MedicalReportPageWidget;
+export '/pages/our_story/our_story_widget.dart' show OurStoryWidget;
+export '/pages/daily_reminder_page/daily_reminder_page_widget.dart'
+    show DailyReminderPageWidget;
+export '/pages/weekly_insight_page/weekly_insight_page_widget.dart'
+    show WeeklyInsightPageWidget;
+export '/pages/community_forum_page/community_forum_page_widget.dart'
+    show CommunityForumPageWidget;
+export '/pages/streak_tracker_page/streak_tracker_page_widget.dart'
+    show StreakTrackerPageWidget;
+export '/pages/symptom_detail_page/symptom_detail_page_widget.dart'
+    show SymptomDetailPageWidget;
+export '/pages/subscription_win_back_pag/subscription_win_back_pag_widget.dart'
+    show SubscriptionWinBackPagWidget;
+export '/pages/personalized_recommendations_pag/personalized_recommendations_pag_widget.dart'
+    show PersonalizedRecommendationsPagWidget;
+export '/pages/create_post_page/create_post_page_widget.dart'
+    show CreatePostPageWidget;

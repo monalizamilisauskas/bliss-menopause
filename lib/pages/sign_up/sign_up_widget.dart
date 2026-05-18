@@ -579,18 +579,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       color: Color(0xFFC9A84C),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FontWeight.w600,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
+                                fontFamily: 'Inter Tight',
                                 color: Colors.white,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
                               ),
                       elevation: 0.0,
                       borderSide: BorderSide(
@@ -671,18 +663,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       color: Colors.transparent,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FontWeight.w600,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
+                                fontFamily: 'Inter Tight',
                                 color: Color(0xFF2D1B0E),
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
                               ),
                       elevation: 0.0,
                       borderSide: BorderSide(

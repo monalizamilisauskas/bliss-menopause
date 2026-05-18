@@ -8,6 +8,8 @@ import 'schema/util/firestore_util.dart';
 import 'schema/users_record.dart';
 import 'schema/symptom_logs_record.dart';
 import 'schema/onboarding_answers_record.dart';
+import 'schema/community_stats_record.dart';
+import 'schema/posts_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -19,6 +21,8 @@ export 'schema/util/schema_util.dart';
 export 'schema/users_record.dart';
 export 'schema/symptom_logs_record.dart';
 export 'schema/onboarding_answers_record.dart';
+export 'schema/community_stats_record.dart';
+export 'schema/posts_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -126,6 +130,80 @@ Future<List<OnboardingAnswersRecord>> queryOnboardingAnswersRecordOnce({
     queryCollectionOnce(
       OnboardingAnswersRecord.collection,
       OnboardingAnswersRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query CommunityStatsRecords (as a Stream and as a Future).
+Future<int> queryCommunityStatsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      CommunityStatsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<CommunityStatsRecord>> queryCommunityStatsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      CommunityStatsRecord.collection,
+      CommunityStatsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<CommunityStatsRecord>> queryCommunityStatsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      CommunityStatsRecord.collection,
+      CommunityStatsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query PostsRecords (as a Stream and as a Future).
+Future<int> queryPostsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      PostsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<PostsRecord>> queryPostsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      PostsRecord.collection,
+      PostsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<PostsRecord>> queryPostsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      PostsRecord.collection,
+      PostsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

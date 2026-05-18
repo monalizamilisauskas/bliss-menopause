@@ -126,19 +126,18 @@ class _HormonalProfileWidgetState extends State<HormonalProfileWidget> {
                   Text(
                     'Hormonal Profile',
                     textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          font: GoogleFonts.playfairDisplay(
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          font: GoogleFonts.plusJakartaSans(
                             fontWeight: FontWeight.bold,
                             fontStyle: FlutterFlowTheme.of(context)
-                                .headlineMedium
+                                .titleMedium
                                 .fontStyle,
                           ),
-                          color: Color(0xFF2D1B0E),
                           fontSize: 24.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
                           fontStyle: FlutterFlowTheme.of(context)
-                              .headlineMedium
+                              .titleMedium
                               .fontStyle,
                         ),
                   ),
@@ -954,19 +953,11 @@ class _HormonalProfileWidgetState extends State<HormonalProfileWidget> {
                           color: Color(0xFFC9A84C),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    font: GoogleFonts.interTight(
-                                      fontWeight: FontWeight.w600,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
-                                    ),
+                                    fontFamily: 'Inter Tight',
                                     color: Colors.white,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
                                   ),
                           elevation: 0.0,
                           borderSide: BorderSide(

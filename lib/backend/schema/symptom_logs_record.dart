@@ -75,6 +75,11 @@ class SymptomLogsRecord extends FirestoreRecord {
   bool get anxiety => _anxiety ?? false;
   bool hasAnxiety() => _anxiety != null;
 
+  // "intensity" field.
+  String? _intensity;
+  String get intensity => _intensity ?? '';
+  bool hasIntensity() => _intensity != null;
+
   void _initializeFields() {
     _userId = snapshotData['userId'] as String?;
     _date = snapshotData['date'] as DateTime?;
@@ -88,6 +93,7 @@ class SymptomLogsRecord extends FirestoreRecord {
     _headache = snapshotData['headache'] as bool?;
     _bloating = snapshotData['bloating'] as bool?;
     _anxiety = snapshotData['anxiety'] as bool?;
+    _intensity = snapshotData['intensity'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -137,6 +143,7 @@ Map<String, dynamic> createSymptomLogsRecordData({
   bool? headache,
   bool? bloating,
   bool? anxiety,
+  String? intensity,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -152,6 +159,7 @@ Map<String, dynamic> createSymptomLogsRecordData({
       'headache': headache,
       'bloating': bloating,
       'anxiety': anxiety,
+      'intensity': intensity,
     }.withoutNulls,
   );
 
@@ -174,7 +182,8 @@ class SymptomLogsRecordDocumentEquality implements Equality<SymptomLogsRecord> {
         e1?.fatigue == e2?.fatigue &&
         e1?.headache == e2?.headache &&
         e1?.bloating == e2?.bloating &&
-        e1?.anxiety == e2?.anxiety;
+        e1?.anxiety == e2?.anxiety &&
+        e1?.intensity == e2?.intensity;
   }
 
   @override
@@ -190,7 +199,8 @@ class SymptomLogsRecordDocumentEquality implements Equality<SymptomLogsRecord> {
         e?.fatigue,
         e?.headache,
         e?.bloating,
-        e?.anxiety
+        e?.anxiety,
+        e?.intensity
       ]);
 
   @override

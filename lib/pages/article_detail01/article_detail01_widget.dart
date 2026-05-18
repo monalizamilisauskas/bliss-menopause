@@ -68,15 +68,15 @@ class _ArticleDetail01WidgetState extends State<ArticleDetail01Widget> {
           ),
           title: Text(
             'Hydration & Skin Elasticity',
-            style: FlutterFlowTheme.of(context).bodyLarge.override(
+            style: FlutterFlowTheme.of(context).titleMedium.override(
                   font: GoogleFonts.plusJakartaSans(
-                    fontWeight:
-                        FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                    fontWeight: FontWeight.bold,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).titleMedium.fontStyle,
                   ),
                   letterSpacing: 0.0,
-                  fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
                 ),
           ),
           actions: [],
@@ -100,24 +100,26 @@ class _ArticleDetail01WidgetState extends State<ArticleDetail01Widget> {
                         width: 44.0,
                         height: 44.0,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).accent1,
+                          color: FlutterFlowTheme.of(context).alternate,
                           borderRadius: BorderRadius.circular(12.0),
                           border: Border.all(
                             color: FlutterFlowTheme.of(context).primary,
                             width: 2.0,
                           ),
                         ),
-                        child: Padding(
-                          padding: EdgeInsets.all(2.0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10.0),
-                            child: Image.network(
-                              'https://source.unsplash.com/random/1280x720?profile&5',
-                              width: 44.0,
-                              height: 44.0,
-                              fit: BoxFit.cover,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 0.0),
+                              child: Icon(
+                                Icons.group_rounded,
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                size: 30.0,
+                              ),
                             ),
-                          ),
+                          ],
                         ),
                       ),
                       Expanded(
@@ -130,7 +132,7 @@ class _ArticleDetail01WidgetState extends State<ArticleDetail01Widget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Haily Brown',
+                                'Our Story',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
@@ -184,8 +186,9 @@ class _ArticleDetail01WidgetState extends State<ArticleDetail01Widget> {
                         ),
                       ),
                       FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          context
+                              .pushNamed(SubscriptionPlanpageWidget.routeName);
                         },
                         text: 'Subscribe',
                         options: FFButtonOptions(
@@ -197,22 +200,9 @@ class _ArticleDetail01WidgetState extends State<ArticleDetail01Widget> {
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    font: GoogleFonts.interTight(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
-                                    ),
+                                    fontFamily: 'Inter Tight',
                                     color: Colors.white,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
                                   ),
                           elevation: 3.0,
                           borderSide: BorderSide(
@@ -320,7 +310,7 @@ class _ArticleDetail01WidgetState extends State<ArticleDetail01Widget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: Text(
-                                '#website',
+                                '#skincare',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -363,7 +353,7 @@ class _ArticleDetail01WidgetState extends State<ArticleDetail01Widget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: Text(
-                                '#ux',
+                                '#menopause',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -398,20 +388,22 @@ class _ArticleDetail01WidgetState extends State<ArticleDetail01Widget> {
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: Text(
                     'Introduction',
-                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
                           font: GoogleFonts.plusJakartaSans(
                             fontWeight: FlutterFlowTheme.of(context)
-                                .bodyLarge
+                                .titleMedium
                                 .fontWeight,
                             fontStyle: FlutterFlowTheme.of(context)
-                                .bodyLarge
+                                .titleMedium
                                 .fontStyle,
                           ),
                           letterSpacing: 0.0,
-                          fontWeight:
-                              FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .fontStyle,
                         ),
                   ),
                 ),

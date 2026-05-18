@@ -272,47 +272,81 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 16.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
+                              10.0, 16.0, 10.0, 16.0),
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 1.0,
+                            shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16.0),
                             ),
-                            child: Padding(
-                              padding: EdgeInsets.all(16.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '28',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.plusJakartaSans(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(16.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      '28',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.plusJakartaSans(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFFC9A84C),
+                                            fontSize: 32.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
-                                          color: Color(0xFFC9A84C),
-                                          fontSize: 32.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Avg Cycle',
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 4.0, 0.0, 0.0),
+                                      child: Text(
+                                        'Avg Cycle',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmall
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                    Text(
+                                      'Days',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
@@ -338,35 +372,8 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                     .fontStyle,
                                           ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Days',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .override(
-                                          font: GoogleFonts.plusJakartaSans(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelSmall
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -375,47 +382,81 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 16.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
+                              10.0, 16.0, 10.0, 16.0),
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 1.0,
+                            shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16.0),
                             ),
-                            child: Padding(
-                              padding: EdgeInsets.all(16.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '5',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.plusJakartaSans(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(16.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      '5',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.plusJakartaSans(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFFC9A84C),
+                                            fontSize: 32.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
-                                          color: Color(0xFFC9A84C),
-                                          fontSize: 32.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Period',
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 4.0, 0.0, 0.0),
+                                      child: Text(
+                                        'Period',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmall
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                    Text(
+                                      'Days',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
@@ -441,35 +482,8 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                     .fontStyle,
                                           ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Days',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .override(
-                                          font: GoogleFonts.plusJakartaSans(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelSmall
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -478,52 +492,68 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 16.0, 16.0, 16.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
+                              10.0, 16.0, 10.0, 16.0),
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 1.0,
+                            shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16.0),
                             ),
-                            child: Padding(
-                              padding: EdgeInsets.all(16.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Day 14',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.plusJakartaSans(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(16.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Day 14',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.plusJakartaSans(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFFC9A84C),
+                                            fontSize: 22.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
-                                          color: Color(0xFFC9A84C),
-                                          fontSize: 22.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Ovulation',
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelSmall
-                                          .override(
-                                            font: GoogleFonts.plusJakartaSans(
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 4.0, 0.0, 0.0),
+                                      child: Text(
+                                        'Ovulation',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmall
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .labelSmall
@@ -533,19 +563,10 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                       .labelSmall
                                                       .fontStyle,
                                             ),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelSmall
-                                                    .fontStyle,
-                                          ),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -578,28 +599,45 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
+                    child: Material(
+                      color: Colors.transparent,
+                      elevation: 2.0,
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  '😫',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    '😫',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.plusJakartaSans(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          fontSize: 20.0,
+                                          letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
@@ -609,59 +647,52 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        fontSize: 20.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                                Text(
-                                  'Fatigue',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
+                                  ),
+                                  Text(
+                                    'Fatigue',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.plusJakartaSans(
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF2D1B0E),
+                                          fontSize: 14.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        color: Color(0xFF2D1B0E),
-                                        fontSize: 14.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.bold,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ].divide(SizedBox(width: 8.0)),
-                            ),
-                            Container(
-                              width: 120.0,
-                              height: 8.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFF0E6D3),
-                                borderRadius: BorderRadius.circular(4.0),
+                                  ),
+                                ].divide(SizedBox(width: 8.0)),
                               ),
-                              child: Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
-                                child: Container(
-                                  width: 96.0,
-                                  height: 8.0,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFC9A84C),
-                                    borderRadius: BorderRadius.circular(4.0),
+                              Container(
+                                width: 120.0,
+                                height: 8.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFF0E6D3),
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                                child: Align(
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  child: Container(
+                                    width: 96.0,
+                                    height: 8.0,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFC9A84C),
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -669,28 +700,45 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
+                    child: Material(
+                      color: Colors.transparent,
+                      elevation: 2.0,
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  '🤕',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    '🤕',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.plusJakartaSans(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          fontSize: 20.0,
+                                          letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
@@ -700,59 +748,52 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        fontSize: 20.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                                Text(
-                                  'Headache',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
+                                  ),
+                                  Text(
+                                    'Headache',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.plusJakartaSans(
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF2D1B0E),
+                                          fontSize: 14.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        color: Color(0xFF2D1B0E),
-                                        fontSize: 14.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.bold,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ].divide(SizedBox(width: 8.0)),
-                            ),
-                            Container(
-                              width: 120.0,
-                              height: 8.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFF0E6D3),
-                                borderRadius: BorderRadius.circular(4.0),
+                                  ),
+                                ].divide(SizedBox(width: 8.0)),
                               ),
-                              child: Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
-                                child: Container(
-                                  width: 78.0,
-                                  height: 8.0,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFC9A84C),
-                                    borderRadius: BorderRadius.circular(4.0),
+                              Container(
+                                width: 120.0,
+                                height: 8.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFF0E6D3),
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                                child: Align(
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  child: Container(
+                                    width: 78.0,
+                                    height: 8.0,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFC9A84C),
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -760,28 +801,45 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
+                    child: Material(
+                      color: Colors.transparent,
+                      elevation: 2.0,
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  '😤',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    '😤',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.plusJakartaSans(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          fontSize: 20.0,
+                                          letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
@@ -791,59 +849,52 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        fontSize: 20.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                                Text(
-                                  'Bloating',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
+                                  ),
+                                  Text(
+                                    'Bloating',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.plusJakartaSans(
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF2D1B0E),
+                                          fontSize: 14.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        color: Color(0xFF2D1B0E),
-                                        fontSize: 14.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.bold,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ].divide(SizedBox(width: 8.0)),
-                            ),
-                            Container(
-                              width: 120.0,
-                              height: 8.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFF0E6D3),
-                                borderRadius: BorderRadius.circular(4.0),
+                                  ),
+                                ].divide(SizedBox(width: 8.0)),
                               ),
-                              child: Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
-                                child: Container(
-                                  width: 84.0,
-                                  height: 8.0,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFC9A84C),
-                                    borderRadius: BorderRadius.circular(4.0),
+                              Container(
+                                width: 120.0,
+                                height: 8.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFF0E6D3),
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                                child: Align(
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  child: Container(
+                                    width: 84.0,
+                                    height: 8.0,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFC9A84C),
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -851,28 +902,45 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
+                    child: Material(
+                      color: Colors.transparent,
+                      elevation: 2.0,
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  '😰',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    '😰',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.plusJakartaSans(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          fontSize: 20.0,
+                                          letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
@@ -882,59 +950,52 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        fontSize: 20.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                                Text(
-                                  'Anxiety',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
+                                  ),
+                                  Text(
+                                    'Anxiety',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.plusJakartaSans(
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF2D1B0E),
+                                          fontSize: 14.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        color: Color(0xFF2D1B0E),
-                                        fontSize: 14.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.bold,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ].divide(SizedBox(width: 8.0)),
-                            ),
-                            Container(
-                              width: 120.0,
-                              height: 8.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFF0E6D3),
-                                borderRadius: BorderRadius.circular(4.0),
+                                  ),
+                                ].divide(SizedBox(width: 8.0)),
                               ),
-                              child: Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
-                                child: Container(
-                                  width: 60.0,
-                                  height: 8.0,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFC9A84C),
-                                    borderRadius: BorderRadius.circular(4.0),
+                              Container(
+                                width: 120.0,
+                                height: 8.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFF0E6D3),
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                                child: Align(
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  child: Container(
+                                    width: 60.0,
+                                    height: 8.0,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFC9A84C),
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -942,28 +1003,45 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
+                    child: Material(
+                      color: Colors.transparent,
+                      elevation: 2.0,
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  '😴',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    '😴',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.plusJakartaSans(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          fontSize: 20.0,
+                                          letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
@@ -973,59 +1051,52 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        fontSize: 20.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                                Text(
-                                  'Low Energy',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
+                                  ),
+                                  Text(
+                                    'Low Energy',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.plusJakartaSans(
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF2D1B0E),
+                                          fontSize: 14.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        color: Color(0xFF2D1B0E),
-                                        fontSize: 14.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.bold,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ].divide(SizedBox(width: 8.0)),
-                            ),
-                            Container(
-                              width: 120.0,
-                              height: 8.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFF0E6D3),
-                                borderRadius: BorderRadius.circular(4.0),
+                                  ),
+                                ].divide(SizedBox(width: 8.0)),
                               ),
-                              child: Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
-                                child: Container(
-                                  width: 72.0,
-                                  height: 8.0,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFC9A84C),
-                                    borderRadius: BorderRadius.circular(4.0),
+                              Container(
+                                width: 120.0,
+                                height: 8.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFF0E6D3),
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                                child: Align(
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  child: Container(
+                                    width: 72.0,
+                                    height: 8.0,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFC9A84C),
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -1059,79 +1130,27 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              12.0, 12.0, 12.0, 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
+                              0.0, 12.0, 0.0, 12.0),
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 1.0,
+                            shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16.0),
                             ),
-                            child: Padding(
-                              padding: EdgeInsets.all(16.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '😊',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.plusJakartaSans(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                          fontSize: 28.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 6.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Good',
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.plusJakartaSans(
-                                              fontWeight: FontWeight.bold,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFF2D1B0E),
-                                            fontSize: 12.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 2.0, 0.0, 0.0),
-                                    child: Text(
-                                      '12 days',
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(16.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      '😊',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1146,8 +1165,7 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                       .bodyMedium
                                                       .fontStyle,
                                             ),
-                                            color: Color(0xFF8B6F5E),
-                                            fontSize: 11.0,
+                                            fontSize: 28.0,
                                             letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
@@ -1159,8 +1177,68 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                     .fontStyle,
                                           ),
                                     ),
-                                  ),
-                                ],
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 6.0, 0.0, 0.0),
+                                      child: Text(
+                                        'Good',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              color: Color(0xFF2D1B0E),
+                                              fontSize: 12.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 2.0, 0.0, 0.0),
+                                      child: Text(
+                                        '12 days',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              color: Color(0xFF8B6F5E),
+                                              fontSize: 11.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -1169,79 +1247,27 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              12.0, 12.0, 12.0, 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
+                              0.0, 12.0, 0.0, 12.0),
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 1.0,
+                            shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16.0),
                             ),
-                            child: Padding(
-                              padding: EdgeInsets.all(16.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '😐',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.plusJakartaSans(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                          fontSize: 28.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 6.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Neutral',
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.plusJakartaSans(
-                                              fontWeight: FontWeight.bold,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFF2D1B0E),
-                                            fontSize: 12.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 2.0, 0.0, 0.0),
-                                    child: Text(
-                                      '10 days',
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(16.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      '😐',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1256,8 +1282,7 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                       .bodyMedium
                                                       .fontStyle,
                                             ),
-                                            color: Color(0xFF8B6F5E),
-                                            fontSize: 11.0,
+                                            fontSize: 28.0,
                                             letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
@@ -1269,8 +1294,68 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                     .fontStyle,
                                           ),
                                     ),
-                                  ),
-                                ],
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 6.0, 0.0, 0.0),
+                                      child: Text(
+                                        'Neutral',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              color: Color(0xFF2D1B0E),
+                                              fontSize: 12.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 2.0, 0.0, 0.0),
+                                      child: Text(
+                                        '10 days',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              color: Color(0xFF8B6F5E),
+                                              fontSize: 11.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -1279,79 +1364,27 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              12.0, 12.0, 12.0, 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
+                              0.0, 12.0, 0.0, 12.0),
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 1.0,
+                            shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16.0),
                             ),
-                            child: Padding(
-                              padding: EdgeInsets.all(16.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '😔',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.plusJakartaSans(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                          fontSize: 28.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 6.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Low',
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.plusJakartaSans(
-                                              fontWeight: FontWeight.bold,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFF2D1B0E),
-                                            fontSize: 12.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 2.0, 0.0, 0.0),
-                                    child: Text(
-                                      '5 days',
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(16.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      '😔',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1366,8 +1399,7 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                       .bodyMedium
                                                       .fontStyle,
                                             ),
-                                            color: Color(0xFF8B6F5E),
-                                            fontSize: 11.0,
+                                            fontSize: 28.0,
                                             letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
@@ -1379,8 +1411,68 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                     .fontStyle,
                                           ),
                                     ),
-                                  ),
-                                ],
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 6.0, 0.0, 0.0),
+                                      child: Text(
+                                        'Low',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              color: Color(0xFF2D1B0E),
+                                              fontSize: 12.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 2.0, 0.0, 0.0),
+                                      child: Text(
+                                        '5 days',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              color: Color(0xFF8B6F5E),
+                                              fontSize: 11.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -1389,79 +1481,27 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              12.0, 12.0, 12.0, 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
+                              0.0, 12.0, 0.0, 12.0),
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 1.0,
+                            shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16.0),
                             ),
-                            child: Padding(
-                              padding: EdgeInsets.all(16.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '😤',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.plusJakartaSans(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                          fontSize: 28.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 6.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Anxious',
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.plusJakartaSans(
-                                              fontWeight: FontWeight.bold,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFF2D1B0E),
-                                            fontSize: 12.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 2.0, 0.0, 0.0),
-                                    child: Text(
-                                      '3 days',
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(16.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      '😤',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1476,8 +1516,7 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                       .bodyMedium
                                                       .fontStyle,
                                             ),
-                                            color: Color(0xFF8B6F5E),
-                                            fontSize: 11.0,
+                                            fontSize: 28.0,
                                             letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
@@ -1489,8 +1528,68 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                                                     .fontStyle,
                                           ),
                                     ),
-                                  ),
-                                ],
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 6.0, 0.0, 0.0),
+                                      child: Text(
+                                        'Anxious',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              color: Color(0xFF2D1B0E),
+                                              fontSize: 12.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 2.0, 0.0, 0.0),
+                                      child: Text(
+                                        '3 days',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              color: Color(0xFF8B6F5E),
+                                              fontSize: 11.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -1523,154 +1622,82 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
+                    child: Material(
+                      color: Colors.transparent,
+                      elevation: 2.0,
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.all(12.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      '⚡',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.plusJakartaSans(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            fontSize: 20.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    '⚡',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
                                     ),
-                                    Text(
-                                      'High Energy',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.plusJakartaSans(
-                                              fontWeight: FontWeight.bold,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFF2D1B0E),
-                                            fontSize: 14.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                  ),
+                                  Text(
+                                    'High Energy',
+                                    style: TextStyle(
+                                      color: Color(0xFF2D1B0E),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14.0,
                                     ),
-                                  ].divide(SizedBox(width: 8.0)),
+                                  ),
+                                ].divide(SizedBox(width: 8.0)),
+                              ),
+                              Container(
+                                width: 120.0,
+                                height: 8.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFF0E6D3),
+                                  borderRadius: BorderRadius.circular(4.0),
                                 ),
-                                Container(
-                                  width: 120.0,
+                                child: Container(
+                                  width: 54.0,
                                   height: 8.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFFF0E6D3),
+                                    color: Color(0xFFC9A84C),
                                     borderRadius: BorderRadius.circular(4.0),
                                   ),
-                                  child: Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
-                                    child: Container(
-                                      width: 48.0,
-                                      height: 8.0,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFFC9A84C),
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
+                                  child: Container(
+                                    width: 120.0,
+                                    height: 8.0,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFF0E6D3),
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
+                                    child: Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: Container(
+                                        width: 48.0,
+                                        height: 8.0,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFC9A84C),
+                                          borderRadius:
+                                              BorderRadius.circular(4.0),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  '🔋',
-                                  style: TextStyle(
-                                    fontSize: 20.0,
-                                  ),
-                                ),
-                                Text(
-                                  'Medium Energy',
-                                  style: TextStyle(
-                                    color: Color(0xFF2D1B0E),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14.0,
-                                  ),
-                                ),
-                              ].divide(SizedBox(width: 8.0)),
-                            ),
-                            Container(
-                              width: 120.0,
-                              height: 8.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFF0E6D3),
-                                borderRadius: BorderRadius.circular(4.0),
-                              ),
-                              child: Container(
-                                width: 54.0,
-                                height: 8.0,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFC9A84C),
-                                  borderRadius: BorderRadius.circular(4.0),
-                                ),
-                              ),
-                            ),
-                          ],
                         ),
                       ),
                     ),
@@ -1678,60 +1705,124 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
+                    child: Material(
+                      color: Colors.transparent,
+                      elevation: 2.0,
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.all(12.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      '🪫',
-                                      style: TextStyle(
-                                        fontSize: 20.0,
-                                      ),
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    '🔋',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
                                     ),
-                                    Text(
-                                      'Low Energy',
-                                      style: TextStyle(
-                                        color: Color(0xFF2D1B0E),
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14.0,
-                                      ),
+                                  ),
+                                  Text(
+                                    'Medium Energy',
+                                    style: TextStyle(
+                                      color: Color(0xFF2D1B0E),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14.0,
                                     ),
-                                  ].divide(SizedBox(width: 8.0)),
+                                  ),
+                                ].divide(SizedBox(width: 8.0)),
+                              ),
+                              Container(
+                                width: 120.0,
+                                height: 8.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFF0E6D3),
+                                  borderRadius: BorderRadius.circular(4.0),
                                 ),
-                                Container(
-                                  width: 120.0,
+                                child: Container(
+                                  width: 54.0,
                                   height: 8.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFFF0E6D3),
+                                    color: Color(0xFFC9A84C),
                                     borderRadius: BorderRadius.circular(4.0),
                                   ),
-                                  child: Container(
-                                    width: 18.0,
-                                    height: 8.0,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFFC9A84C),
-                                      borderRadius: BorderRadius.circular(4.0),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                    child: Material(
+                      color: Colors.transparent,
+                      elevation: 2.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    '🪫',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
                                     ),
                                   ),
+                                  Text(
+                                    'Low  Energy',
+                                    style: TextStyle(
+                                      color: Color(0xFF2D1B0E),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14.0,
+                                    ),
+                                  ),
+                                ].divide(SizedBox(width: 8.0)),
+                              ),
+                              Container(
+                                width: 120.0,
+                                height: 8.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFF0E6D3),
+                                  borderRadius: BorderRadius.circular(4.0),
                                 ),
-                              ],
-                            ),
+                                child: Container(
+                                  width: 54.0,
+                                  height: 8.0,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFC9A84C),
+                                    borderRadius: BorderRadius.circular(4.0),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),

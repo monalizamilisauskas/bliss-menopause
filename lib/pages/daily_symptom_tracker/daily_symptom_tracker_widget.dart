@@ -65,75 +65,88 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                 shape: BoxShape.rectangle,
               ),
               child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.max,
                 children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
-                    child: Container(
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          FlutterFlowIconButton(
-                            borderRadius: 8.0,
-                            buttonSize: 40.0,
-                            fillColor: Colors.transparent,
-                            icon: Icon(
-                              Icons.arrow_back_rounded,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              size: 24.0,
-                            ),
-                            onPressed: () async {
-                              context.pushNamed(HomeDashboardWidget.routeName);
-                            },
-                          ),
-                          Text(
-                            'Daily Log',
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  font: GoogleFonts.plusJakartaSans(
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleLarge
-                                        .fontStyle,
-                                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Container(
+                        width: 100.0,
+                        height: 43.19,
+                        decoration: BoxDecoration(),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 16.0, 24.0, 16.0),
+                        child: Container(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              FlutterFlowIconButton(
+                                borderRadius: 8.0,
+                                buttonSize: 40.0,
+                                fillColor: Colors.transparent,
+                                icon: Icon(
+                                  Icons.arrow_back_rounded,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .fontStyle,
-                                  lineHeight: 1.27,
+                                  size: 24.0,
                                 ),
+                                onPressed: () async {
+                                  context
+                                      .pushNamed(HomeDashboardWidget.routeName);
+                                },
+                              ),
+                              Text(
+                                'Daily Log',
+                                textAlign: TextAlign.start,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      font: GoogleFonts.plusJakartaSans(
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontStyle,
+                                      lineHeight: 1.27,
+                                    ),
+                              ),
+                              FlutterFlowIconButton(
+                                borderRadius: 8.0,
+                                buttonSize: 40.0,
+                                fillColor: Colors.transparent,
+                                icon: Icon(
+                                  Icons.calendar_month_rounded,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 24.0,
+                                ),
+                                onPressed: () async {
+                                  context
+                                      .pushNamed(SymptomTrendsWidget.routeName);
+                                },
+                              ),
+                            ],
                           ),
-                          FlutterFlowIconButton(
-                            borderRadius: 8.0,
-                            buttonSize: 40.0,
-                            fillColor: Colors.transparent,
-                            icon: Icon(
-                              Icons.calendar_month_rounded,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              size: 24.0,
-                            ),
-                            onPressed: () async {
-                              context.pushNamed(SymptomTrendsWidget.routeName);
-                            },
-                          ),
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
-                  Container(
-                    height: 1.0,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      shape: BoxShape.rectangle,
-                    ),
+                      Container(
+                        height: 1.0,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).alternate,
+                          shape: BoxShape.rectangle,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -190,19 +203,9 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          font: GoogleFonts.interTight(
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily: 'Inter Tight',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontStyle,
                                         ),
                                   ),
                                 ].divide(SizedBox(height: 4.0)),
@@ -241,53 +244,107 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                     children: [
                                       Expanded(
                                         flex: 1,
-                                        child: wrapWithModel(
-                                          model: _model.moodCalmModel,
-                                          updateCallback: () =>
-                                              safeSetState(() {}),
-                                          child: MoodChipWidget(
-                                            emoji: '😊',
-                                            label: 'Calm',
-                                            active: true,
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            _model.selectedMood = 'Calm';
+                                            safeSetState(() {});
+                                          },
+                                          child: wrapWithModel(
+                                            model: _model.moodCalmModel,
+                                            updateCallback: () =>
+                                                safeSetState(() {}),
+                                            child: MoodChipWidget(
+                                              emoji: '😊',
+                                              label: 'Calm',
+                                              active:
+                                                  (_model.selectedMood == 'Calm'
+                                                          ? false
+                                                          : false)
+                                                      ? true
+                                                      : true,
+                                            ),
                                           ),
                                         ),
                                       ),
                                       Expanded(
                                         flex: 1,
-                                        child: wrapWithModel(
-                                          model: _model.moodLowModel,
-                                          updateCallback: () =>
-                                              safeSetState(() {}),
-                                          child: MoodChipWidget(
-                                            emoji: '😔',
-                                            label: 'Low',
-                                            active: false,
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            _model.selectedMood = ' Low';
+                                            safeSetState(() {});
+                                          },
+                                          child: wrapWithModel(
+                                            model: _model.moodLowModel,
+                                            updateCallback: () =>
+                                                safeSetState(() {}),
+                                            child: MoodChipWidget(
+                                              emoji: '😔',
+                                              label: 'Low',
+                                              active:
+                                                  _model.selectedMood == 'Low'
+                                                      ? true
+                                                      : false,
+                                            ),
                                           ),
                                         ),
                                       ),
                                       Expanded(
                                         flex: 1,
-                                        child: wrapWithModel(
-                                          model: _model.moodAnxiousModel,
-                                          updateCallback: () =>
-                                              safeSetState(() {}),
-                                          child: MoodChipWidget(
-                                            emoji: '🤯',
-                                            label: 'Anxious',
-                                            active: false,
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            _model.selectedMood = 'Anxious';
+                                            safeSetState(() {});
+                                          },
+                                          child: wrapWithModel(
+                                            model: _model.moodAnxiousModel,
+                                            updateCallback: () =>
+                                                safeSetState(() {}),
+                                            child: MoodChipWidget(
+                                              emoji: '🤯',
+                                              label: 'Anxious',
+                                              active: _model.selectedMood ==
+                                                      'anxious'
+                                                  ? true
+                                                  : false,
+                                            ),
                                           ),
                                         ),
                                       ),
                                       Expanded(
                                         flex: 1,
-                                        child: wrapWithModel(
-                                          model: _model.moodTiredModel,
-                                          updateCallback: () =>
-                                              safeSetState(() {}),
-                                          child: MoodChipWidget(
-                                            emoji: '😴',
-                                            label: 'Tired',
-                                            active: false,
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            _model.selectedMood = 'Tired';
+                                            safeSetState(() {});
+                                          },
+                                          child: wrapWithModel(
+                                            model: _model.moodTiredModel,
+                                            updateCallback: () =>
+                                                safeSetState(() {}),
+                                            child: MoodChipWidget(
+                                              emoji: '😴',
+                                              label: 'Tired',
+                                              active:
+                                                  _model.selectedMood == 'tired'
+                                                      ? true
+                                                      : false,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -390,7 +447,8 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            _model.hotFlashesValue = 50;
+                                            _model.hotFlashesValue =
+                                                _model.hotFlashesValue;
                                             safeSetState(() {});
                                           },
                                           child: wrapWithModel(
@@ -618,7 +676,8 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                _model.energyLevelValue = 50;
+                                                _model.sleepQualityValue =
+                                                    _model.sleepQualityValue;
                                                 safeSetState(() {});
                                               },
                                               child: wrapWithModel(
@@ -648,7 +707,8 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                _model.energyLevelValue = 50;
+                                                _model.energyLevelValue =
+                                                    _model.energyLevelValue;
                                                 safeSetState(() {});
                                               },
                                               child: wrapWithModel(
@@ -909,33 +969,31 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                         ),
                                         Expanded(
                                           flex: 1,
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Bliss AI Insight',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .plusJakartaSans(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                          ),
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .onSecondary,
-                                                          letterSpacing: 0.0,
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                  AIHealthCoachWidget
+                                                      .routeName);
+                                            },
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Bliss AI Insight',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelLarge
+                                                      .override(
+                                                        font: GoogleFonts
+                                                            .plusJakartaSans(
                                                           fontWeight:
                                                               FontWeight.bold,
                                                           fontStyle:
@@ -943,32 +1001,30 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                                       context)
                                                                   .labelLarge
                                                                   .fontStyle,
-                                                          lineHeight: 1.33,
                                                         ),
-                                              ),
-                                              Text(
-                                                'Your sleep quality often dips after night sweats. Try lowering the room temp to 65°F tonight.',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodySmall
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .plusJakartaSans(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmall
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmall
-                                                                    .fontStyle,
-                                                          ),
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .onSecondary,
-                                                          letterSpacing: 0.0,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .onSecondary,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .fontStyle,
+                                                        lineHeight: 1.33,
+                                                      ),
+                                                ),
+                                                Text(
+                                                  'Your sleep quality often dips after night sweats. Try lowering the room temp to 65°F tonight.',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodySmall
+                                                      .override(
+                                                        font: GoogleFonts
+                                                            .plusJakartaSans(
                                                           fontWeight:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -979,37 +1035,55 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                                       context)
                                                                   .bodySmall
                                                                   .fontStyle,
-                                                          lineHeight: 1.4,
                                                         ),
-                                              ),
-                                              wrapWithModel(
-                                                model: _model.buttonModel2,
-                                                updateCallback: () =>
-                                                    safeSetState(() {}),
-                                                child: ButtonWidget(
-                                                  content: 'Chat with Coach',
-                                                  icon: Icon(
-                                                    Icons.smart_toy_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .onSecondary,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmall
+                                                                .fontStyle,
+                                                        lineHeight: 1.4,
+                                                      ),
+                                                ),
+                                                wrapWithModel(
+                                                  model: _model.buttonModel2,
+                                                  updateCallback: () =>
+                                                      safeSetState(() {}),
+                                                  child: ButtonWidget(
+                                                    content: 'Chat with Coach',
+                                                    icon: Icon(
+                                                      Icons.smart_toy_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      size: 16.0,
+                                                    ),
+                                                    icon_present: true,
+                                                    icon_end_present: false,
+                                                    on_tap:
+                                                        'navigate:AIHealthCoach',
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
-                                                    size: 16.0,
+                                                    variant: 'ghost',
+                                                    size: 'small',
+                                                    full_width: false,
+                                                    loading: false,
+                                                    disabled: false,
                                                   ),
-                                                  icon_present: true,
-                                                  icon_end_present: false,
-                                                  on_tap:
-                                                      'navigate:AIHealthCoach',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  variant: 'ghost',
-                                                  size: 'small',
-                                                  full_width: false,
-                                                  loading: false,
-                                                  disabled: false,
                                                 ),
-                                              ),
-                                            ].divide(SizedBox(height: 4.0)),
+                                              ].divide(SizedBox(height: 4.0)),
+                                            ),
                                           ),
                                         ),
                                       ].divide(SizedBox(width: 16.0)),
@@ -1060,7 +1134,9 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                             await SymptomLogsRecord.collection
                                 .doc()
                                 .set(createSymptomLogsRecordData(
-                                  userId: currentUserUid,
+                                  userId: valueOrDefault(
+                                          currentUserDocument?.streak, 0)
+                                      .toString(),
                                   date: getCurrentTimestamp,
                                   hotFlashes: _model.hotFlashesValue,
                                   sleepQuality: _model.sleepQualityValue,
@@ -1071,7 +1147,17 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                   headache: _model.headache,
                                   bloating: _model.bloating,
                                   anxiety: _model.anxiety,
+                                  mood: _model.selectedMood,
+                                  intensity: '',
                                 ));
+
+                            await currentUserReference!.update({
+                              ...mapToFirestore(
+                                {
+                                  'streak': FieldValue.increment(1),
+                                },
+                              ),
+                            });
                           },
                           child: wrapWithModel(
                             model: _model.buttonModel3,
@@ -1086,7 +1172,7 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                               icon_present: true,
                               icon_end_present: false,
                               on_tap: 'navigate:HomeDashboard',
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: Color(0xFFC9A84C),
                               variant: 'primary',
                               size: 'large',
                               full_width: true,

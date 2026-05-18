@@ -63,83 +63,93 @@ class _WellnessHubWidgetState extends State<WellnessHubWidget> {
                 color: FlutterFlowTheme.of(context).primaryBackground,
                 shape: BoxShape.rectangle,
               ),
-              child: Padding(
-                padding: EdgeInsets.all(24.0),
-                child: Container(
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    width: 416.0,
+                    height: 39.6,
+                    decoration: BoxDecoration(),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(24.0),
+                    child: Container(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(
-                            'Wellness Hub',
-                            style: FlutterFlowTheme.of(context)
-                                .headlineMedium
-                                .override(
-                                  font: GoogleFonts.playfairDisplay(
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineMedium
-                                        .fontStyle,
-                                  ),
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .headlineMedium
-                                      .fontStyle,
-                                  lineHeight: 1.25,
-                                ),
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Wellness Hub',
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineMedium
+                                    .override(
+                                      font: GoogleFonts.playfairDisplay(
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineMedium
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .fontStyle,
+                                      lineHeight: 1.25,
+                                    ),
+                              ),
+                              Text(
+                                'Nourish your body & mind',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.plusJakartaSans(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                      lineHeight: 1.47,
+                                    ),
+                              ),
+                            ],
                           ),
-                          Text(
-                            'Nourish your body & mind',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.plusJakartaSans(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                  lineHeight: 1.47,
-                                ),
+                          FlutterFlowIconButton(
+                            borderRadius: 9999.0,
+                            buttonSize: 40.0,
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            icon: Icon(
+                              Icons.person_outline_rounded,
+                              size: 24.0,
+                            ),
+                            onPressed: () {
+                              print('IconButton pressed ...');
+                            },
                           ),
                         ],
                       ),
-                      FlutterFlowIconButton(
-                        borderRadius: 9999.0,
-                        buttonSize: 40.0,
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        icon: Icon(
-                          Icons.person_outline_rounded,
-                          size: 24.0,
-                        ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
-                        },
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
             Container(
@@ -603,11 +613,12 @@ class _WellnessHubWidgetState extends State<WellnessHubWidget> {
                               ),
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFFDF6E3),
+                                  color: FlutterFlowTheme.of(context).alternate,
                                   borderRadius: BorderRadius.circular(24.0),
                                   shape: BoxShape.rectangle,
                                   border: Border.all(
-                                    color: Color(0xFFF5E6C8),
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
                                     width: 1.0,
                                   ),
                                 ),
@@ -625,7 +636,8 @@ class _WellnessHubWidgetState extends State<WellnessHubWidget> {
                                           width: 50.0,
                                           height: 50.0,
                                           decoration: BoxDecoration(
-                                            color: Color(0xFFEAD7B0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
                                             borderRadius:
                                                 BorderRadius.circular(9999.0),
                                             shape: BoxShape.rectangle,
@@ -651,32 +663,19 @@ class _WellnessHubWidgetState extends State<WellnessHubWidget> {
                                             children: [
                                               Text(
                                                 'Have a specific question?',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontStyle,
-                                                          ),
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Inter Tight',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .primaryText,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontStyle,
-                                                        ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
                                               ),
                                               Text(
                                                 'Ask Bliss AI about your symptoms.',
@@ -717,22 +716,33 @@ class _WellnessHubWidgetState extends State<WellnessHubWidget> {
                                             ].divide(SizedBox(height: 4.0)),
                                           ),
                                         ),
-                                        wrapWithModel(
-                                          model: _model.buttonModel2,
-                                          updateCallback: () =>
-                                              safeSetState(() {}),
-                                          child: ButtonWidget(
-                                            content: 'Chat',
-                                            icon_present: false,
-                                            icon_end_present: false,
-                                            on_tap: 'navigate:AIHealthCoach',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            variant: 'secondary',
-                                            size: 'small',
-                                            full_width: false,
-                                            loading: false,
-                                            disabled: false,
+                                        InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                                AIHealthCoachWidget.routeName);
+                                          },
+                                          child: wrapWithModel(
+                                            model: _model.buttonModel2,
+                                            updateCallback: () =>
+                                                safeSetState(() {}),
+                                            child: ButtonWidget(
+                                              content: 'Chat',
+                                              icon_present: false,
+                                              icon_end_present: false,
+                                              on_tap: 'navigate:AIHealthCoach',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              variant: 'secondary',
+                                              size: 'small',
+                                              full_width: false,
+                                              loading: false,
+                                              disabled: false,
+                                            ),
                                           ),
                                         ),
                                       ].divide(SizedBox(width: 16.0)),
