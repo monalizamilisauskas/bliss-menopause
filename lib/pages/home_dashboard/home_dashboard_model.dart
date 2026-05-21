@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/quick_action/quick_action_widget.dart';
 import '/components/symptom_stat/symptom_stat_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -16,7 +16,7 @@ class HomeDashboardModel extends FlutterFlowModel<HomeDashboardWidget> {
   // Model for QuickAction.
   late QuickActionModel quickActionModel3;
   // Model for Button.
-  late ButtonModel buttonModel1;
+  late ButtonSkipModel buttonModel1;
   // Model for SymptomStat.
   late SymptomStatModel symptomStatModel1;
   // Model for SymptomStat.
@@ -24,18 +24,18 @@ class HomeDashboardModel extends FlutterFlowModel<HomeDashboardWidget> {
   // Model for SymptomStat.
   late SymptomStatModel symptomStatModel3;
   // Model for Button.
-  late ButtonModel buttonModel2;
+  late ButtonSkipModel buttonModel2;
 
   @override
   void initState(BuildContext context) {
     quickActionModel1 = createModel(context, () => QuickActionModel());
     quickActionModel2 = createModel(context, () => QuickActionModel());
     quickActionModel3 = createModel(context, () => QuickActionModel());
-    buttonModel1 = createModel(context, () => ButtonModel());
+    buttonModel1 = createModel(context, () => ButtonSkipModel());
     symptomStatModel1 = createModel(context, () => SymptomStatModel());
     symptomStatModel2 = createModel(context, () => SymptomStatModel());
     symptomStatModel3 = createModel(context, () => SymptomStatModel());
-    buttonModel2 = createModel(context, () => ButtonModel());
+    buttonModel2 = createModel(context, () => ButtonSkipModel());
   }
 
   @override

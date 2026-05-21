@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -89,7 +90,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           size: 24.0,
                         ),
                         onPressed: () async {
-                          context.pushNamed(LoginInWidget.routeName);
+                          context.safePop();
                         },
                       ),
                     ],
@@ -270,25 +271,28 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                       ),
                       FFButtonWidget(
                         onPressed: () async {
+                          await actions.sendPasswordReset(
+                            valueOrDefault<String>(
+                              _model.textController.text,
+                              'email',
+                            ),
+                          );
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text(
-                                '\"Reset link sent to your email!\"',
+                                'Reset link sent to your email!',
                                 style: TextStyle(
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  color: Colors.white,
                                 ),
                               ),
                               duration: Duration(milliseconds: 4000),
-                              backgroundColor:
-                                  FlutterFlowTheme.of(context).secondary,
-                              action: SnackBarAction(
-                                label: 'Action 2',
-                                onPressed: () async {
-                                  context.goNamed(LoginInWidget.routeName);
-                                },
-                              ),
+                              backgroundColor: Color(0xFFC9A84C),
                             ),
                           );
+                          if (Navigator.of(context).canPop()) {
+                            context.pop();
+                          }
+                          context.pushNamed(LoginInWidget.routeName);
                         },
                         text: 'Send Reset Link',
                         options: FFButtonOptions(
@@ -351,7 +355,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed(SignUpWidget.routeName);
+                                context.pushNamed(LoginInWidget.routeName);
                               },
                               child: Text(
                                 'Sign In',

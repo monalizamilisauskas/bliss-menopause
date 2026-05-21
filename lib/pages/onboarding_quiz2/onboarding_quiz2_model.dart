@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/progress_step/progress_step_widget.dart';
 import '/components/quiz_option/quiz_option_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -10,7 +10,7 @@ class OnboardingQuiz2Model extends FlutterFlowModel<OnboardingQuiz2Widget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for Button.
-  late ButtonModel buttonModel1;
+  late ButtonSkipModel buttonModel1;
   // Model for ProgressStep.
   late ProgressStepModel progressStepModel1;
   // Model for ProgressStep.
@@ -28,11 +28,11 @@ class OnboardingQuiz2Model extends FlutterFlowModel<OnboardingQuiz2Widget> {
   // Model for QuizOption1.
   late QuizOptionModel quizOption1Model4;
   // Model for Button.
-  late ButtonModel buttonModel2;
+  late ButtonSkipModel buttonModel2;
 
   @override
   void initState(BuildContext context) {
-    buttonModel1 = createModel(context, () => ButtonModel());
+    buttonModel1 = createModel(context, () => ButtonSkipModel());
     progressStepModel1 = createModel(context, () => ProgressStepModel());
     progressStepModel2 = createModel(context, () => ProgressStepModel());
     progressStepModel3 = createModel(context, () => ProgressStepModel());
@@ -41,7 +41,7 @@ class OnboardingQuiz2Model extends FlutterFlowModel<OnboardingQuiz2Widget> {
     quizOption1Model2 = createModel(context, () => QuizOptionModel());
     quizOption1Model3 = createModel(context, () => QuizOptionModel());
     quizOption1Model4 = createModel(context, () => QuizOptionModel());
-    buttonModel2 = createModel(context, () => ButtonModel());
+    buttonModel2 = createModel(context, () => ButtonSkipModel());
   }
 
   @override

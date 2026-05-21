@@ -9,13 +9,15 @@ class LoginInModel extends FlutterFlowModel<LoginInWidget> {
   final formKey = GlobalKey<FormState>();
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
-  TextEditingController? emailTextController;
-  String? Function(BuildContext, String?)? emailTextControllerValidator;
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
-  TextEditingController? passwordTextController;
+  TextEditingController? textController2;
   late bool passwordVisibility;
-  String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  String? Function(BuildContext, String?)? textController2Validator;
+  // Stores action output result for [Custom Action - signInWithEmail] action in Button widget.
+  bool? loginResult;
 
   @override
   void initState(BuildContext context) {
@@ -25,9 +27,9 @@ class LoginInModel extends FlutterFlowModel<LoginInWidget> {
   @override
   void dispose() {
     textFieldFocusNode1?.dispose();
-    emailTextController?.dispose();
+    textController1?.dispose();
 
     textFieldFocusNode2?.dispose();
-    passwordTextController?.dispose();
+    textController2?.dispose();
   }
 }

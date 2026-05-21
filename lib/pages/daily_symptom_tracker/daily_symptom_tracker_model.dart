@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/mood_chip/mood_chip_widget.dart';
 import '/components/severity_slider/severity_slider_widget.dart';
 import '/components/symptom_selector/symptom_selector_widget.dart';
@@ -33,6 +33,8 @@ class DailySymptomTrackerModel
 
   String selectedMood = 'Calm';
 
+  int? hotFlashCount = 0;
+
   ///  State fields for stateful widgets in this page.
 
   // Model for MoodCalm.
@@ -44,7 +46,7 @@ class DailySymptomTrackerModel
   // Model for MoodTired.
   late MoodChipModel moodTiredModel;
   // Model for Button.
-  late ButtonModel buttonModel1;
+  late ButtonSkipModel buttonModel1;
   // Model for Intensity.
   late SeveritySliderModel intensityModel;
   // Model for SleepQuality.
@@ -66,9 +68,9 @@ class DailySymptomTrackerModel
   // Model for Headache.
   late SymptomSelectorModel headacheModel;
   // Model for Button.
-  late ButtonModel buttonModel2;
+  late ButtonSkipModel buttonModel2;
   // Model for Button.
-  late ButtonModel buttonModel3;
+  late ButtonSkipModel buttonModel3;
 
   @override
   void initState(BuildContext context) {
@@ -76,7 +78,7 @@ class DailySymptomTrackerModel
     moodLowModel = createModel(context, () => MoodChipModel());
     moodAnxiousModel = createModel(context, () => MoodChipModel());
     moodTiredModel = createModel(context, () => MoodChipModel());
-    buttonModel1 = createModel(context, () => ButtonModel());
+    buttonModel1 = createModel(context, () => ButtonSkipModel());
     intensityModel = createModel(context, () => SeveritySliderModel());
     sleepQualityModel = createModel(context, () => SeveritySliderModel());
     energyLevelModel = createModel(context, () => SeveritySliderModel());
@@ -87,8 +89,8 @@ class DailySymptomTrackerModel
     bloatingModel = createModel(context, () => SymptomSelectorModel());
     anxietyModel = createModel(context, () => SymptomSelectorModel());
     headacheModel = createModel(context, () => SymptomSelectorModel());
-    buttonModel2 = createModel(context, () => ButtonModel());
-    buttonModel3 = createModel(context, () => ButtonModel());
+    buttonModel2 = createModel(context, () => ButtonSkipModel());
+    buttonModel3 = createModel(context, () => ButtonSkipModel());
   }
 
   @override

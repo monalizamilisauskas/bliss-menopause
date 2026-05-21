@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/category_chip/category_chip_widget.dart';
 import '/components/text_field/text_field_widget.dart';
 import '/components/wellness_card/wellness_card_widget.dart';
@@ -437,7 +437,7 @@ class _WellnessHubWidgetState extends State<WellnessHubWidget> {
                                                     model: _model.buttonModel1,
                                                     updateCallback: () =>
                                                         safeSetState(() {}),
-                                                    child: ButtonWidget(
+                                                    child: ButtonSkipWidget(
                                                       content: 'Explore Now',
                                                       icon_present: false,
                                                       icon_end_present: false,
@@ -729,7 +729,7 @@ class _WellnessHubWidgetState extends State<WellnessHubWidget> {
                                             model: _model.buttonModel2,
                                             updateCallback: () =>
                                                 safeSetState(() {}),
-                                            child: ButtonWidget(
+                                            child: ButtonSkipWidget(
                                               content: 'Chat',
                                               icon_present: false,
                                               icon_end_present: false,

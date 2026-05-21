@@ -5,6 +5,10 @@ import 'create_post_page_widget.dart' show CreatePostPageWidget;
 import 'package:flutter/material.dart';
 
 class CreatePostPageModel extends FlutterFlowModel<CreatePostPageWidget> {
+  ///  Local state fields for this page.
+
+  String selectedCategory = 'Hot Flashes';
+
   ///  State fields for stateful widgets in this page.
 
   // Model for CategoryChip.

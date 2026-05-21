@@ -1,9 +1,14 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'daily_reminder_page_widget.dart' show DailyReminderPageWidget;
 import 'package:flutter/material.dart';
 
 class DailyReminderPageModel extends FlutterFlowModel<DailyReminderPageWidget> {
+  ///  Local state fields for this page.
+
+  String? selectedSuggestion;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for Switch widget.

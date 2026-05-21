@@ -121,6 +121,11 @@ class UsersRecord extends FirestoreRecord {
   DateTime? get lastSeen => _lastSeen;
   bool hasLastSeen() => _lastSeen != null;
 
+  // "hormonalProfileUpdatedAt" field.
+  DateTime? _hormonalProfileUpdatedAt;
+  DateTime? get hormonalProfileUpdatedAt => _hormonalProfileUpdatedAt;
+  bool hasHormonalProfileUpdatedAt() => _hormonalProfileUpdatedAt != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -143,6 +148,8 @@ class UsersRecord extends FirestoreRecord {
     _reminderDays = getDataList(snapshotData['reminderDays']);
     _reminderMessage = snapshotData['reminderMessage'] as String?;
     _lastSeen = snapshotData['lastSeen'] as DateTime?;
+    _hormonalProfileUpdatedAt =
+        snapshotData['hormonalProfileUpdatedAt'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -199,6 +206,7 @@ Map<String, dynamic> createUsersRecordData({
   DateTime? reminderTime,
   String? reminderMessage,
   DateTime? lastSeen,
+  DateTime? hormonalProfileUpdatedAt,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -222,6 +230,7 @@ Map<String, dynamic> createUsersRecordData({
       'reminderTime': reminderTime,
       'reminderMessage': reminderMessage,
       'lastSeen': lastSeen,
+      'hormonalProfileUpdatedAt': hormonalProfileUpdatedAt,
     }.withoutNulls,
   );
 
@@ -254,7 +263,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.reminderTime == e2?.reminderTime &&
         listEquality.equals(e1?.reminderDays, e2?.reminderDays) &&
         e1?.reminderMessage == e2?.reminderMessage &&
-        e1?.lastSeen == e2?.lastSeen;
+        e1?.lastSeen == e2?.lastSeen &&
+        e1?.hormonalProfileUpdatedAt == e2?.hormonalProfileUpdatedAt;
   }
 
   @override
@@ -279,7 +289,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.reminderTime,
         e?.reminderDays,
         e?.reminderMessage,
-        e?.lastSeen
+        e?.lastSeen,
+        e?.hormonalProfileUpdatedAt
       ]);
 
   @override

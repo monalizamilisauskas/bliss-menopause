@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/profile_stat/profile_stat_widget.dart';
 import '/components/settings_item/settings_item_widget.dart';
 import '/components/switch_component/switch_component_widget.dart';
@@ -638,7 +638,7 @@ class _UserProfileSettingsWidgetState extends State<UserProfileSettingsWidget> {
                     wrapWithModel(
                       model: _model.buttonModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: ButtonWidget(
+                      child: ButtonSkipWidget(
                         content: 'Sign Out',
                         icon: Icon(
                           Icons.logout_rounded,

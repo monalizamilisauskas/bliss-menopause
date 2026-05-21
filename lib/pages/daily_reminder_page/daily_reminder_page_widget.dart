@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'daily_reminder_page_model.dart';
@@ -106,8 +107,8 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
               color: FlutterFlowTheme.of(context).primaryText,
               size: 24.0,
             ),
-            onPressed: () {
-              print('IconButton pressed ...');
+            onPressed: () async {
+              context.pushNamed(HomeDashboardWidget.routeName);
             },
           ),
           title: Text(
@@ -741,7 +742,7 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     {
                                                       'reminderDays':
                                                           FieldValue.arrayUnion(
-                                                              [' \"S\"']),
+                                                              ['S']),
                                                     },
                                                   ),
                                                 });
@@ -810,7 +811,7 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     {
                                                       'reminderDays':
                                                           FieldValue.arrayUnion(
-                                                              ['\"M\"']),
+                                                              ['M']),
                                                     },
                                                   ),
                                                 });
@@ -879,7 +880,7 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     {
                                                       'reminderDays':
                                                           FieldValue.arrayUnion(
-                                                              ['\"T\"']),
+                                                              ['T']),
                                                     },
                                                   ),
                                                 });
@@ -948,7 +949,7 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     {
                                                       'reminderDays':
                                                           FieldValue.arrayUnion(
-                                                              ['\"W\"']),
+                                                              ['W']),
                                                     },
                                                   ),
                                                 });
@@ -1017,7 +1018,7 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     {
                                                       'reminderDays':
                                                           FieldValue.arrayUnion(
-                                                              ['\"TH\"']),
+                                                              ['TH']),
                                                     },
                                                   ),
                                                 });
@@ -1086,7 +1087,7 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     {
                                                       'reminderDays':
                                                           FieldValue.arrayUnion(
-                                                              ['\"F\"']),
+                                                              ['F']),
                                                     },
                                                   ),
                                                 });
@@ -1142,48 +1143,71 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                 ),
                                               ),
                                             ),
-                                            Container(
-                                              width: 38.0,
-                                              height: 38.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                shape: BoxShape.circle,
-                                              ),
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Padding(
-                                                  padding: EdgeInsets.all(8.0),
-                                                  child: Text(
-                                                    'S',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodySmall
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .plusJakartaSans(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await currentUserReference!
+                                                    .update({
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'reminderDays':
+                                                          FieldValue.arrayUnion(
+                                                              ['SA']),
+                                                    },
+                                                  ),
+                                                });
+                                              },
+                                              child: Container(
+                                                width: 38.0,
+                                                height: 38.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  shape: BoxShape.circle,
+                                                ),
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsets.all(8.0),
+                                                    child: Text(
+                                                      'S',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmall
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .plusJakartaSans(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmall
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                fontStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodySmall
                                                                     .fontStyle,
-                                                          ),
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodySmall
-                                                                  .fontStyle,
-                                                        ),
+                                                              ),
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -1391,22 +1415,32 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      _model.textController?.text =
-                                          valueOrDefault<String>(
-                                        '',
-                                        'Time to check in with your body 🧡',
-                                      );
+                                      safeSetState(() {
+                                        _model.textController?.text =
+                                            'Time to check in with your body 💛';
+                                      });
+                                      _model.selectedSuggestion =
+                                          'Time to check in with your body 💛';
+                                      safeSetState(() {});
                                     },
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
+                                        color: _model.selectedSuggestion ==
+                                                'Time to check in with your body 💛'
+                                            ? FlutterFlowTheme.of(context)
+                                                .alternate
+                                            : FlutterFlowTheme.of(context)
+                                                .primaryBackground,
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                         border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                          color: _model.selectedSuggestion ==
+                                                  'Time to check in with your body 💛'
+                                              ? FlutterFlowTheme.of(context)
+                                                  .primary
+                                              : FlutterFlowTheme.of(context)
+                                                  .alternate,
                                           width: 1.0,
                                         ),
                                       ),
@@ -1454,12 +1488,25 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                         ),
                                               ),
                                             ),
-                                            Icon(
-                                              Icons.check_circle_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              size: 18.0,
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                safeSetState(() {
+                                                  _model.textController?.text =
+                                                      'Time to check in with your body 💛';
+                                                });
+                                              },
+                                              child: Icon(
+                                                Icons.check_circle_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                size: 18.0,
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -1475,22 +1522,32 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      _model.textController?.text =
-                                          valueOrDefault<String>(
-                                        '',
-                                        'How are you feeling today? 🌸',
-                                      );
+                                      safeSetState(() {
+                                        _model.textController?.text =
+                                            'How are you feeling today? 🌸';
+                                      });
+                                      _model.selectedSuggestion =
+                                          'How are you feeling today? 🌸';
+                                      safeSetState(() {});
                                     },
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                                        color: _model.selectedSuggestion ==
+                                                'How are you feeling today? 🌸'
+                                            ? FlutterFlowTheme.of(context)
+                                                .alternate
+                                            : FlutterFlowTheme.of(context)
+                                                .primaryBackground,
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                         border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .alternate,
+                                          color: _model.selectedSuggestion ==
+                                                  'How are you feeling today? 🌸'
+                                              ? FlutterFlowTheme.of(context)
+                                                  .primary
+                                              : FlutterFlowTheme.of(context)
+                                                  .alternate,
                                           width: 1.0,
                                         ),
                                       ),
@@ -1538,13 +1595,26 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                         ),
                                               ),
                                             ),
-                                            Icon(
-                                              Icons
-                                                  .radio_button_unchecked_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              size: 18.0,
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                safeSetState(() {
+                                                  _model.textController?.text =
+                                                      'How are you feeling today? 🌸';
+                                                });
+                                              },
+                                              child: Icon(
+                                                Icons
+                                                    .radio_button_unchecked_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                size: 18.0,
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -1560,22 +1630,32 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      _model.textController?.text =
-                                          valueOrDefault<String>(
-                                        '',
-                                        'Your daily wellness moment awaits ✨',
-                                      );
+                                      safeSetState(() {
+                                        _model.textController?.text =
+                                            'Your daily wellness moment awaits ✨';
+                                      });
+                                      _model.selectedSuggestion =
+                                          'Your daily wellness moment awaits ✨';
+                                      safeSetState(() {});
                                     },
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                                        color: _model.selectedSuggestion ==
+                                                'Your daily wellness moment awaits ✨'
+                                            ? FlutterFlowTheme.of(context)
+                                                .alternate
+                                            : FlutterFlowTheme.of(context)
+                                                .primaryBackground,
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                         border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .alternate,
+                                          color: _model.selectedSuggestion ==
+                                                  'Your daily wellness moment awaits ✨'
+                                              ? FlutterFlowTheme.of(context)
+                                                  .primary
+                                              : FlutterFlowTheme.of(context)
+                                                  .alternate,
                                           width: 1.0,
                                         ),
                                       ),
@@ -1623,13 +1703,26 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                         ),
                                               ),
                                             ),
-                                            Icon(
-                                              Icons
-                                                  .radio_button_unchecked_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              size: 18.0,
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                safeSetState(() {
+                                                  _model.textController?.text =
+                                                      'Your daily wellness moment awaits ✨';
+                                                });
+                                              },
+                                              child: Icon(
+                                                Icons
+                                                    .radio_button_unchecked_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                size: 18.0,
+                                              ),
                                             ),
                                           ],
                                         ),

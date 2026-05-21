@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/category_chip/category_chip_widget.dart';
 import '/components/text_field/text_field_widget.dart';
 import '/components/wellness_card/wellness_card_widget.dart';
@@ -21,7 +21,7 @@ class WellnessHubModel extends FlutterFlowModel<WellnessHubWidget> {
   // Model for CategoryChip.
   late CategoryChipModel categoryChipModel4;
   // Model for Button.
-  late ButtonModel buttonModel1;
+  late ButtonSkipModel buttonModel1;
   // Model for WellnessCard.
   late WellnessCardModel wellnessCardModel1;
   // Model for WellnessCard.
@@ -29,7 +29,7 @@ class WellnessHubModel extends FlutterFlowModel<WellnessHubWidget> {
   // Model for WellnessCard.
   late WellnessCardModel wellnessCardModel3;
   // Model for Button.
-  late ButtonModel buttonModel2;
+  late ButtonSkipModel buttonModel2;
 
   @override
   void initState(BuildContext context) {
@@ -38,11 +38,11 @@ class WellnessHubModel extends FlutterFlowModel<WellnessHubWidget> {
     categoryChipModel2 = createModel(context, () => CategoryChipModel());
     categoryChipModel3 = createModel(context, () => CategoryChipModel());
     categoryChipModel4 = createModel(context, () => CategoryChipModel());
-    buttonModel1 = createModel(context, () => ButtonModel());
+    buttonModel1 = createModel(context, () => ButtonSkipModel());
     wellnessCardModel1 = createModel(context, () => WellnessCardModel());
     wellnessCardModel2 = createModel(context, () => WellnessCardModel());
     wellnessCardModel3 = createModel(context, () => WellnessCardModel());
-    buttonModel2 = createModel(context, () => ButtonModel());
+    buttonModel2 = createModel(context, () => ButtonSkipModel());
   }
 
   @override

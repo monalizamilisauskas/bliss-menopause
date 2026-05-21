@@ -75,7 +75,7 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
                     'assets/images/Cabealho.png',
                     width: 500.0,
                     height: 800.0,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ],

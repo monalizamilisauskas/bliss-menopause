@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -47,10 +48,10 @@ class _LoginInWidgetState extends State<LoginInWidget> {
     super.initState();
     _model = createModel(context, () => LoginInModel());
 
-    _model.emailTextController ??= TextEditingController();
+    _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.passwordTextController ??= TextEditingController();
+    _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -167,7 +168,7 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                         Container(
                           width: double.infinity,
                           child: TextFormField(
-                            controller: _model.emailTextController,
+                            controller: _model.textController1,
                             focusNode: _model.textFieldFocusNode1,
                             autofocus: false,
                             textInputAction: TextInputAction.next,
@@ -249,14 +250,14 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                                 ),
                             keyboardType: TextInputType.emailAddress,
                             cursorColor: Color(0xFFC9A84C),
-                            validator: _model.emailTextControllerValidator
+                            validator: _model.textController1Validator
                                 .asValidator(context),
                           ),
                         ),
                         Container(
                           width: double.infinity,
                           child: TextFormField(
-                            controller: _model.passwordTextController,
+                            controller: _model.textController2,
                             focusNode: _model.textFieldFocusNode2,
                             autofocus: false,
                             textInputAction: TextInputAction.done,
@@ -351,25 +352,40 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                                       .fontStyle,
                                 ),
                             cursorColor: Color(0xFFC9A84C),
-                            validator: _model.passwordTextControllerValidator
+                            validator: _model.textController2Validator
                                 .asValidator(context),
                           ),
                         ),
                         FFButtonWidget(
                           onPressed: () async {
-                            GoRouter.of(context).prepareAuthEvent();
-
-                            final user = await authManager.signInWithEmail(
-                              context,
-                              _model.emailTextController.text,
-                              _model.passwordTextController.text,
-                            );
-                            if (user == null) {
+                            if (_model.formKey.currentState == null ||
+                                !_model.formKey.currentState!.validate()) {
                               return;
                             }
+                            _model.loginResult = await actions.signInWithEmail(
+                              _model.textController1.text,
+                              _model.textController2.text,
+                            );
+                            if (_model.loginResult!) {
+                              context.goNamed(HomeDashboardWidget.routeName);
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    'Invalid email or password. Please try again.',
+                                    style: TextStyle(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
+                                  ),
+                                  duration: Duration(milliseconds: 3000),
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).error,
+                                ),
+                              );
+                            }
 
-                            context.goNamedAuth(
-                                HomeDashboardWidget.routeName, context.mounted);
+                            safeSetState(() {});
                           },
                           text: 'Sign In',
                           options: FFButtonOptions(
@@ -484,7 +500,7 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                     },
                     text: 'Continue with Google',
                     icon: FaIcon(
-                      FontAwesomeIcons.googlePlus,
+                      FontAwesomeIcons.google,
                       size: 20.0,
                     ),
                     options: FFButtonOptions(

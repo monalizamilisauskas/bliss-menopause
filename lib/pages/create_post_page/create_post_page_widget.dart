@@ -288,49 +288,123 @@ class _CreatePostPageWidgetState extends State<CreatePostPageWidget> {
                                             VerticalDirection.down,
                                         clipBehavior: Clip.none,
                                         children: [
-                                          wrapWithModel(
-                                            model: _model.categoryChipModel1,
-                                            updateCallback: () =>
-                                                safeSetState(() {}),
-                                            child: CategoryChip4Widget(
-                                              selected: true,
-                                              label: 'Hot Flashes',
+                                          InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              _model.selectedCategory =
+                                                  'Hot Flashes';
+                                              safeSetState(() {});
+                                            },
+                                            child: wrapWithModel(
+                                              model: _model.categoryChipModel1,
+                                              updateCallback: () =>
+                                                  safeSetState(() {}),
+                                              child: CategoryChip4Widget(
+                                                selected:
+                                                    _model.selectedCategory ==
+                                                            'Hot Flashes'
+                                                        ? true
+                                                        : false,
+                                                label: 'Hot Flashes',
+                                              ),
                                             ),
                                           ),
-                                          wrapWithModel(
-                                            model: _model.categoryChipModel2,
-                                            updateCallback: () =>
-                                                safeSetState(() {}),
-                                            child: CategoryChip4Widget(
-                                              selected: false,
-                                              label: 'Sleep',
+                                          InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              _model.selectedCategory = 'Sleep';
+                                              safeSetState(() {});
+                                            },
+                                            child: wrapWithModel(
+                                              model: _model.categoryChipModel2,
+                                              updateCallback: () =>
+                                                  safeSetState(() {}),
+                                              child: CategoryChip4Widget(
+                                                selected:
+                                                    _model.selectedCategory ==
+                                                            'Sleep'
+                                                        ? true
+                                                        : false,
+                                                label: 'Sleep',
+                                              ),
                                             ),
                                           ),
-                                          wrapWithModel(
-                                            model: _model.categoryChipModel3,
-                                            updateCallback: () =>
-                                                safeSetState(() {}),
-                                            child: CategoryChip4Widget(
-                                              selected: false,
-                                              label: 'Nutrition',
+                                          InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              _model.selectedCategory =
+                                                  'Nutrition';
+                                              safeSetState(() {});
+                                            },
+                                            child: wrapWithModel(
+                                              model: _model.categoryChipModel3,
+                                              updateCallback: () =>
+                                                  safeSetState(() {}),
+                                              child: CategoryChip4Widget(
+                                                selected:
+                                                    _model.selectedCategory ==
+                                                            'Nutrition'
+                                                        ? true
+                                                        : false,
+                                                label: 'Nutrition',
+                                              ),
                                             ),
                                           ),
-                                          wrapWithModel(
-                                            model: _model.categoryChipModel4,
-                                            updateCallback: () =>
-                                                safeSetState(() {}),
-                                            child: CategoryChip4Widget(
-                                              selected: false,
-                                              label: 'Mental Health',
+                                          InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              _model.selectedCategory =
+                                                  'Mental Health';
+                                              safeSetState(() {});
+                                            },
+                                            child: wrapWithModel(
+                                              model: _model.categoryChipModel4,
+                                              updateCallback: () =>
+                                                  safeSetState(() {}),
+                                              child: CategoryChip4Widget(
+                                                selected:
+                                                    _model.selectedCategory ==
+                                                            'Mental Health'
+                                                        ? true
+                                                        : false,
+                                                label: 'Mental Health',
+                                              ),
                                             ),
                                           ),
-                                          wrapWithModel(
-                                            model: _model.categoryChipModel5,
-                                            updateCallback: () =>
-                                                safeSetState(() {}),
-                                            child: CategoryChip4Widget(
-                                              selected: false,
-                                              label: 'General',
+                                          InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              _model.selectedCategory =
+                                                  'General';
+                                              safeSetState(() {});
+                                            },
+                                            child: wrapWithModel(
+                                              model: _model.categoryChipModel5,
+                                              updateCallback: () =>
+                                                  safeSetState(() {}),
+                                              child: CategoryChip4Widget(
+                                                selected:
+                                                    _model.selectedCategory ==
+                                                            'General'
+                                                        ? true
+                                                        : false,
+                                                label: 'General',
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -515,7 +589,9 @@ class _CreatePostPageWidgetState extends State<CreatePostPageWidget> {
                                                 focusedBorder:
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
-                                                    color: Color(0x00000000),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
@@ -603,7 +679,8 @@ class _CreatePostPageWidgetState extends State<CreatePostPageWidget> {
                                                     authorName:
                                                         currentUserDisplayName,
                                                     authorPhoto: '',
-                                                    category: '\"General\"',
+                                                    category:
+                                                        _model.selectedCategory,
                                                     createdAt:
                                                         getCurrentTimestamp,
                                                     likesCount: 0,

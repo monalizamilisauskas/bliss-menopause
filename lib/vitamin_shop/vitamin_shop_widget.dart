@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/category_chip2/category_chip2_widget.dart';
 import '/components/text_field/text_field_widget.dart';
 import '/components/vitamin_card/vitamin_card_widget.dart';
@@ -365,7 +365,7 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
                                   wrapWithModel(
                                     model: _model.buttonModel,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: ButtonWidget(
+                                    child: ButtonSkipWidget(
                                       content: 'Get My Pack',
                                       icon_present: false,
                                       icon_end_present: false,

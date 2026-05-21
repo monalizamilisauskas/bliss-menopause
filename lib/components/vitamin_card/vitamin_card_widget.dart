@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -232,7 +232,7 @@ class _VitaminCardWidgetState extends State<VitaminCardWidget> {
                   wrapWithModel(
                     model: _model.buttonModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: ButtonWidget(
+                    child: ButtonSkipWidget(
                       content: 'Add',
                       icon_present: false,
                       icon_end_present: false,

@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
-import 'button_model.dart';
-export 'button_model.dart';
+import 'button_skip_model.dart';
+export 'button_skip_model.dart';
 
-class ButtonWidget extends StatefulWidget {
-  const ButtonWidget({
+class ButtonSkipWidget extends StatefulWidget {
+  const ButtonSkipWidget({
     super.key,
     String? content,
     this.icon,
@@ -49,11 +49,11 @@ class ButtonWidget extends StatefulWidget {
   final bool disabled;
 
   @override
-  State<ButtonWidget> createState() => _ButtonWidgetState();
+  State<ButtonSkipWidget> createState() => _ButtonSkipWidgetState();
 }
 
-class _ButtonWidgetState extends State<ButtonWidget> {
-  late ButtonModel _model;
+class _ButtonSkipWidgetState extends State<ButtonSkipWidget> {
+  late ButtonSkipModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -64,7 +64,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ButtonModel());
+    _model = createModel(context, () => ButtonSkipModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }

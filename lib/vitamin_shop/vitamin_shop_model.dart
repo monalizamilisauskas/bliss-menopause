@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/category_chip2/category_chip2_widget.dart';
 import '/components/text_field/text_field_widget.dart';
 import '/components/vitamin_card/vitamin_card_widget.dart';
@@ -23,7 +23,7 @@ class VitaminShopModel extends FlutterFlowModel<VitaminShopWidget> {
   // Model for CategoryChip2.
   late CategoryChip2Model categoryChip2Model5;
   // Model for Button.
-  late ButtonModel buttonModel;
+  late ButtonSkipModel buttonModel;
   // Model for VitaminCard.
   late VitaminCardModel vitaminCardModel1;
   // Model for VitaminCard.
@@ -41,7 +41,7 @@ class VitaminShopModel extends FlutterFlowModel<VitaminShopWidget> {
     categoryChip2Model3 = createModel(context, () => CategoryChip2Model());
     categoryChip2Model4 = createModel(context, () => CategoryChip2Model());
     categoryChip2Model5 = createModel(context, () => CategoryChip2Model());
-    buttonModel = createModel(context, () => ButtonModel());
+    buttonModel = createModel(context, () => ButtonSkipModel());
     vitaminCardModel1 = createModel(context, () => VitaminCardModel());
     vitaminCardModel2 = createModel(context, () => VitaminCardModel());
     vitaminCardModel3 = createModel(context, () => VitaminCardModel());

@@ -1,10 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/quick_action/quick_action_widget.dart';
 import '/components/symptom_stat/symptom_stat_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -82,10 +83,6 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
         }
         List<SymptomLogsRecord> homeDashboardSymptomLogsRecordList =
             snapshot.data!;
-        // Return an empty Container when the item does not exist.
-        if (snapshot.data!.isEmpty) {
-          return Container();
-        }
         final homeDashboardSymptomLogsRecord =
             homeDashboardSymptomLogsRecordList.isNotEmpty
                 ? homeDashboardSymptomLogsRecordList.first
@@ -190,45 +187,52 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                AuthUserStreamWidget(
-                                                  builder: (context) => Text(
-                                                    key: ValueKey(
-                                                        valueOrDefault<String>(
-                                                      currentUserDisplayName,
-                                                      '\"Good morning, \" + [display_name]',
-                                                    )),
-                                                    'Good morning, Sarah',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .titleLarge
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .plusJakartaSans(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleLarge
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleLarge
-                                                                    .fontStyle,
-                                                          ),
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleLarge
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleLarge
-                                                                  .fontStyle,
-                                                          lineHeight: 1.25,
-                                                        ),
-                                                  ),
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          Text(
+                                                        key: ValueKey(
+                                                            valueOrDefault<
+                                                                String>(
+                                                          currentUserDisplayName,
+                                                          '\"Good morning, \" + [display_name]',
+                                                        )),
+                                                        '${functions.getGreeting()}, ${currentUserDisplayName}',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleLarge
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .plusJakartaSans(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleLarge
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleLarge
+                                                                      .fontStyle,
+                                                                  lineHeight:
+                                                                      1.25,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
                                                 Text(
                                                   key: ValueKey(
@@ -237,7 +241,8 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                         .toString(),
                                                     'EEEE, MMMM d',
                                                   )),
-                                                  'Monday, October 24',
+                                                  dateTimeFormat("MMMMEEEEd",
+                                                      getCurrentTimestamp),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -304,7 +309,7 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                        HomeDashboardWidget
+                                                        UserProfileSettingsWidget
                                                             .routeName);
                                                   },
                                                   child: Container(
@@ -327,17 +332,38 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                     alignment:
                                                         AlignmentDirectional(
                                                             0.0, 0.0),
-                                                    child: Text(
-                                                      'S',
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      maxLines: 1,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelMedium
-                                                          .override(
-                                                            font: GoogleFonts
-                                                                .plusJakartaSans(
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          Text(
+                                                        currentUserDisplayName !=
+                                                                    ''
+                                                            ? functions
+                                                                .getFirstLetter(
+                                                                    currentUserDisplayName)
+                                                            : '\'U\'',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        maxLines: 1,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .labelMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .plusJakartaSans(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .onPrimary,
+                                                              fontSize: 18.24,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w600,
@@ -346,23 +372,11 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                                           context)
                                                                       .labelMedium
                                                                       .fontStyle,
+                                                              lineHeight: 1.38,
                                                             ),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .onPrimary,
-                                                            fontSize: 18.24,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                            lineHeight: 1.38,
-                                                          ),
-                                                      overflow:
-                                                          TextOverflow.clip,
+                                                        overflow:
+                                                            TextOverflow.clip,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -452,35 +466,73 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                                   .tertiary,
                                                               size: 28.0,
                                                             ),
+                                                            AuthUserStreamWidget(
+                                                              builder:
+                                                                  (context) =>
+                                                                      Text(
+                                                                key: ValueKey(
+                                                                    'streak\" Days\"'),
+                                                                valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.streak,
+                                                                        0)
+                                                                    .toString(),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMedium
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .plusJakartaSans(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .fontStyle,
+                                                                      lineHeight:
+                                                                          1.27,
+                                                                    ),
+                                                              ),
+                                                            ),
                                                             Text(
                                                               key: ValueKey(
                                                                   'streak\" Days\"'),
-                                                              '12 Days',
+                                                              ' Days',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .titleLarge
+                                                                  .titleMedium
                                                                   .override(
                                                                     font: GoogleFonts
                                                                         .plusJakartaSans(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .fontWeight,
                                                                       fontStyle: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .titleLarge
+                                                                          .titleMedium
                                                                           .fontStyle,
                                                                     ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium
+                                                                        .fontWeight,
                                                                     fontStyle: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .titleLarge
+                                                                        .titleMedium
                                                                         .fontStyle,
                                                                     lineHeight:
                                                                         1.27,
@@ -571,12 +623,10 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                               builder:
                                                                   (context) =>
                                                                       Text(
-                                                                key: ValueKey(
-                                                                    valueOrDefault(
-                                                                        currentUserDocument
-                                                                            ?.hormonalBalance,
-                                                                        '')),
-                                                                'Stable',
+                                                                valueOrDefault(
+                                                                    currentUserDocument
+                                                                        ?.hormonalBalance,
+                                                                    ''),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleMedium
@@ -846,7 +896,7 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                   model: _model.buttonModel1,
                                                   updateCallback: () =>
                                                       safeSetState(() {}),
-                                                  child: ButtonWidget(
+                                                  child: ButtonSkipWidget(
                                                     content: 'See Trends',
                                                     icon_present: false,
                                                     icon_end_present: false,
@@ -877,19 +927,6 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                 updateCallback: () =>
                                                     safeSetState(() {}),
                                                 child: SymptomStatWidget(
-                                                  key: ValueKey(() {
-                                                    if (homeDashboardSymptomLogsRecord!
-                                                            .hotFlashes <=
-                                                        33) {
-                                                      return '\"Low\"';
-                                                    } else if (homeDashboardSymptomLogsRecord
-                                                            .hotFlashes <=
-                                                        66) {
-                                                      return '\"Moderate\"';
-                                                    } else {
-                                                      return '\"High\"';
-                                                    }
-                                                  }()),
                                                   icon: Icon(
                                                     Icons.hot_tub_rounded,
                                                     color: FlutterFlowTheme.of(
@@ -902,14 +939,9 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                       homeDashboardSymptomLogsRecord
                                                           ?.hotFlashes
                                                           .toDouble(),
-                                                  value: formatNumber(
-                                                    homeDashboardSymptomLogsRecord
-                                                        ?.hotFlashes,
-                                                    formatType:
-                                                        FormatType.custom,
-                                                    format: 'hotFlashes / 100',
-                                                    locale: '',
-                                                  ),
+                                                  value: functions.getSymptomLabel(
+                                                      homeDashboardSymptomLogsRecord!
+                                                          .hotFlashes),
                                                 ),
                                               ),
                                               wrapWithModel(
@@ -917,19 +949,6 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                 updateCallback: () =>
                                                     safeSetState(() {}),
                                                 child: SymptomStatWidget(
-                                                  key: ValueKey(() {
-                                                    if (homeDashboardSymptomLogsRecord!
-                                                            .sleepQuality <=
-                                                        33) {
-                                                      return '\"Low';
-                                                    } else if (homeDashboardSymptomLogsRecord
-                                                            .sleepQuality <=
-                                                        66) {
-                                                      return '\"Moderate\"';
-                                                    } else {
-                                                      return '\"Good\"';
-                                                    }
-                                                  }()),
                                                   icon: Icon(
                                                     Icons.brightness_3_rounded,
                                                     color: FlutterFlowTheme.of(
@@ -940,17 +959,11 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                   label: 'Sleep Quality',
                                                   progress:
                                                       homeDashboardSymptomLogsRecord
-                                                          ?.sleepQuality
+                                                          .sleepQuality
                                                           .toDouble(),
-                                                  value: formatNumber(
-                                                    homeDashboardSymptomLogsRecord
-                                                        ?.sleepQuality,
-                                                    formatType:
-                                                        FormatType.custom,
-                                                    format:
-                                                        'sleepQuality / 100',
-                                                    locale: '',
-                                                  ),
+                                                  value: functions.getSymptomLabel(
+                                                      homeDashboardSymptomLogsRecord
+                                                          .sleepQuality),
                                                 ),
                                               ),
                                               wrapWithModel(
@@ -958,19 +971,6 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                 updateCallback: () =>
                                                     safeSetState(() {}),
                                                 child: SymptomStatWidget(
-                                                  key: ValueKey(() {
-                                                    if (homeDashboardSymptomLogsRecord!
-                                                            .energyLevel <=
-                                                        33) {
-                                                      return '\"Low\"';
-                                                    } else if (homeDashboardSymptomLogsRecord
-                                                            .energyLevel <=
-                                                        66) {
-                                                      return '\"Moderate\"';
-                                                    } else {
-                                                      return '\"Good\"';
-                                                    }
-                                                  }()),
                                                   icon: Icon(
                                                     Icons.bolt_rounded,
                                                     color: FlutterFlowTheme.of(
@@ -981,16 +981,11 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                   label: 'Energy Levels',
                                                   progress:
                                                       homeDashboardSymptomLogsRecord
-                                                          ?.energyLevel
+                                                          .energyLevel
                                                           .toDouble(),
-                                                  value: formatNumber(
-                                                    homeDashboardSymptomLogsRecord
-                                                        ?.energyLevel,
-                                                    formatType:
-                                                        FormatType.custom,
-                                                    format: 'energyLevel/100',
-                                                    locale: '',
-                                                  ),
+                                                  value: functions.getSymptomLabel(
+                                                      homeDashboardSymptomLogsRecord
+                                                          .energyLevel),
                                                 ),
                                               ),
                                             ].divide(SizedBox(height: 16.0)),
@@ -1230,7 +1225,7 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                           model: _model.buttonModel2,
                                           updateCallback: () =>
                                               safeSetState(() {}),
-                                          child: ButtonWidget(
+                                          child: ButtonSkipWidget(
                                             content: 'Shop All',
                                             icon_present: false,
                                             icon_end_present: false,

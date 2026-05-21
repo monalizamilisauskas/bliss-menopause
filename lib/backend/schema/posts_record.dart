@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -55,6 +56,46 @@ class PostsRecord extends FirestoreRecord {
   int get commentsCount => _commentsCount ?? 0;
   bool hasCommentsCount() => _commentsCount != null;
 
+  // "likedBy" field.
+  List<String>? _likedBy;
+  List<String> get likedBy => _likedBy ?? const [];
+  bool hasLikedBy() => _likedBy != null;
+
+  // "savedBy" field.
+  List<String>? _savedBy;
+  List<String> get savedBy => _savedBy ?? const [];
+  bool hasSavedBy() => _savedBy != null;
+
+  // "email" field.
+  String? _email;
+  String get email => _email ?? '';
+  bool hasEmail() => _email != null;
+
+  // "display_name" field.
+  String? _displayName;
+  String get displayName => _displayName ?? '';
+  bool hasDisplayName() => _displayName != null;
+
+  // "photo_url" field.
+  String? _photoUrl;
+  String get photoUrl => _photoUrl ?? '';
+  bool hasPhotoUrl() => _photoUrl != null;
+
+  // "uid" field.
+  String? _uid;
+  String get uid => _uid ?? '';
+  bool hasUid() => _uid != null;
+
+  // "created_time" field.
+  DateTime? _createdTime;
+  DateTime? get createdTime => _createdTime;
+  bool hasCreatedTime() => _createdTime != null;
+
+  // "phone_number" field.
+  String? _phoneNumber;
+  String get phoneNumber => _phoneNumber ?? '';
+  bool hasPhoneNumber() => _phoneNumber != null;
+
   void _initializeFields() {
     _content = snapshotData['content'] as String?;
     _authorId = snapshotData['authorId'] as String?;
@@ -64,6 +105,14 @@ class PostsRecord extends FirestoreRecord {
     _createdAt = snapshotData['createdAt'] as DateTime?;
     _likesCount = castToType<int>(snapshotData['likesCount']);
     _commentsCount = castToType<int>(snapshotData['commentsCount']);
+    _likedBy = getDataList(snapshotData['likedBy']);
+    _savedBy = getDataList(snapshotData['savedBy']);
+    _email = snapshotData['email'] as String?;
+    _displayName = snapshotData['display_name'] as String?;
+    _photoUrl = snapshotData['photo_url'] as String?;
+    _uid = snapshotData['uid'] as String?;
+    _createdTime = snapshotData['created_time'] as DateTime?;
+    _phoneNumber = snapshotData['phone_number'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -108,6 +157,12 @@ Map<String, dynamic> createPostsRecordData({
   DateTime? createdAt,
   int? likesCount,
   int? commentsCount,
+  String? email,
+  String? displayName,
+  String? photoUrl,
+  String? uid,
+  DateTime? createdTime,
+  String? phoneNumber,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -119,6 +174,12 @@ Map<String, dynamic> createPostsRecordData({
       'createdAt': createdAt,
       'likesCount': likesCount,
       'commentsCount': commentsCount,
+      'email': email,
+      'display_name': displayName,
+      'photo_url': photoUrl,
+      'uid': uid,
+      'created_time': createdTime,
+      'phone_number': phoneNumber,
     }.withoutNulls,
   );
 
@@ -130,6 +191,7 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
 
   @override
   bool equals(PostsRecord? e1, PostsRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.content == e2?.content &&
         e1?.authorId == e2?.authorId &&
         e1?.authorName == e2?.authorName &&
@@ -137,7 +199,15 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         e1?.category == e2?.category &&
         e1?.createdAt == e2?.createdAt &&
         e1?.likesCount == e2?.likesCount &&
-        e1?.commentsCount == e2?.commentsCount;
+        e1?.commentsCount == e2?.commentsCount &&
+        listEquality.equals(e1?.likedBy, e2?.likedBy) &&
+        listEquality.equals(e1?.savedBy, e2?.savedBy) &&
+        e1?.email == e2?.email &&
+        e1?.displayName == e2?.displayName &&
+        e1?.photoUrl == e2?.photoUrl &&
+        e1?.uid == e2?.uid &&
+        e1?.createdTime == e2?.createdTime &&
+        e1?.phoneNumber == e2?.phoneNumber;
   }
 
   @override
@@ -149,7 +219,15 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         e?.category,
         e?.createdAt,
         e?.likesCount,
-        e?.commentsCount
+        e?.commentsCount,
+        e?.likedBy,
+        e?.savedBy,
+        e?.email,
+        e?.displayName,
+        e?.photoUrl,
+        e?.uid,
+        e?.createdTime,
+        e?.phoneNumber
       ]);
 
   @override

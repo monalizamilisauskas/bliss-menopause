@@ -80,6 +80,36 @@ class SymptomLogsRecord extends FirestoreRecord {
   String get intensity => _intensity ?? '';
   bool hasIntensity() => _intensity != null;
 
+  // "email" field.
+  String? _email;
+  String get email => _email ?? '';
+  bool hasEmail() => _email != null;
+
+  // "display_name" field.
+  String? _displayName;
+  String get displayName => _displayName ?? '';
+  bool hasDisplayName() => _displayName != null;
+
+  // "photo_url" field.
+  String? _photoUrl;
+  String get photoUrl => _photoUrl ?? '';
+  bool hasPhotoUrl() => _photoUrl != null;
+
+  // "uid" field.
+  String? _uid;
+  String get uid => _uid ?? '';
+  bool hasUid() => _uid != null;
+
+  // "created_time" field.
+  DateTime? _createdTime;
+  DateTime? get createdTime => _createdTime;
+  bool hasCreatedTime() => _createdTime != null;
+
+  // "phone_number" field.
+  String? _phoneNumber;
+  String get phoneNumber => _phoneNumber ?? '';
+  bool hasPhoneNumber() => _phoneNumber != null;
+
   void _initializeFields() {
     _userId = snapshotData['userId'] as String?;
     _date = snapshotData['date'] as DateTime?;
@@ -94,6 +124,12 @@ class SymptomLogsRecord extends FirestoreRecord {
     _bloating = snapshotData['bloating'] as bool?;
     _anxiety = snapshotData['anxiety'] as bool?;
     _intensity = snapshotData['intensity'] as String?;
+    _email = snapshotData['email'] as String?;
+    _displayName = snapshotData['display_name'] as String?;
+    _photoUrl = snapshotData['photo_url'] as String?;
+    _uid = snapshotData['uid'] as String?;
+    _createdTime = snapshotData['created_time'] as DateTime?;
+    _phoneNumber = snapshotData['phone_number'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -144,6 +180,12 @@ Map<String, dynamic> createSymptomLogsRecordData({
   bool? bloating,
   bool? anxiety,
   String? intensity,
+  String? email,
+  String? displayName,
+  String? photoUrl,
+  String? uid,
+  DateTime? createdTime,
+  String? phoneNumber,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -160,6 +202,12 @@ Map<String, dynamic> createSymptomLogsRecordData({
       'bloating': bloating,
       'anxiety': anxiety,
       'intensity': intensity,
+      'email': email,
+      'display_name': displayName,
+      'photo_url': photoUrl,
+      'uid': uid,
+      'created_time': createdTime,
+      'phone_number': phoneNumber,
     }.withoutNulls,
   );
 
@@ -183,7 +231,13 @@ class SymptomLogsRecordDocumentEquality implements Equality<SymptomLogsRecord> {
         e1?.headache == e2?.headache &&
         e1?.bloating == e2?.bloating &&
         e1?.anxiety == e2?.anxiety &&
-        e1?.intensity == e2?.intensity;
+        e1?.intensity == e2?.intensity &&
+        e1?.email == e2?.email &&
+        e1?.displayName == e2?.displayName &&
+        e1?.photoUrl == e2?.photoUrl &&
+        e1?.uid == e2?.uid &&
+        e1?.createdTime == e2?.createdTime &&
+        e1?.phoneNumber == e2?.phoneNumber;
   }
 
   @override
@@ -200,7 +254,13 @@ class SymptomLogsRecordDocumentEquality implements Equality<SymptomLogsRecord> {
         e?.headache,
         e?.bloating,
         e?.anxiety,
-        e?.intensity
+        e?.intensity,
+        e?.email,
+        e?.displayName,
+        e?.photoUrl,
+        e?.uid,
+        e?.createdTime,
+        e?.phoneNumber
       ]);
 
   @override

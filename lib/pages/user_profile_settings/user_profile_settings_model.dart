@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/profile_stat/profile_stat_widget.dart';
 import '/components/settings_item/settings_item_widget.dart';
 import '/components/switch_component/switch_component_widget.dart';
@@ -34,7 +34,7 @@ class UserProfileSettingsModel
   // Model for SettingsItem.
   late SettingsItemModel settingsItemModel7;
   // Model for Button.
-  late ButtonModel buttonModel;
+  late ButtonSkipModel buttonModel;
 
   @override
   void initState(BuildContext context) {
@@ -49,7 +49,7 @@ class UserProfileSettingsModel
     settingsItemModel5 = createModel(context, () => SettingsItemModel());
     settingsItemModel6 = createModel(context, () => SettingsItemModel());
     settingsItemModel7 = createModel(context, () => SettingsItemModel());
-    buttonModel = createModel(context, () => ButtonModel());
+    buttonModel = createModel(context, () => ButtonSkipModel());
   }
 
   @override

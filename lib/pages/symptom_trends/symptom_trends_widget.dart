@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/symptom_log_item/symptom_log_item_widget.dart';
 import '/components/trend_stat_card/trend_stat_card_widget.dart';
 import '/flutter_flow/flutter_flow_charts.dart';
@@ -964,7 +964,7 @@ class _SymptomTrendsWidgetState extends State<SymptomTrendsWidget> {
                         wrapWithModel(
                           model: _model.buttonModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: ButtonWidget(
+                          child: ButtonSkipWidget(
                             content: 'See All',
                             icon_present: false,
                             icon_end_present: false,

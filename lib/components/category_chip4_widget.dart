@@ -50,7 +50,7 @@ class _CategoryChip4WidgetState extends State<CategoryChip4Widget> {
       decoration: BoxDecoration(
         color: widget.selected
             ? FlutterFlowTheme.of(context).primary
-            : Color(0x00000000),
+            : FlutterFlowTheme.of(context).info,
         borderRadius: BorderRadius.circular(20.0),
         shape: BoxShape.rectangle,
         border: Border.all(

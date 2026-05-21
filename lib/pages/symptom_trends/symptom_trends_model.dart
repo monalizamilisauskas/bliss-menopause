@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/symptom_log_item/symptom_log_item_widget.dart';
 import '/components/trend_stat_card/trend_stat_card_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -14,7 +14,7 @@ class SymptomTrendsModel extends FlutterFlowModel<SymptomTrendsWidget> {
   // Model for TrendStatCard.
   late TrendStatCardModel trendStatCardModel2;
   // Model for Button.
-  late ButtonModel buttonModel;
+  late ButtonSkipModel buttonModel;
   // Model for SymptomLogItem.
   late SymptomLogItemModel symptomLogItemModel1;
   // Model for SymptomLogItem.
@@ -26,7 +26,7 @@ class SymptomTrendsModel extends FlutterFlowModel<SymptomTrendsWidget> {
   void initState(BuildContext context) {
     trendStatCardModel1 = createModel(context, () => TrendStatCardModel());
     trendStatCardModel2 = createModel(context, () => TrendStatCardModel());
-    buttonModel = createModel(context, () => ButtonModel());
+    buttonModel = createModel(context, () => ButtonSkipModel());
     symptomLogItemModel1 = createModel(context, () => SymptomLogItemModel());
     symptomLogItemModel2 = createModel(context, () => SymptomLogItemModel());
     symptomLogItemModel3 = createModel(context, () => SymptomLogItemModel());

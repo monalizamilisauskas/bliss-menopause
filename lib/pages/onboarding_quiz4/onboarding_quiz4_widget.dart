@@ -1,4 +1,4 @@
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/progress_step/progress_step_widget.dart';
 import '/components/quiz_option/quiz_option_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -104,7 +104,7 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
                                 child: wrapWithModel(
                                   model: _model.buttonModel1,
                                   updateCallback: () => safeSetState(() {}),
-                                  child: ButtonWidget(
+                                  child: ButtonSkipWidget(
                                     content: 'Skip',
                                     icon_present: false,
                                     icon_end_present: false,
@@ -347,7 +347,7 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
                             child: wrapWithModel(
                               model: _model.buttonModel2,
                               updateCallback: () => safeSetState(() {}),
-                              child: ButtonWidget(
+                              child: ButtonSkipWidget(
                                 content: 'Continue',
                                 icon_present: false,
                                 icon_end_present: false,

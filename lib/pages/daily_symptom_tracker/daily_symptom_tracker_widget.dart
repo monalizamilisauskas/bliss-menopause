@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/button/button_widget.dart';
+import '/components/button_skip/button_skip_widget.dart';
 import '/components/mood_chip/mood_chip_widget.dart';
 import '/components/severity_slider/severity_slider_widget.dart';
 import '/components/symptom_selector/symptom_selector_widget.dart';
@@ -174,39 +174,104 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Text(
-                                    'Today, Oct 24',
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .override(
-                                          font: GoogleFonts.plusJakartaSans(
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelLarge
-                                                    .fontStyle,
-                                          ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .onSecondary,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                          lineHeight: 1.33,
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'How are you feeling, ',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              fontFamily: 'Inter Tight',
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          currentUserDisplayName,
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                fontFamily: 'Inter Tight',
+                                                fontSize: 20.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.normal,
+                                                fontStyle: FontStyle.italic,
+                                              ),
                                         ),
+                                      ),
+                                      Text(
+                                        '?',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              fontFamily: 'Inter Tight',
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                      ),
+                                    ],
                                   ),
-                                  Text(
-                                    'How are you feeling, Sarah?',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Inter Tight',
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Today, ',
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .onSecondary,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                              lineHeight: 1.33,
+                                            ),
+                                      ),
+                                      Text(
+                                        dateTimeFormat(
+                                            "MMMEd", getCurrentTimestamp),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.plusJakartaSans(
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .onSecondary,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                              lineHeight: 1.33,
+                                            ),
+                                      ),
+                                    ],
                                   ),
                                 ].divide(SizedBox(height: 4.0)),
                               ),
@@ -262,10 +327,10 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                               label: 'Calm',
                                               active:
                                                   (_model.selectedMood == 'Calm'
-                                                          ? false
+                                                          ? true
                                                           : false)
                                                       ? true
-                                                      : true,
+                                                      : false,
                                             ),
                                           ),
                                         ),
@@ -278,7 +343,7 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            _model.selectedMood = ' Low';
+                                            _model.selectedMood = 'Low';
                                             safeSetState(() {});
                                           },
                                           child: wrapWithModel(
@@ -315,7 +380,7 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                               emoji: '🤯',
                                               label: 'Anxious',
                                               active: _model.selectedMood ==
-                                                      'anxious'
+                                                      'Anxious'
                                                   ? true
                                                   : false,
                                             ),
@@ -341,7 +406,7 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                               emoji: '😴',
                                               label: 'Tired',
                                               active:
-                                                  _model.selectedMood == 'tired'
+                                                  _model.selectedMood == 'Tired'
                                                       ? true
                                                       : false,
                                             ),
@@ -419,24 +484,36 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                 ),
                                               ].divide(SizedBox(width: 8.0)),
                                             ),
-                                            wrapWithModel(
-                                              model: _model.buttonModel1,
-                                              updateCallback: () =>
-                                                  safeSetState(() {}),
-                                              child: ButtonWidget(
-                                                content: '+ Log One',
-                                                icon_present: false,
-                                                icon_end_present: false,
-                                                on_tap:
-                                                    'navigate:HomeDashboard',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                variant: 'outline',
-                                                size: 'small',
-                                                full_width: false,
-                                                loading: false,
-                                                disabled: false,
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                _model.hotFlashCount =
+                                                    _model.hotFlashCount! + 1;
+                                                safeSetState(() {});
+                                              },
+                                              child: wrapWithModel(
+                                                model: _model.buttonModel1,
+                                                updateCallback: () =>
+                                                    safeSetState(() {}),
+                                                child: ButtonSkipWidget(
+                                                  content: '+ Log One',
+                                                  icon_present: false,
+                                                  icon_end_present: false,
+                                                  on_tap:
+                                                      'navigate:HomeDashboard',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  variant: 'outline',
+                                                  size: 'small',
+                                                  full_width: false,
+                                                  loading: false,
+                                                  disabled: false,
+                                                ),
                                               ),
                                             ),
                                           ],
@@ -515,7 +592,7 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                         ),
                                                   ),
                                                   Text(
-                                                    '3 today',
+                                                    '${_model.hotFlashCount?.toString()} today',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1058,7 +1135,7 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                   model: _model.buttonModel2,
                                                   updateCallback: () =>
                                                       safeSetState(() {}),
-                                                  child: ButtonWidget(
+                                                  child: ButtonSkipWidget(
                                                     content: 'Chat with Coach',
                                                     icon: Icon(
                                                       Icons.smart_toy_rounded,
@@ -1134,14 +1211,12 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                             await SymptomLogsRecord.collection
                                 .doc()
                                 .set(createSymptomLogsRecordData(
-                                  userId: valueOrDefault(
-                                          currentUserDocument?.streak, 0)
-                                      .toString(),
+                                  userId: currentUserUid,
                                   date: getCurrentTimestamp,
                                   hotFlashes: _model.hotFlashesValue,
                                   sleepQuality: _model.sleepQualityValue,
                                   energyLevel: _model.energyLevelValue,
-                                  nightSweats: false,
+                                  nightSweats: _model.nightSweats,
                                   brainFog: _model.brainFog,
                                   fatigue: _model.fatigue,
                                   headache: _model.headache,
@@ -1162,7 +1237,7 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                           child: wrapWithModel(
                             model: _model.buttonModel3,
                             updateCallback: () => safeSetState(() {}),
-                            child: ButtonWidget(
+                            child: ButtonSkipWidget(
                               content: 'Save Daily Log',
                               icon: Icon(
                                 Icons.check_circle_rounded,
