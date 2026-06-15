@@ -10,6 +10,8 @@ import 'schema/symptom_logs_record.dart';
 import 'schema/onboarding_answers_record.dart';
 import 'schema/community_stats_record.dart';
 import 'schema/posts_record.dart';
+import 'schema/cycle_data_record.dart';
+import 'schema/articles_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -23,6 +25,8 @@ export 'schema/symptom_logs_record.dart';
 export 'schema/onboarding_answers_record.dart';
 export 'schema/community_stats_record.dart';
 export 'schema/posts_record.dart';
+export 'schema/cycle_data_record.dart';
+export 'schema/articles_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -204,6 +208,80 @@ Future<List<PostsRecord>> queryPostsRecordOnce({
     queryCollectionOnce(
       PostsRecord.collection,
       PostsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query CycleDataRecords (as a Stream and as a Future).
+Future<int> queryCycleDataRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      CycleDataRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<CycleDataRecord>> queryCycleDataRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      CycleDataRecord.collection,
+      CycleDataRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<CycleDataRecord>> queryCycleDataRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      CycleDataRecord.collection,
+      CycleDataRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query ArticlesRecords (as a Stream and as a Future).
+Future<int> queryArticlesRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ArticlesRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ArticlesRecord>> queryArticlesRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ArticlesRecord.collection,
+      ArticlesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ArticlesRecord>> queryArticlesRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ArticlesRecord.collection,
+      ArticlesRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

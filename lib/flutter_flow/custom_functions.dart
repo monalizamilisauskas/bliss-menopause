@@ -1,104 +1,50 @@
-import 'dart:convert';
-import 'dart:math' as math;
-
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
-import 'package:timeago/timeago.dart' as timeago;
-import 'lat_lng.dart';
-import 'place.dart';
-import 'uploaded_file.dart';
-import '/backend/backend.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import '/auth/firebase_auth/auth_util.dart';
-
-String getGreeting() {
-  final hour = DateTime.now().hour;
-  if (hour < 12) {
-    return 'Good morning';
-  } else if (hour < 18) {
-    return 'Good afternoon';
-  } else {
-    return 'Good evening';
-  }
-}
-
-String getFirstLetter(String name) {
-  if (name.isEmpty) return 'U';
-  return name[0].toUpperCase();
-}
-
-String getSymptomLabel(int value) {
-  if (value <= 33) {
-    return 'Low';
-  } else if (value <= 66) {
-    return 'Moderate';
-  } else {
-    return 'High';
-  }
-}
-
-double getHormonPercent(int value) {
-  return (value / 100).clamp(0.0, 1.0);
-}
-
-int doubleToInt(double value) {
-  return value.toInt();
-}
-
-String getTimeAgo(DateTime date) {
-  final now = DateTime.now();
-  final difference = now.difference(date);
-
-  if (difference.inDays > 30) {
-    final months = (difference.inDays / 30).floor();
-    return '$months month${months > 1 ? 's' : ''} ago';
-  } else if (difference.inDays > 0) {
-    return '${difference.inDays} day${difference.inDays > 1 ? 's' : ''} ago';
-  } else if (difference.inHours > 0) {
-    return '${difference.inHours} hour${difference.inHours > 1 ? 's' : ''} ago';
-  } else {
-    return 'Just now';
-  }
-}
-
-String getLastUpdatedText(DateTime? date) {
-  if (date == null) return 'Not yet updated';
-
-  final now = DateTime.now();
-  final difference = now.difference(date);
-
-  if (difference.inDays > 30) {
-    final months = (difference.inDays / 30).floor();
-    return 'Last Updated: $months month${months > 1 ? 's' : ''} ago';
-  } else if (difference.inDays > 0) {
-    return 'Last Updated: ${difference.inDays} day${difference.inDays > 1 ? 's' : ''} ago';
-  } else if (difference.inHours > 0) {
-    return 'Last Updated: ${difference.inHours} hour${difference.inHours > 1 ? 's' : ''} ago';
-  } else {
-    return 'Last Updated: Just now';
-  }
-}
-
-String getPhaseDescription(String phase) {
-  switch (phase) {
-    case 'Perimenopause':
-      return 'Transitional hormonal phase';
-    case 'Menopause':
-      return 'Natural end of menstrual cycles';
-    case 'Post-Menopause':
-      return 'After 12 months without periods';
-    default:
-      return 'Hormonal phase';
-  }
-}
-
-String getHormonDescription(int value) {
-  if (value <= 33) {
-    return 'Below optimal range';
-  } else if (value <= 66) {
-    return 'Within moderate range';
-  } else {
-    return 'Above normal range';
-  }
-}
+export '/custom_code/functions/get_greeting.dart';
+export '/custom_code/functions/get_first_letter.dart';
+export '/custom_code/functions/get_symptom_label.dart';
+export '/custom_code/functions/get_hormon_percent.dart';
+export '/custom_code/functions/double_to_int.dart';
+export '/custom_code/functions/get_time_ago.dart';
+export '/custom_code/functions/get_last_updated_text.dart';
+export '/custom_code/functions/get_phase_description.dart';
+export '/custom_code/functions/get_hormon_description.dart';
+export '/custom_code/functions/count_symptom.dart';
+export '/custom_code/functions/calc_bar_width.dart';
+export '/custom_code/functions/count_mood.dart';
+export '/custom_code/functions/count_energy_level.dart';
+export '/custom_code/functions/get_current_month.dart';
+export '/custom_code/functions/get_top_symptoms.dart';
+export '/custom_code/functions/get_message_text.dart';
+export '/custom_code/functions/get_message_is_user.dart';
+export '/custom_code/functions/get_message_time.dart';
+export '/custom_code/functions/get_motivational_quote.dart';
+export '/custom_code/functions/get_primary_symptom.dart';
+export '/custom_code/functions/calc_avg_sleep_quality.dart';
+export '/custom_code/functions/calc_avg_mood_score.dart';
+export '/custom_code/functions/get_hot_flash_data.dart';
+export '/custom_code/functions/get_week_day_labels.dart';
+export '/custom_code/functions/calc_avg_hot_flashes.dart';
+export '/custom_code/functions/count_hot_flashes.dart';
+export '/custom_code/functions/count_fatigue.dart';
+export '/custom_code/functions/count_mood_negative.dart';
+export '/custom_code/functions/count_other.dart';
+export '/custom_code/functions/get_pie_chart_data.dart';
+export '/custom_code/functions/get_pie_chart_percent.dart';
+export '/custom_code/functions/get_bliss_insight.dart';
+export '/custom_code/functions/calculate_age.dart';
+export '/custom_code/functions/get_tag_filter.dart';
+export '/custom_code/functions/get_week_start_date.dart';
+export '/custom_code/functions/calc_avg_percent.dart';
+export '/custom_code/functions/calc_bool_percent.dart';
+export '/custom_code/functions/calc_bar_width_px.dart';
+export '/custom_code/functions/calc_bar_width_px_bool.dart';
+export '/custom_code/functions/calc_avg_percent_text.dart';
+export '/custom_code/functions/calc_bool_percent_text.dart';
+export '/custom_code/functions/count_tracked_symptoms.dart';
+export '/custom_code/functions/get_last_week_start_date.dart';
+export '/custom_code/functions/calc_week_comparison.dart';
+export '/custom_code/functions/get_week_range_text.dart';
+export '/custom_code/functions/needs_new_insight.dart';
+export '/custom_code/functions/get_hot_flash_label.dart';
+export '/custom_code/functions/get_bool_symptom_label.dart';
+export '/custom_code/functions/get_symptom_badge.dart';
+export '/custom_code/functions/get_symptom_badge_bool.dart';

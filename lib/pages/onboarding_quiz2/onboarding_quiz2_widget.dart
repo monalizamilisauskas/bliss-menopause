@@ -1,3 +1,5 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/components/button_skip/button_skip_widget.dart';
 import '/components/progress_step/progress_step_widget.dart';
 import '/components/quiz_option/quiz_option_widget.dart';
@@ -30,8 +32,6 @@ class _OnboardingQuiz2WidgetState extends State<OnboardingQuiz2Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OnboardingQuiz2Model());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -106,13 +106,14 @@ class _OnboardingQuiz2WidgetState extends State<OnboardingQuiz2Widget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: ButtonSkipWidget(
                                     content: 'Skip',
-                                    icon_present: false,
-                                    icon_end_present: false,
-                                    on_tap: 'navigate:HomeDashboard',
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    iconResent: false,
+                                    iconPresent: false,
+                                    onTap: 'navigate:HomeDashboard',
+                                    inColor:
+                                        FlutterFlowTheme.of(context).primary,
                                     variant: 'ghost',
                                     size: 'small',
-                                    full_width: false,
+                                    fullWidth: false,
                                     loading: false,
                                     disabled: false,
                                   ),
@@ -173,7 +174,9 @@ class _OnboardingQuiz2WidgetState extends State<OnboardingQuiz2Widget> {
                                 ].divide(SizedBox(width: 4.0)),
                               ),
                               Text(
-                                'Step 2 of 4',
+                                FFLocalizations.of(context).getText(
+                                  '0jiewneq' /* Step 2 of 4 */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -233,7 +236,9 @@ class _OnboardingQuiz2WidgetState extends State<OnboardingQuiz2Widget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'What symptoms are affecting you most?',
+                            FFLocalizations.of(context).getText(
+                              'iy20q8l3' /* What symptoms are affecting yo... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
@@ -254,7 +259,9 @@ class _OnboardingQuiz2WidgetState extends State<OnboardingQuiz2Widget> {
                                 ),
                           ),
                           Text(
-                            'This helps us focus on what matters most to you.',
+                            FFLocalizations.of(context).getText(
+                              'yjfopavq' /* This helps us focus on what ma... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -288,40 +295,119 @@ class _OnboardingQuiz2WidgetState extends State<OnboardingQuiz2Widget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          wrapWithModel(
-                            model: _model.quizOption1Model1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: ' Hot flashes & night sweats',
-                              on_tap: 'On Tap',
-                              selected: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              if (_model.selectedSymptoms
+                                  .contains('hot_flashes')) {
+                                _model
+                                    .removeFromSelectedSymptoms('hot_flashes');
+                                safeSetState(() {});
+                              } else {
+                                _model.addToSelectedSymptoms('hot_flashes');
+                                safeSetState(() {});
+                              }
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model1,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: ' Hot flashes & night sweats',
+                                on_tap: 'On Tap',
+                                selected: _model.selectedSymptoms
+                                        .contains('hot_flashes')
+                                    ? true
+                                    : false,
+                              ),
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.quizOption1Model2,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'Sleep problems',
-                              on_tap: 'On Tap',
-                              selected: true,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              if (_model.selectedSymptoms
+                                  .contains('sleep_problems')) {
+                                _model.removeFromSelectedSymptoms(
+                                    'sleep_problems');
+                                safeSetState(() {});
+                              } else {
+                                _model.addToSelectedSymptoms('sleep_problems');
+                                safeSetState(() {});
+                              }
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model2,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'Sleep problems',
+                                on_tap: 'On Tap',
+                                selected: _model.selectedSymptoms
+                                        .contains('sleep_problems')
+                                    ? true
+                                    : false,
+                              ),
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.quizOption1Model3,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: ' Mood swings & anxiety',
-                              on_tap: 'On Tap',
-                              selected: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              if (_model.selectedSymptoms
+                                  .contains('mood_swings')) {
+                                _model
+                                    .removeFromSelectedSymptoms('mood_swings');
+                                safeSetState(() {});
+                              } else {
+                                _model.addToSelectedSymptoms('mood_swings');
+                                safeSetState(() {});
+                              }
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model3,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: ' Mood swings & anxiety',
+                                on_tap: 'On Tap',
+                                selected: _model.selectedSymptoms
+                                        .contains('mood_swings')
+                                    ? true
+                                    : false,
+                              ),
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.quizOption1Model4,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'Brain fog & memory issues',
-                              on_tap: 'On Tap',
-                              selected: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              if (_model.selectedSymptoms
+                                  .contains('brain_fog')) {
+                                _model.removeFromSelectedSymptoms('brain_fog');
+                                safeSetState(() {});
+                              } else {
+                                _model.addToSelectedSymptoms('brain_fog');
+                                safeSetState(() {});
+                              }
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model4,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'Brain fog & memory issues',
+                                on_tap: 'On Tap',
+                                selected: _model.selectedSymptoms
+                                        .contains('brain_fog')
+                                    ? true
+                                    : false,
+                              ),
                             ),
                           ),
                         ],
@@ -341,6 +427,14 @@ class _OnboardingQuiz2WidgetState extends State<OnboardingQuiz2Widget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              await currentUserReference!.update({
+                                ...mapToFirestore(
+                                  {
+                                    'topSymptoms': _model.selectedSymptoms,
+                                  },
+                                ),
+                              });
+
                               context
                                   .pushNamed(OnboardingQuiz3Widget.routeName);
                             },
@@ -349,13 +443,13 @@ class _OnboardingQuiz2WidgetState extends State<OnboardingQuiz2Widget> {
                               updateCallback: () => safeSetState(() {}),
                               child: ButtonSkipWidget(
                                 content: 'Continue',
-                                icon_present: false,
-                                icon_end_present: false,
-                                on_tap: 'navigate:HomeDashboard',
-                                color: FlutterFlowTheme.of(context).primary,
+                                iconResent: false,
+                                iconPresent: false,
+                                onTap: 'navigate:HomeDashboard',
+                                inColor: FlutterFlowTheme.of(context).primary,
                                 variant: 'primary',
                                 size: 'large',
-                                full_width: false,
+                                fullWidth: false,
                                 loading: false,
                                 disabled: false,
                               ),
@@ -390,7 +484,9 @@ class _OnboardingQuiz2WidgetState extends State<OnboardingQuiz2Widget> {
                                     Expanded(
                                       flex: 1,
                                       child: Text(
-                                        'Your data is encrypted and private. We use this only to personalize your Bliss experience.',
+                                        FFLocalizations.of(context).getText(
+                                          '5myxdk87' /* Your data is encrypted and pri... */,
+                                        ),
                                         maxLines: 2,
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall

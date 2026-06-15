@@ -5,7 +5,7 @@ export '/pages/home_dashboard/home_dashboard_widget.dart'
     show HomeDashboardWidget;
 export '/pages/daily_symptom_tracker/daily_symptom_tracker_widget.dart'
     show DailySymptomTrackerWidget;
-export '/pages/wellness_hub/wellness_hub_widget.dart' show WellnessHubWidget;
+export '/wellness_hub/wellness_hub_widget.dart' show WellnessHubWidget;
 export '/vitamin_shop/vitamin_shop_widget.dart' show VitaminShopWidget;
 export '/pages/a_i_health_coach/a_i_health_coach_widget.dart'
     show AIHealthCoachWidget;
@@ -13,8 +13,8 @@ export '/pages/symptom_trends/symptom_trends_widget.dart'
     show SymptomTrendsWidget;
 export '/pages/user_profile_settings/user_profile_settings_widget.dart'
     show UserProfileSettingsWidget;
-export '/pages/article_detail01/article_detail01_widget.dart'
-    show ArticleDetail01Widget;
+export '/pages/article_detail1/article_detail1_widget.dart'
+    show ArticleDetail1Widget;
 export '/pages/onboarding_quiz2/onboarding_quiz2_widget.dart'
     show OnboardingQuiz2Widget;
 export '/pages/onboarding_quiz3/onboarding_quiz3_widget.dart'
@@ -35,7 +35,7 @@ export '/pages/plan_comparison/plan_comparison_widget.dart'
     show PlanComparisonWidget;
 export '/pages/subscription_success_page/subscription_success_page_widget.dart'
     show SubscriptionSuccessPageWidget;
-export '/pages/quiz_intro/quiz_intro_widget.dart' show QuizIntroWidget;
+export '/quiz_intro/quiz_intro_widget.dart' show QuizIntroWidget;
 export '/nutrition_guide_page/nutrition_guide_page_widget.dart'
     show NutritionGuidePageWidget;
 export '/nutrition_follicular_page/nutrition_follicular_page_widget.dart'
@@ -44,26 +44,26 @@ export '/nutrition_ovulatory_page/nutrition_ovulatory_page_widget.dart'
     show NutritionOvulatoryPageWidget;
 export '/nutrition_luteal_page/nutrition_luteal_page_widget.dart'
     show NutritionLutealPageWidget;
-export '/pages/skin_hair_guide_page/skin_hair_guide_page_widget.dart'
+export '/skin_hair_guide_page/skin_hair_guide_page_widget.dart'
     show SkinHairGuidePageWidget;
-export '/pages/skin_hair_follicular_page/skin_hair_follicular_page_widget.dart'
+export '/components/skin_hair_follicular_page/skin_hair_follicular_page_widget.dart'
     show SkinHairFollicularPageWidget;
-export '/pages/skin_hair_ovulatory/skin_hair_ovulatory_widget.dart'
+export '/skin_hair_ovulatory/skin_hair_ovulatory_widget.dart'
     show SkinHairOvulatoryWidget;
-export '/pages/skin_hair_luteal_page/skin_hair_luteal_page_widget.dart'
+export '/components/skin_hair_luteal_page/skin_hair_luteal_page_widget.dart'
     show SkinHairLutealPageWidget;
 export '/pages/medical_report_page/medical_report_page_widget.dart'
     show MedicalReportPageWidget;
-export '/pages/our_story/our_story_widget.dart' show OurStoryWidget;
+export '/our_story/our_story_widget.dart' show OurStoryWidget;
 export '/pages/daily_reminder_page/daily_reminder_page_widget.dart'
     show DailyReminderPageWidget;
 export '/pages/weekly_insight_page/weekly_insight_page_widget.dart'
     show WeeklyInsightPageWidget;
 export '/pages/community_forum_page/community_forum_page_widget.dart'
     show CommunityForumPageWidget;
-export '/pages/streak_tracker_page/streak_tracker_page_widget.dart'
-    show StreakTrackerPageWidget;
-export '/pages/symptom_detail_page/symptom_detail_page_widget.dart'
+export '/pages/my_streak_page/my_streak_page_widget.dart'
+    show MyStreakPageWidget;
+export '/symptom_detail_page/symptom_detail_page_widget.dart'
     show SymptomDetailPageWidget;
 export '/pages/subscription_win_back_pag/subscription_win_back_pag_widget.dart'
     show SubscriptionWinBackPagWidget;
@@ -71,3 +71,18 @@ export '/pages/personalized_recommendations_pag/personalized_recommendations_pag
     show PersonalizedRecommendationsPagWidget;
 export '/pages/create_post_page/create_post_page_widget.dart'
     show CreatePostPageWidget;
+export '/pages/allreadings_page/allreadings_page_widget.dart'
+    show AllreadingsPageWidget;
+export '/pages/privacy_security/privacy_security_widget.dart'
+    show PrivacySecurityWidget;
+export '/appearance_page/appearance_page_widget.dart' show AppearancePageWidget;
+export '/pages/help_center_page/help_center_page_widget.dart'
+    show HelpCenterPageWidget;
+export '/pages/profile_visibility_page/profile_visibility_page_widget.dart'
+    show ProfileVisibilityPageWidget;
+export '/pages/change_password/change_password_widget.dart'
+    show ChangePasswordWidget;
+export '/pages/two_factor_authentication/two_factor_authentication_widget.dart'
+    show TwoFactorAuthenticationWidget;
+export '/report_page/report_page_widget.dart' show ReportPageWidget;
+export '/last_week_page/last_week_page_widget.dart' show LastWeekPageWidget;

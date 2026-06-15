@@ -9,6 +9,15 @@ class SubscriptionPlanpageModel
   /// Controls which plan card is selected
   String selectedPlan = 'complete';
 
+  ///  State fields for stateful widgets in this page.
+
+  // Stores action output result for [RevenueCat - Purchase] action in Button widget.
+  bool? purchaseResultStarter;
+  // Stores action output result for [RevenueCat - Purchase] action in Button widget.
+  bool? purchaseResultComplete;
+  // Stores action output result for [RevenueCat - Purchase] action in Button widget.
+  bool? purchaseResultAnnual;
+
   @override
   void initState(BuildContext context) {}
 

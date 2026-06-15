@@ -7,6 +7,18 @@ import 'onboarding_quiz2_widget.dart' show OnboardingQuiz2Widget;
 import 'package:flutter/material.dart';
 
 class OnboardingQuiz2Model extends FlutterFlowModel<OnboardingQuiz2Widget> {
+  ///  Local state fields for this page.
+
+  List<String> selectedSymptoms = [];
+  void addToSelectedSymptoms(String item) => selectedSymptoms.add(item);
+  void removeFromSelectedSymptoms(String item) => selectedSymptoms.remove(item);
+  void removeAtIndexFromSelectedSymptoms(int index) =>
+      selectedSymptoms.removeAt(index);
+  void insertAtIndexInSelectedSymptoms(int index, String item) =>
+      selectedSymptoms.insert(index, item);
+  void updateSelectedSymptomsAtIndex(int index, Function(String) updateFn) =>
+      selectedSymptoms[index] = updateFn(selectedSymptoms[index]);
+
   ///  State fields for stateful widgets in this page.
 
   // Model for Button.

@@ -1,11 +1,8 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:provider/provider.dart';
 import 'button_skip_model.dart';
 export 'button_skip_model.dart';
 
@@ -14,37 +11,37 @@ class ButtonSkipWidget extends StatefulWidget {
     super.key,
     String? content,
     this.icon,
-    bool? icon_present,
-    this.icon_end,
-    bool? icon_end_present,
-    String? on_tap,
-    Color? color,
+    bool? iconResent,
+    this.iconEnd,
+    bool? iconPresent,
+    String? onTap,
+    Color? inColor,
     String? variant,
     String? size,
-    bool? full_width,
+    bool? fullWidth,
     bool? loading,
     bool? disabled,
   })  : this.content = content ?? 'Skip',
-        this.icon_present = icon_present ?? false,
-        this.icon_end_present = icon_end_present ?? false,
-        this.on_tap = on_tap ?? 'navigate:HomeDashboard',
-        this.color = color ?? FlutterFlowTheme.of(context).primary,
+        this.iconResent = iconResent ?? false,
+        this.iconPresent = iconPresent ?? false,
+        this.onTap = onTap ?? 'navigate:HomeDashboard',
+        this.inColor = inColor ?? const Color(0xFFC4973A),
         this.variant = variant ?? 'ghost',
         this.size = size ?? 'small',
-        this.full_width = full_width ?? false,
+        this.fullWidth = fullWidth ?? false,
         this.loading = loading ?? false,
         this.disabled = disabled ?? false;
 
   final String content;
   final Widget? icon;
-  final bool icon_present;
-  final Widget? icon_end;
-  final bool icon_end_present;
-  final String on_tap;
-  final Color color;
+  final bool iconResent;
+  final Widget? iconEnd;
+  final bool iconPresent;
+  final String onTap;
+  final Color inColor;
   final String variant;
   final String size;
-  final bool full_width;
+  final bool fullWidth;
   final bool loading;
   final bool disabled;
 
@@ -65,8 +62,6 @@ class _ButtonSkipWidgetState extends State<ButtonSkipWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ButtonSkipModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -213,11 +208,6 @@ class _ButtonSkipWidgetState extends State<ButtonSkipWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    if (valueOrDefault<bool>(
-                      widget.icon_present,
-                      false,
-                    ))
-                      widget.icon!,
                     Text(
                       valueOrDefault<String>(
                         widget.content,
@@ -257,11 +247,6 @@ class _ButtonSkipWidgetState extends State<ButtonSkipWidget> {
                           ),
                       overflow: TextOverflow.clip,
                     ),
-                    if (valueOrDefault<bool>(
-                      widget.icon_end_present,
-                      false,
-                    ))
-                      widget.icon_end!,
                   ].divide(SizedBox(width: 8.0)),
                 ),
               ),

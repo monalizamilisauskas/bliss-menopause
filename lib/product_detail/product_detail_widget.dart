@@ -41,8 +41,6 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ProductDetailModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -118,7 +116,9 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Vitamin C Complex 1000mg',
+                              FFLocalizations.of(context).getText(
+                                'dcb6ci9m' /* Vitamin C Complex 1000mg */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
                                   .override(
@@ -138,7 +138,9 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                                   ),
                             ),
                             Text(
-                              '\$24.99',
+                              FFLocalizations.of(context).getText(
+                                'o3ocxr1q' /* $24.99 */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
@@ -169,7 +171,9 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Description',
+                              FFLocalizations.of(context).getText(
+                                'eqquqvlf' /* Description */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
@@ -189,7 +193,9 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                                   ),
                             ),
                             Text(
-                              'Our premium Vitamin C Complex provides powerful antioxidant support to help maintain a healthy immune system. Formulated with bioflavonoids for enhanced absorption, this supplement is perfect for daily use to support overall wellness and vitality.',
+                              FFLocalizations.of(context).getText(
+                                'kdp3g805' /* Our premium Vitamin C Complex ... */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -225,7 +231,9 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Benefits',
+                              FFLocalizations.of(context).getText(
+                                'jznp6rfe' /* Benefits */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
@@ -255,7 +263,9 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                                 ),
                                 Expanded(
                                   child: Text(
-                                    'Boosts immune system function and overall defense',
+                                    FFLocalizations.of(context).getText(
+                                      'akuyi68g' /* Boosts immune system function ... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -297,7 +307,9 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                                 ),
                                 Expanded(
                                   child: Text(
-                                    'Powerful antioxidant protection against free radicals',
+                                    FFLocalizations.of(context).getText(
+                                      'xng9eol1' /* Powerful antioxidant protectio... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -339,7 +351,9 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                                 ),
                                 Expanded(
                                   child: Text(
-                                    'Supports collagen synthesis for healthy skin and joints',
+                                    FFLocalizations.of(context).getText(
+                                      'dy6usuzz' /* Supports collagen synthesis fo... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -381,7 +395,9 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                                 ),
                                 Expanded(
                                   child: Text(
-                                    'Enhanced absorption with natural bioflavonoids',
+                                    FFLocalizations.of(context).getText(
+                                      '7iey7xld' /* Enhanced absorption with natur... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -423,7 +439,9 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                                 ),
                                 Expanded(
                                   child: Text(
-                                    'Non-GMO, gluten-free, and suitable for vegetarians',
+                                    FFLocalizations.of(context).getText(
+                                      'js1lgytu' /* Non-GMO, gluten-free, and suit... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -475,7 +493,9 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                     onPressed: () {
                       print('Button pressed ...');
                     },
-                    text: 'Add to Cart',
+                    text: FFLocalizations.of(context).getText(
+                      '5cbl1d4u' /* Add to Cart */,
+                    ),
                     options: FFButtonOptions(
                       width: double.infinity,
                       height: 54.0,

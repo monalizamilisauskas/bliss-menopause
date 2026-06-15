@@ -81,8 +81,6 @@ class _CreatePostPageWidgetState extends State<CreatePostPageWidget> {
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -140,7 +138,9 @@ class _CreatePostPageWidgetState extends State<CreatePostPageWidget> {
                             },
                           ),
                           Text(
-                            'New Post',
+                            FFLocalizations.of(context).getText(
+                              'on5f1g13' /* New Post */,
+                            ),
                             textAlign: TextAlign.start,
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
@@ -248,7 +248,9 @@ class _CreatePostPageWidgetState extends State<CreatePostPageWidget> {
                                             ),
                                           ),
                                           Text(
-                                            'Category',
+                                            FFLocalizations.of(context).getText(
+                                              '9or76rzq' /* Category */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .titleMedium
                                                 .override(
@@ -472,7 +474,10 @@ class _CreatePostPageWidgetState extends State<CreatePostPageWidget> {
                                                 ),
                                               ),
                                               Text(
-                                                'Your Post',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'lda44rl6' /* Your Post */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
@@ -544,7 +549,10 @@ class _CreatePostPageWidgetState extends State<CreatePostPageWidget> {
                                                                   .fontStyle,
                                                         ),
                                                 hintText:
-                                                    'Share your experience, ask a question, or offer support...',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'xek2wmok' /* Share your experience, ask a q... */,
+                                                ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -708,7 +716,10 @@ class _CreatePostPageWidgetState extends State<CreatePostPageWidget> {
                                               );
                                               context.safePop();
                                             },
-                                            text: 'Share with Community',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              '2nesb3rc' /* Share with Community */,
+                                            ),
                                             options: FFButtonOptions(
                                               width: double.infinity,
                                               height: 52.0,

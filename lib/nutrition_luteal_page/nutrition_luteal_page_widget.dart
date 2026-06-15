@@ -75,8 +75,6 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NutritionLutealPageModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -130,7 +128,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        'Nutrition Guide',
+                        FFLocalizations.of(context).getText(
+                          '77vc4sf8' /* Nutrition Guide */,
+                        ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).titleLarge.override(
                               font: GoogleFonts.plusJakartaSans(
@@ -152,7 +152,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                         child: Text(
-                          'Eat for your cycle',
+                          FFLocalizations.of(context).getText(
+                            '7ju432a3' /* Eat for your cycle */,
+                          ),
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
@@ -208,7 +210,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                             child: Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text(
-                                '🔴 Menstrual',
+                                FFLocalizations.of(context).getText(
+                                  'o619ysej' /* 🔴 Menstrual */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -255,7 +259,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                             child: Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text(
-                                '🌱 Follicular',
+                                FFLocalizations.of(context).getText(
+                                  'c0y6szva' /* 🌱 Follicular */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -302,7 +308,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                             child: Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text(
-                                '✨ Ovulatory',
+                                FFLocalizations.of(context).getText(
+                                  '7doy6fvd' /* ✨ Ovulatory */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -349,7 +357,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                             child: Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text(
-                                '🌙 Luteal',
+                                FFLocalizations.of(context).getText(
+                                  'cl246orx' /* 🌙 Luteal */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -413,7 +423,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Luteal Phase',
+                                  FFLocalizations.of(context).getText(
+                                    'tzaqikml' /* Luteal Phase */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
@@ -437,7 +449,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Text(
-                                    'Focus on magnesium-rich and mood-boosting foods to ease PMS symptoms and support progesterone',
+                                    FFLocalizations.of(context).getText(
+                                      'cf3v3km2' /* Focus on magnesium-rich and mo... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -478,7 +492,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                   padding:
                       EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                   child: Text(
-                    'Best Foods This Phase',
+                    FFLocalizations.of(context).getText(
+                      '09rtb4vr' /* Best Foods This Phase */,
+                    ),
                     style: FlutterFlowTheme.of(context).titleMedium.override(
                           font: GoogleFonts.plusJakartaSans(
                             fontWeight: FontWeight.bold,
@@ -537,7 +553,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '🍫',
+                                          FFLocalizations.of(context).getText(
+                                            'qeeztx86' /* 🍫 */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -572,7 +590,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: Text(
-                                            'Dark Chocolate',
+                                            FFLocalizations.of(context).getText(
+                                              'mshtt1q2' /* Dark Chocolate */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -603,7 +623,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Boosts mood',
+                                            FFLocalizations.of(context).getText(
+                                              'u5dnydzg' /* Boosts mood */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
@@ -668,7 +690,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '🍠',
+                                          FFLocalizations.of(context).getText(
+                                            'h9c3xuqc' /* 🍠 */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -703,7 +727,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: Text(
-                                            'Sweet Potato',
+                                            FFLocalizations.of(context).getText(
+                                              'ql1xkog6' /* Sweet Potato */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -734,7 +760,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Complex carbs',
+                                            FFLocalizations.of(context).getText(
+                                              'ogmdv7vo' /* Complex carbs */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
@@ -799,7 +827,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '🥜',
+                                          FFLocalizations.of(context).getText(
+                                            'dqnmgbz9' /* 🥜 */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -834,7 +864,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: Text(
-                                            'Pumpkin Seeds',
+                                            FFLocalizations.of(context).getText(
+                                              'v27ikdwn' /* Pumpkin Seeds */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -865,7 +897,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Magnesium rich',
+                                            FFLocalizations.of(context).getText(
+                                              'z9ceeljj' /* Magnesium rich */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
@@ -930,7 +964,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '🍌',
+                                          FFLocalizations.of(context).getText(
+                                            'd7cl5tag' /* 🍌 */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -965,7 +1001,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: Text(
-                                            'Banana',
+                                            FFLocalizations.of(context).getText(
+                                              'v4q56gv9' /* Banana */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -996,7 +1034,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Vitamin B6',
+                                            FFLocalizations.of(context).getText(
+                                              'ikya1rg5' /* Vitamin B6 */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
@@ -1061,7 +1101,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '🫘',
+                                          FFLocalizations.of(context).getText(
+                                            '4ihz7myq' /* 🫘 */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -1096,7 +1138,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: Text(
-                                            'Lentils',
+                                            FFLocalizations.of(context).getText(
+                                              'zl2uw85l' /* Lentils */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -1127,7 +1171,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Iron and fiber',
+                                            FFLocalizations.of(context).getText(
+                                              'q8v1kcyh' /* Iron and fiber */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
@@ -1180,7 +1226,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                   padding:
                       EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                   child: Text(
-                    'Best Foods This Phase',
+                    FFLocalizations.of(context).getText(
+                      'iyot62y4' /* Best Foods This Phase */,
+                    ),
                     style: FlutterFlowTheme.of(context).titleMedium.override(
                           font: GoogleFonts.plusJakartaSans(
                             fontWeight: FontWeight.bold,
@@ -1239,7 +1287,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '☕',
+                                          FFLocalizations.of(context).getText(
+                                            'chky1max' /* ☕ */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -1274,7 +1324,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: Text(
-                                            'Caffeine',
+                                            FFLocalizations.of(context).getText(
+                                              'w8kpmtbd' /* Caffeine */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -1305,7 +1357,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Worsens anxiety',
+                                            FFLocalizations.of(context).getText(
+                                              'rq8eedsu' /* Worsens anxiety */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
@@ -1370,7 +1424,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '🧂',
+                                          FFLocalizations.of(context).getText(
+                                            'vfxsufay' /* 🧂 */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -1405,7 +1461,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: Text(
-                                            'Salty Foods',
+                                            FFLocalizations.of(context).getText(
+                                              '00wk6ezk' /* Salty Foods */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -1436,7 +1494,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Increases bloating',
+                                            FFLocalizations.of(context).getText(
+                                              '1x7czaey' /* Increases bloating */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
@@ -1501,7 +1561,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '🍬',
+                                          FFLocalizations.of(context).getText(
+                                            '8cxek1xo' /* 🍬 */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -1536,7 +1598,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: Text(
-                                            'Sugar',
+                                            FFLocalizations.of(context).getText(
+                                              'q7r0vo3j' /* Sugar */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -1567,7 +1631,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Worsens mood swings',
+                                            FFLocalizations.of(context).getText(
+                                              '2z1rgsv2' /* Worsens mood swings */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
@@ -1632,7 +1698,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '🥩',
+                                          FFLocalizations.of(context).getText(
+                                            'kgkj4fyo' /* 🥩 */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -1667,7 +1735,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: Text(
-                                            'Red Meat',
+                                            FFLocalizations.of(context).getText(
+                                              '1wqz5jjh' /* Red Meat */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -1698,7 +1768,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Increases inflammation',
+                                            FFLocalizations.of(context).getText(
+                                              'xrtstu9g' /* Increases inflammation */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
@@ -1758,7 +1830,9 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 24.0, 16.0, 0.0),
                         child: Text(
-                          'Meal Ideas',
+                          FFLocalizations.of(context).getText(
+                            'g7rltf2z' /* Meal Ideas */,
+                          ),
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).titleMedium.override(
@@ -1841,7 +1915,10 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Text(
-                                                  '🍳',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'hayd6m6o' /* 🍳 */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -1876,7 +1953,10 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                                 Padding(
                                                   padding: EdgeInsets.all(4.0),
                                                   child: Text(
-                                                    'Breakfast',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '1wc4kagn' /* Breakfast */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .titleSmall
@@ -1898,7 +1978,10 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
-                                                'Banana oatmeal with pumpkin seeds and dark chocolate chips',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '1ku3zenj' /* Banana oatmeal with pumpkin se... */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -1989,7 +2072,10 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Text(
-                                                  '🥗',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    's30rmo96' /* 🥗 */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -2024,7 +2110,10 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                                 Padding(
                                                   padding: EdgeInsets.all(4.0),
                                                   child: Text(
-                                                    'Lunch',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'q2miv9h3' /* Lunch */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .titleSmall
@@ -2046,7 +2135,10 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
-                                                'Lentil soup with sweet potato and whole grain bread',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'yj5kn2jj' /* Lentil soup with sweet potato ... */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -2137,7 +2229,10 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Text(
-                                                  '🍽️',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'kno5mqud' /* 🍽️ */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -2172,7 +2267,10 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                                 Padding(
                                                   padding: EdgeInsets.all(4.0),
                                                   child: Text(
-                                                    'Dinner',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'qfrnjb9g' /* Dinner */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .titleSmall
@@ -2194,7 +2292,10 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
-                                                'Baked salmon with roasted sweet potato and steamed broccoli',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'vhlysflc' /* Baked salmon with roasted swee... */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall

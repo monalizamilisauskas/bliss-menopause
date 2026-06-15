@@ -38,7 +38,6 @@ class _SwitchComponentWidgetState extends State<SwitchComponentWidget> {
     _model = createModel(context, () => SwitchComponentModel());
 
     _model.switchValue = widget.active ? true : false;
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -169,26 +168,30 @@ class _SwitchComponentWidgetState extends State<SwitchComponentWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
             child: Container(
-              child: Text(
-                valueOrDefault<String>(
-                  widget.label.toString(),
-                  'Smart Reminders',
-                ),
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.plusJakartaSans(
+              child: Visibility(
+                visible: widget.label == true ? true : false,
+                child: Text(
+                  valueOrDefault<String>(
+                    widget.label.toString(),
+                    'Smart Reminders',
+                  ),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        font: GoogleFonts.plusJakartaSans(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        letterSpacing: 0.0,
                         fontWeight:
                             FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                         fontStyle:
                             FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        lineHeight: 1.47,
                       ),
-                      color: FlutterFlowTheme.of(context).primaryText,
-                      letterSpacing: 0.0,
-                      fontWeight:
-                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                      lineHeight: 1.47,
-                    ),
+                ),
               ),
             ),
           ),

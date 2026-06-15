@@ -1,4 +1,4 @@
-import '/auth/base_auth_user_provider.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -34,13 +34,16 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
         ),
       );
       if (loggedIn) {
-        context.pushNamed(HomeDashboardWidget.routeName);
+        if (valueOrDefault<bool>(
+            currentUserDocument?.onboardingComplete, false)) {
+          context.pushNamed(HomeDashboardWidget.routeName);
+        } else {
+          context.pushNamed(OnboardingQuiz1Widget.routeName);
+        }
       } else {
         context.pushNamed(LoginInWidget.routeName);
       }
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

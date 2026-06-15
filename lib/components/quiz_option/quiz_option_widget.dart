@@ -36,8 +36,6 @@ class _QuizOptionWidgetState extends State<QuizOptionWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => QuizOptionModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -52,6 +50,13 @@ class _QuizOptionWidgetState extends State<QuizOptionWidget> {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
       child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: widget.selected == true
+                ? FlutterFlowTheme.of(context).primary
+                : FlutterFlowTheme.of(context).alternate,
+          ),
+        ),
         child: SafeArea(
           child: Container(
             decoration: BoxDecoration(

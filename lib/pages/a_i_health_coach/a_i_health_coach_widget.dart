@@ -1,13 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/ai_agents/ai_agent.dart';
-import '/components/coach_message/coach_message_widget.dart';
-import '/components/suggestion_chip/suggestion_chip_widget.dart';
-import '/components/text_field/text_field_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
+import '/flutter_flow/genui/ff_genui_chat.dart';
 import '/index.dart';
+import 'package:genui/genui.dart';
+import 'package:genui_firebase_ai/genui_firebase_ai.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'a_i_health_coach_model.dart';
@@ -33,7 +34,15 @@ class _AIHealthCoachWidgetState extends State<AIHealthCoachWidget> {
     super.initState();
     _model = createModel(context, () => AIHealthCoachModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if ((valueOrDefault(currentUserDocument?.subscriptionTier, '') !=
+              'complete') &&
+          (valueOrDefault(currentUserDocument?.subscriptionTier, '') !=
+              'annual')) {
+        context.pushNamed(SubscriptionPlanpageWidget.routeName);
+      }
+    });
   }
 
   @override
@@ -107,7 +116,9 @@ class _AIHealthCoachWidgetState extends State<AIHealthCoachWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Bliss Coach',
+                                  FFLocalizations.of(context).getText(
+                                    'pzehigwd' /* Bliss Coach */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
@@ -143,7 +154,9 @@ class _AIHealthCoachWidgetState extends State<AIHealthCoachWidget> {
                                       ),
                                     ),
                                     Text(
-                                      'Always here for you',
+                                      FFLocalizations.of(context).getText(
+                                        'hpn120zp' /* Always here for you */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .override(
@@ -185,8 +198,8 @@ class _AIHealthCoachWidgetState extends State<AIHealthCoachWidget> {
                               color: FlutterFlowTheme.of(context).secondaryText,
                               size: 24.0,
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
+                            onPressed: () async {
+                              context.safePop();
                             },
                           ),
                         ].divide(SizedBox(width: 16.0)),
@@ -314,7 +327,9 @@ class _AIHealthCoachWidgetState extends State<AIHealthCoachWidget> {
                                       ],
                                     ),
                                     Text(
-                                      'I\'m your Bliss AI Coach. How are you feeling today? I can help with symptom relief, nutrition, or just listen.',
+                                      FFLocalizations.of(context).getText(
+                                        'di1bjli0' /* I'm your Bliss AI Coach. How a... */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -343,150 +358,93 @@ class _AIHealthCoachWidgetState extends State<AIHealthCoachWidget> {
                                             lineHeight: 1.47,
                                           ),
                                     ),
-                                  ].divide(SizedBox(height: 16.0)),
-                                ),
-                              ),
-                              wrapWithModel(
-                                model: _model.coachMessageModel1,
-                                updateCallback: () => safeSetState(() {}),
-                                child: CoachMessageWidget(
-                                  message:
-                                      'I\'ve been having trouble sleeping because of night sweats.',
-                                  time: '9:41 AM',
-                                  is_user: true,
-                                ),
-                              ),
-                              wrapWithModel(
-                                model: _model.coachMessageModel2,
-                                updateCallback: () => safeSetState(() {}),
-                                child: CoachMessageWidget(
-                                  message:
-                                      'I\'m sorry to hear that, Maya. Night sweats can be so disruptive. Have you tried keeping a cooling gel pack nearby or wearing breathable bamboo fabrics?',
-                                  time: '9:42 AM',
-                                  is_user: false,
-                                ),
-                              ),
-                              wrapWithModel(
-                                model: _model.coachMessageModel3,
-                                updateCallback: () => safeSetState(() {}),
-                                child: CoachMessageWidget(
-                                  message:
-                                      'I\'ll try the bamboo pajamas! Do you have any nutrition tips to help with the intensity?',
-                                  time: '9:45 AM',
-                                  is_user: true,
-                                ),
-                              ),
-                              if (_model.isTyping == true)
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      width: 24.0,
-                                      height: 24.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        shape: BoxShape.circle,
-                                      ),
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: Text(
-                                        'B',
-                                        textAlign: TextAlign.center,
-                                        maxLines: 1,
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              font: GoogleFonts.plusJakartaSans(
-                                                fontWeight: FontWeight.w600,
-                                                fontStyle:
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Container(
+                                          width: double.infinity,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.6,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => FFGenUIChat(
+                                              config: FFGenUIChatConfig(
+                                                userPrompt:
+                                                    'You are Bliss, a compassionate AI health coach  specializing in perimenopause and menopause.  The woman you are speaking with is ${functions.calculateAge(currentUserDocument?.dateOfBirth).toString()} years old. Use this information to personalize your responses based on her specific life stage: - Under 45: Early perimenopause awareness - 45-50: Active perimenopause support - 51-55: Menopause transition support - 55+: Post-menopause wellness focus  You speak with warmth, empathy and understanding. You explain hormonal changes clearly and give personalized advice based on symptoms shared and the user\'s age.  Your areas of expertise: - Hot flashes and night sweats management - Sleep hygiene during menopause - Nutrition and supplements for hormonal balance - Stress and mood management - Exercise recommendations - Skin and hair changes - Brain fog and memory tips - Libido and intimacy support  Rules: - Never diagnose medical conditions - Always recommend consulting a doctor for serious concerns - Keep responses concise and supportive (max 3-4 paragraphs) - Use encouraging, non-judgmental language - Respond in the same language the user writes in - Focus on practical, actionable tips - Always acknowledge the user\'s age context when relevant to the response' ??
+                                                        'You are a helpful AI assistant that builds UI in response to user requests.',
+                                                componentDocs: '''''',
+                                                catalog: Catalog([],
+                                                    catalogId:
+                                                        'flutterflow.io:genUIChatWidgetConfig'),
+                                                contentGeneratorFactory: (catalog,
+                                                        systemPrompt, context,
+                                                        {onStatusChange}) =>
+                                                    FirebaseAiContentGenerator(
+                                                  catalog: catalog,
+                                                  systemInstruction:
+                                                      systemPrompt,
+                                                ),
+                                                showHeader: false,
+                                                headerTitle: 'Chat',
+                                                showAvatars: false,
+                                                avatarSize: 32.0,
+                                                backgroundColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
+                                                        .alternate,
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                                contentPadding:
+                                                    EdgeInsets.all(16.0),
+                                                messageSpacing: 8.0,
+                                                autoScroll: true,
+                                                scrollAnimationMs: 300,
+                                                inputPlaceholder:
+                                                    'Ask Bliss anything...',
+                                                inputAreaBackgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                inputAreaBorderRadius:
+                                                    BorderRadius.circular(24.0),
+                                                userBubbleColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                userBubbleTextColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .onPrimary,
+                                                userBubbleBorderRadius:
+                                                    BorderRadius.circular(16.0),
+                                                aiBubbleColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                aiBubbleTextColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                aiBubbleBorderRadius:
+                                                    BorderRadius.circular(16.0),
+                                                sendButtonIconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                sendButtonBackgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                showWelcome: false,
+                                                thinkingMessage:
+                                                    'Bliss is thinking...',
                                               ),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .onPrimary,
-                                              fontSize: 12.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                              lineHeight: 1.38,
-                                            ),
-                                        overflow: TextOverflow.clip,
-                                      ),
-                                    ),
-                                    if (_model.isTyping == true)
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                          shape: BoxShape.rectangle,
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 8.0, 16.0, 8.0),
-                                          child: Container(
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                Container(
-                                                  width: 6.0,
-                                                  height: 6.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            9999.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                ),
-                                                Container(
-                                                  width: 6.0,
-                                                  height: 6.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            9999.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                ),
-                                                Container(
-                                                  width: 6.0,
-                                                  height: 6.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            9999.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                ),
-                                              ].divide(SizedBox(width: 4.0)),
+                                              width: double.infinity,
+                                              height: double.infinity,
                                             ),
                                           ),
                                         ),
-                                      ),
-                                  ].divide(SizedBox(width: 8.0)),
+                                      ],
+                                    ),
+                                  ].divide(SizedBox(height: 16.0)),
                                 ),
+                              ),
                             ].divide(SizedBox(height: 24.0)),
                           ),
                         ),
@@ -500,157 +458,6 @@ class _AIHealthCoachWidgetState extends State<AIHealthCoachWidget> {
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 shape: BoxShape.rectangle,
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Container(
-                    height: 1.0,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      shape: BoxShape.rectangle,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(24.0),
-                    child: Container(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                wrapWithModel(
-                                  model: _model.suggestionChipModel1,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: SuggestionChipWidget(
-                                    icon: Icon(
-                                      Icons.restaurant_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 16.0,
-                                    ),
-                                    label: 'Nutrition tips',
-                                  ),
-                                ),
-                                wrapWithModel(
-                                  model: _model.suggestionChipModel2,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: SuggestionChipWidget(
-                                    icon: Icon(
-                                      Icons.self_improvement_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 16.0,
-                                    ),
-                                    label: 'Cooling breath',
-                                  ),
-                                ),
-                                wrapWithModel(
-                                  model: _model.suggestionChipModel3,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: SuggestionChipWidget(
-                                    icon: Icon(
-                                      Icons.bed_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 16.0,
-                                    ),
-                                    label: 'Sleep hygiene',
-                                  ),
-                                ),
-                              ].divide(SizedBox(width: 8.0)),
-                            ),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Expanded(
-                                flex: 1,
-                                child: wrapWithModel(
-                                  model: _model.textFieldModel,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: TextFieldWidget(
-                                    label: false,
-                                    helper: false,
-                                    hint: 'Ask Bliss anything...',
-                                    value: '',
-                                    leading_icon_present: false,
-                                    trailing_icon_present: false,
-                                    radius: 32.0,
-                                    variant: 'filled',
-                                    error: false,
-                                  ),
-                                ),
-                              ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  _model.addToMessages(_model
-                                      .textFieldModel.inputTextController.text);
-                                  safeSetState(() {});
-                                  _model.isTyping = true;
-                                  safeSetState(() {});
-                                  await callAiAgent(
-                                    context: context,
-                                    prompt: _model.textFieldModel
-                                        .inputTextController.text,
-                                    threadId: currentUserUid,
-                                    agentCloudFunctionName: 'blissCoach',
-                                    provider: 'ANTHROPIC',
-                                    agentJson: null,
-                                    responseType: 'PLAINTEXT',
-                                  ).then((generatedText) {
-                                    safeSetState(() =>
-                                        _model.blissReply = generatedText);
-                                  });
-
-                                  _model.isTyping = false;
-                                  safeSetState(() {});
-                                  safeSetState(() {
-                                    _model.textFieldModel.inputTextController
-                                            ?.text =
-                                        _model.textFieldModel.widget!.value;
-                                  });
-
-                                  safeSetState(() {});
-                                },
-                                child: Container(
-                                  width: 48.0,
-                                  height: 48.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    borderRadius: BorderRadius.circular(9999.0),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Icon(
-                                    Icons.send_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .onSecondary,
-                                    size: 24.0,
-                                  ),
-                                ),
-                              ),
-                            ].divide(SizedBox(width: 16.0)),
-                          ),
-                        ].divide(SizedBox(height: 16.0)),
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
           ],

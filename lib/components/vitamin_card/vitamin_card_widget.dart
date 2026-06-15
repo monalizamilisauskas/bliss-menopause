@@ -45,8 +45,6 @@ class _VitaminCardWidgetState extends State<VitaminCardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => VitaminCardModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -234,13 +232,13 @@ class _VitaminCardWidgetState extends State<VitaminCardWidget> {
                     updateCallback: () => safeSetState(() {}),
                     child: ButtonSkipWidget(
                       content: 'Add',
-                      icon_present: false,
-                      icon_end_present: false,
-                      on_tap: 'navigate:HomeDashboard',
-                      color: FlutterFlowTheme.of(context).primary,
+                      iconResent: false,
+                      iconPresent: false,
+                      onTap: 'navigate:HomeDashboard',
+                      inColor: FlutterFlowTheme.of(context).primary,
                       variant: 'outline',
                       size: 'small',
-                      full_width: false,
+                      fullWidth: false,
                       loading: false,
                       disabled: false,
                     ),

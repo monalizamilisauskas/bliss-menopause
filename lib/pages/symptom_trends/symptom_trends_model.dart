@@ -7,6 +7,10 @@ import 'symptom_trends_widget.dart' show SymptomTrendsWidget;
 import 'package:flutter/material.dart';
 
 class SymptomTrendsModel extends FlutterFlowModel<SymptomTrendsWidget> {
+  ///  Local state fields for this page.
+
+  String selectedPeriod = '7';
+
   ///  State fields for stateful widgets in this page.
 
   // Model for TrendStatCard.
@@ -15,21 +19,16 @@ class SymptomTrendsModel extends FlutterFlowModel<SymptomTrendsWidget> {
   late TrendStatCardModel trendStatCardModel2;
   // Model for Button.
   late ButtonSkipModel buttonModel;
-  // Model for SymptomLogItem.
-  late SymptomLogItemModel symptomLogItemModel1;
-  // Model for SymptomLogItem.
-  late SymptomLogItemModel symptomLogItemModel2;
-  // Model for SymptomLogItem.
-  late SymptomLogItemModel symptomLogItemModel3;
+  // Models for SymptomLogItem dynamic component.
+  late FlutterFlowDynamicModels<SymptomLogItemModel> symptomLogItemModels;
 
   @override
   void initState(BuildContext context) {
     trendStatCardModel1 = createModel(context, () => TrendStatCardModel());
     trendStatCardModel2 = createModel(context, () => TrendStatCardModel());
     buttonModel = createModel(context, () => ButtonSkipModel());
-    symptomLogItemModel1 = createModel(context, () => SymptomLogItemModel());
-    symptomLogItemModel2 = createModel(context, () => SymptomLogItemModel());
-    symptomLogItemModel3 = createModel(context, () => SymptomLogItemModel());
+    symptomLogItemModels =
+        FlutterFlowDynamicModels(() => SymptomLogItemModel());
   }
 
   @override
@@ -37,8 +36,6 @@ class SymptomTrendsModel extends FlutterFlowModel<SymptomTrendsWidget> {
     trendStatCardModel1.dispose();
     trendStatCardModel2.dispose();
     buttonModel.dispose();
-    symptomLogItemModel1.dispose();
-    symptomLogItemModel2.dispose();
-    symptomLogItemModel3.dispose();
+    symptomLogItemModels.dispose();
   }
 }

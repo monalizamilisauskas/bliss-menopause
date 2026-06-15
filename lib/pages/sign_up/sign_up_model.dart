@@ -8,12 +8,12 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
-  TextEditingController? emailTextController;
-  String? Function(BuildContext, String?)? emailTextControllerValidator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
   TextEditingController? textController1;
   String? Function(BuildContext, String?)? textController1Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
+  TextEditingController? emailTextController;
+  String? Function(BuildContext, String?)? emailTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode3;
   TextEditingController? passwordTextController;
@@ -35,10 +35,10 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
   @override
   void dispose() {
     textFieldFocusNode1?.dispose();
-    emailTextController?.dispose();
+    textController1?.dispose();
 
     textFieldFocusNode2?.dispose();
-    textController1?.dispose();
+    emailTextController?.dispose();
 
     textFieldFocusNode3?.dispose();
     passwordTextController?.dispose();

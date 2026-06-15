@@ -9,8 +9,16 @@ import 'package:flutter/material.dart';
 
 class UserProfileSettingsModel
     extends FlutterFlowModel<UserProfileSettingsWidget> {
+  ///  Local state fields for this page.
+
+  bool isEditing = false;
+
   ///  State fields for stateful widgets in this page.
 
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
   // Model for ProfileStat.
   late ProfileStatModel profileStatModel1;
   // Model for ProfileStat.
@@ -54,6 +62,9 @@ class UserProfileSettingsModel
 
   @override
   void dispose() {
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
+
     profileStatModel1.dispose();
     profileStatModel2.dispose();
     profileStatModel3.dispose();

@@ -38,8 +38,6 @@ class _SymptomLogItemWidgetState extends State<SymptomLogItemWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SymptomLogItemModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -164,7 +162,9 @@ class _SymptomLogItemWidgetState extends State<SymptomLogItemWidget> {
                             ),
                       ),
                       Text(
-                        'Severity',
+                        FFLocalizations.of(context).getText(
+                          '7y2eygwf' /* Severity */,
+                        ),
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               font: GoogleFonts.plusJakartaSans(
                                 fontWeight: FlutterFlowTheme.of(context)

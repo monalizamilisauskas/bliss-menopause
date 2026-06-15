@@ -66,7 +66,9 @@ class _UpdateHormonalProfileWidgetState
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: Text(
-                    'Update Hormonal Profile',
+                    FFLocalizations.of(context).getText(
+                      'fewf4czj' /* Update Hormonal Profile */,
+                    ),
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Inter Tight',
@@ -77,7 +79,9 @@ class _UpdateHormonalProfileWidgetState
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: Text(
-                    'Estrogen Level',
+                    FFLocalizations.of(context).getText(
+                      'yni8ecr9' /* Estrogen Level */,
+                    ),
                     style: FlutterFlowTheme.of(context).bodySmall.override(
                           font: GoogleFonts.plusJakartaSans(
                             fontWeight: FontWeight.w600,
@@ -116,7 +120,9 @@ class _UpdateHormonalProfileWidgetState
                   ),
                 ),
                 Text(
-                  'Progesterone Level',
+                  FFLocalizations.of(context).getText(
+                    'rtoec9f3' /* Progesterone Level */,
+                  ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodySmall.override(
                         font: GoogleFonts.plusJakartaSans(
@@ -154,7 +160,9 @@ class _UpdateHormonalProfileWidgetState
                   ),
                 ),
                 Text(
-                  'FSH Level',
+                  FFLocalizations.of(context).getText(
+                    '54i93ac0' /* FSH Level */,
+                  ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodySmall.override(
                         font: GoogleFonts.plusJakartaSans(
@@ -193,7 +201,17 @@ class _UpdateHormonalProfileWidgetState
                 FlutterFlowDropDown<String>(
                   controller: _model.dropDownValueController ??=
                       FormFieldController<String>(null),
-                  options: ['Perimenopause', 'Menopause', 'Post-Menopause'],
+                  options: [
+                    FFLocalizations.of(context).getText(
+                      'znwurthe' /* Perimenopause */,
+                    ),
+                    FFLocalizations.of(context).getText(
+                      'ys8p8di5' /* Menopause */,
+                    ),
+                    FFLocalizations.of(context).getText(
+                      '3ze8aoxj' /* Post-Menopause */,
+                    )
+                  ],
                   onChanged: (val) =>
                       safeSetState(() => _model.dropDownValue = val),
                   width: 200.0,
@@ -212,7 +230,9 @@ class _UpdateHormonalProfileWidgetState
                         fontStyle:
                             FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                       ),
-                  hintText: 'Select...',
+                  hintText: FFLocalizations.of(context).getText(
+                    'dgzeub4x' /* Select... */,
+                  ),
                   icon: Icon(
                     Icons.keyboard_arrow_down_rounded,
                     color: FlutterFlowTheme.of(context).secondaryText,
@@ -242,7 +262,9 @@ class _UpdateHormonalProfileWidgetState
                       );
                       context.safePop();
                     },
-                    text: 'Save Changes',
+                    text: FFLocalizations.of(context).getText(
+                      '3awz3h7v' /* Save Changes */,
+                    ),
                     options: FFButtonOptions(
                       width: double.infinity,
                       height: 52.0,

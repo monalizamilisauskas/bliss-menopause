@@ -37,8 +37,6 @@ class _CoachMessageWidgetState extends State<CoachMessageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CoachMessageModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -66,7 +64,9 @@ class _CoachMessageWidgetState extends State<CoachMessageWidget> {
               ),
               alignment: AlignmentDirectional(0.0, 0.0),
               child: Text(
-                'B',
+                FFLocalizations.of(context).getText(
+                  'a9v41da8' /* B */,
+                ),
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 style: FlutterFlowTheme.of(context).labelMedium.override(

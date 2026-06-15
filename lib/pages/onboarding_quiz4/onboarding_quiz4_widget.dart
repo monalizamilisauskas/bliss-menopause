@@ -1,3 +1,5 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/components/button_skip/button_skip_widget.dart';
 import '/components/progress_step/progress_step_widget.dart';
 import '/components/quiz_option/quiz_option_widget.dart';
@@ -30,8 +32,6 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OnboardingQuiz4Model());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -88,6 +88,11 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
                                   size: 24.0,
                                 ),
                                 onPressed: () async {
+                                  await currentUserReference!
+                                      .update(createUsersRecordData(
+                                    onboardingComplete: true,
+                                  ));
+
                                   context
                                       .pushNamed(HomeDashboardWidget.routeName);
                                 },
@@ -98,6 +103,11 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  await currentUserReference!
+                                      .update(createUsersRecordData(
+                                    onboardingComplete: true,
+                                  ));
+
                                   context
                                       .pushNamed(HomeDashboardWidget.routeName);
                                 },
@@ -106,13 +116,14 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: ButtonSkipWidget(
                                     content: 'Skip',
-                                    icon_present: false,
-                                    icon_end_present: false,
-                                    on_tap: 'navigate:HomeDashboard',
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    iconResent: false,
+                                    iconPresent: false,
+                                    onTap: 'navigate:HomeDashboard',
+                                    inColor:
+                                        FlutterFlowTheme.of(context).primary,
                                     variant: 'ghost',
                                     size: 'small',
-                                    full_width: false,
+                                    fullWidth: false,
                                     loading: false,
                                     disabled: false,
                                   ),
@@ -173,7 +184,9 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
                                 ].divide(SizedBox(width: 4.0)),
                               ),
                               Text(
-                                'Step 4 of 4',
+                                FFLocalizations.of(context).getText(
+                                  '1cu6g3wj' /* Step 4 of 4 */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -234,7 +247,9 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'What\'s your main goal with Bliss?',
+                            FFLocalizations.of(context).getText(
+                              'us11tjqp' /* What's your main goal with Bli... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
@@ -255,7 +270,9 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
                                 ),
                           ),
                           Text(
-                            'We\'ll tailor your dashboard and daily tips based on your answer.',
+                            FFLocalizations.of(context).getText(
+                              'ugmzq7s5' /* We'll tailor your dashboard an... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -289,40 +306,89 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          wrapWithModel(
-                            model: _model.quizOption1Model1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'Track & understand my symptoms',
-                              on_tap: 'On Tap',
-                              selected: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.selectedGoal = 'track_symptoms';
+                              safeSetState(() {});
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model1,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'Track & understand my symptoms',
+                                on_tap: 'On Tap',
+                                selected:
+                                    _model.selectedGoal == 'track_symptoms'
+                                        ? true
+                                        : false,
+                              ),
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.quizOption1Model2,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'Get personalized AI support',
-                              on_tap: 'On Tap',
-                              selected: true,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.selectedGoal = 'ai_support';
+                              safeSetState(() {});
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model2,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'Get personalized AI support',
+                                on_tap: 'On Tap',
+                                selected: _model.selectedGoal == 'ai_support'
+                                    ? true
+                                    : false,
+                              ),
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.quizOption1Model3,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'Improve my energy & sleep',
-                              on_tap: 'On Tap',
-                              selected: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.selectedGoal = 'energy_sleep';
+                              safeSetState(() {});
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model3,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'Improve my energy & sleep',
+                                on_tap: 'On Tap',
+                                selected: _model.selectedGoal == 'energy_sleep'
+                                    ? true
+                                    : false,
+                              ),
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.quizOption1Model4,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'Find natural remedies & vitamins',
-                              on_tap: 'On Tap',
-                              selected: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.selectedGoal = 'remedies';
+                              safeSetState(() {});
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model4,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'Find natural remedies & vitamins',
+                                on_tap: 'On Tap',
+                                selected: _model.selectedGoal == 'remedies'
+                                    ? true
+                                    : false,
+                              ),
                             ),
                           ),
                         ],
@@ -342,6 +408,12 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              await currentUserReference!
+                                  .update(createUsersRecordData(
+                                onboardingComplete: true,
+                                mainGoal: _model.selectedGoal,
+                              ));
+
                               context.pushNamed(HomeDashboardWidget.routeName);
                             },
                             child: wrapWithModel(
@@ -349,13 +421,13 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
                               updateCallback: () => safeSetState(() {}),
                               child: ButtonSkipWidget(
                                 content: 'Continue',
-                                icon_present: false,
-                                icon_end_present: false,
-                                on_tap: 'navigate:HomeDashboard',
-                                color: FlutterFlowTheme.of(context).primary,
+                                iconResent: false,
+                                iconPresent: false,
+                                onTap: 'navigate:HomeDashboard',
+                                inColor: FlutterFlowTheme.of(context).primary,
                                 variant: 'primary',
                                 size: 'large',
-                                full_width: false,
+                                fullWidth: false,
                                 loading: false,
                                 disabled: false,
                               ),
@@ -390,7 +462,9 @@ class _OnboardingQuiz4WidgetState extends State<OnboardingQuiz4Widget> {
                                     Expanded(
                                       flex: 1,
                                       child: Text(
-                                        'Your data is encrypted and private. We use this only to personalize your Bliss experience.',
+                                        FFLocalizations.of(context).getText(
+                                          'b797xkwo' /* Your data is encrypted and pri... */,
+                                        ),
                                         maxLines: 2,
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall

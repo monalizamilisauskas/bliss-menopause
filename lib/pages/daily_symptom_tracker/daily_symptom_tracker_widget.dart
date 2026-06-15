@@ -33,8 +33,6 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DailySymptomTrackerModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -80,62 +78,55 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 16.0, 24.0, 16.0),
                         child: Container(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                fillColor: Colors.transparent,
-                                icon: Icon(
-                                  Icons.arrow_back_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  context
-                                      .pushNamed(HomeDashboardWidget.routeName);
-                                },
-                              ),
-                              Text(
-                                'Daily Log',
-                                textAlign: TextAlign.start,
-                                style: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                120.0, 0.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'zl496ael' /* Daily Log */,
+                                  ),
+                                  textAlign: TextAlign.start,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                        font: GoogleFonts.plusJakartaSans(
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMedium
+                                                  .fontStyle,
+                                        ),
+                                        fontSize: 22.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .fontStyle,
+                                        lineHeight: 1.27,
                                       ),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleMedium
-                                          .fontStyle,
-                                      lineHeight: 1.27,
-                                    ),
-                              ),
-                              FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                fillColor: Colors.transparent,
-                                icon: Icon(
-                                  Icons.calendar_month_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 24.0,
                                 ),
-                                onPressed: () async {
-                                  context
-                                      .pushNamed(SymptomTrendsWidget.routeName);
-                                },
-                              ),
-                            ],
+                                FlutterFlowIconButton(
+                                  borderRadius: 8.0,
+                                  buttonSize: 40.0,
+                                  fillColor: Colors.transparent,
+                                  icon: Icon(
+                                    Icons.calendar_month_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 24.0,
+                                  ),
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                        SymptomTrendsWidget.routeName);
+                                  },
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -179,7 +170,9 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'How are you feeling, ',
+                                        FFLocalizations.of(context).getText(
+                                          'jhpi88nz' /* How are you feeling,  */,
+                                        ),
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
@@ -205,7 +198,9 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                         ),
                                       ),
                                       Text(
-                                        '?',
+                                        FFLocalizations.of(context).getText(
+                                          'g0ln29e5' /* ? */,
+                                        ),
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
@@ -248,7 +243,11 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                       ),
                                       Text(
                                         dateTimeFormat(
-                                            "MMMEd", getCurrentTimestamp),
+                                          "MMMEd",
+                                          getCurrentTimestamp,
+                                          locale: FFLocalizations.of(context)
+                                              .languageCode,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -281,7 +280,9 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
                                   Text(
-                                    'Current Mood',
+                                    FFLocalizations.of(context).getText(
+                                      '6cgg9hf1' /* Current Mood */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
@@ -456,7 +457,10 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                   size: 24.0,
                                                 ),
                                                 Text(
-                                                  'Hot Flashes',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'rgru4jxp' /* Hot Flashes */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .titleMedium
@@ -501,16 +505,16 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                     safeSetState(() {}),
                                                 child: ButtonSkipWidget(
                                                   content: '+ Log One',
-                                                  icon_present: false,
-                                                  icon_end_present: false,
-                                                  on_tap:
+                                                  iconResent: false,
+                                                  iconPresent: false,
+                                                  onTap:
                                                       'navigate:HomeDashboard',
-                                                  color: FlutterFlowTheme.of(
+                                                  inColor: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
                                                   variant: 'outline',
                                                   size: 'small',
-                                                  full_width: false,
+                                                  fullWidth: false,
                                                   loading: false,
                                                   disabled: false,
                                                 ),
@@ -556,7 +560,10 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                     CrossAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'Frequency',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'c7i2o55o' /* Frequency */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelSmall
@@ -631,7 +638,10 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                     CrossAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'Last log',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'soxma51x' /* Last log */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelSmall
@@ -667,7 +677,10 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                         ),
                                                   ),
                                                   Text(
-                                                    '2h ago',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'r2ctiai7' /* 2h ago */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -709,7 +722,9 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Vitality',
+                                    FFLocalizations.of(context).getText(
+                                      'l9f8voru' /* Vitality */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
@@ -812,7 +827,9 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Other Symptoms',
+                                    FFLocalizations.of(context).getText(
+                                      'gyr1xtwe' /* Other Symptoms */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
@@ -1064,7 +1081,10 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Bliss AI Insight',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '3jh3b3l3' /* Bliss AI Insight */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelLarge
@@ -1095,7 +1115,10 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                       ),
                                                 ),
                                                 Text(
-                                                  'Your sleep quality often dips after night sweats. Try lowering the room temp to 65°F tonight.',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'tqk281h4' /* Your sleep quality often dips ... */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -1145,16 +1168,17 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                                               .primary,
                                                       size: 16.0,
                                                     ),
-                                                    icon_present: true,
-                                                    icon_end_present: false,
-                                                    on_tap:
+                                                    iconResent: true,
+                                                    iconPresent: false,
+                                                    onTap:
                                                         'navigate:AIHealthCoach',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
+                                                    inColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
                                                     variant: 'ghost',
                                                     size: 'small',
-                                                    full_width: false,
+                                                    fullWidth: false,
                                                     loading: false,
                                                     disabled: false,
                                                   ),
@@ -1244,13 +1268,13 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
                                 color: FlutterFlowTheme.of(context).onPrimary,
                                 size: 16.0,
                               ),
-                              icon_present: true,
-                              icon_end_present: false,
-                              on_tap: 'navigate:HomeDashboard',
-                              color: Color(0xFFC9A84C),
+                              iconResent: true,
+                              iconPresent: false,
+                              onTap: 'navigate:HomeDashboard',
+                              inColor: Color(0xFFC9A84C),
                               variant: 'primary',
                               size: 'large',
-                              full_width: true,
+                              fullWidth: true,
                               loading: false,
                               disabled: false,
                             ),

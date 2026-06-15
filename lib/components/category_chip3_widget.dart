@@ -33,8 +33,6 @@ class _CategoryChip3WidgetState extends State<CategoryChip3Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CategoryChip3Model());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

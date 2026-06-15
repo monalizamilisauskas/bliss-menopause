@@ -92,8 +92,6 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CommunityForumPageModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -149,32 +147,26 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
               automaticallyImplyLeading: false,
-              leading: FlutterFlowIconButton(
-                borderColor: Colors.transparent,
-                borderRadius: 22.0,
-                buttonSize: 44.0,
-                icon: Icon(
-                  Icons.arrow_back_rounded,
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  size: 24.0,
-                ),
-                onPressed: () async {
-                  context.pushNamed(HomeDashboardWidget.routeName);
-                },
-              ),
-              title: Text(
-                'Community',
-                style: FlutterFlowTheme.of(context).titleMedium.override(
-                      font: GoogleFonts.plusJakartaSans(
+              title: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(120.0, 0.0, 0.0, 0.0),
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    'tvhfy4qq' /* Community */,
+                  ),
+                  textAlign: TextAlign.center,
+                  style: FlutterFlowTheme.of(context).titleMedium.override(
+                        font: GoogleFonts.plusJakartaSans(
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .fontStyle,
+                        ),
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
                         fontStyle:
                             FlutterFlowTheme.of(context).titleMedium.fontStyle,
                       ),
-                      letterSpacing: 0.0,
-                      fontWeight: FontWeight.bold,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                    ),
+                ),
               ),
               actions: [
                 Padding(
@@ -207,11 +199,12 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                       child: SingleChildScrollView(
+                        primary: false,
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(24.0),
+                              padding: EdgeInsets.all(14.0),
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
@@ -259,7 +252,10 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Bliss Community 💛',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'u2sm386z' /* Bliss Community 💛 */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .headlineMedium
@@ -289,7 +285,10 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                               Opacity(
                                                 opacity: 0.8,
                                                 child: Text(
-                                                  'You are not alone in this journey',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'yxv60mmp' /* You are not alone in this jour... */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -377,7 +376,10 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                                         ),
                                               ),
                                               Text(
-                                                'Members',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'p2mlfbyo' /* Members */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -459,7 +461,10 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                                         ),
                                               ),
                                               Text(
-                                                'Online now',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'p0zhomrv' /* Online now */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -541,7 +546,10 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                                         ),
                                               ),
                                               Text(
-                                                'Posts today',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'enxa6678' /* Posts today */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -636,7 +644,9 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                             ),
                                           ),
                                           Text(
-                                            'Topics',
+                                            FFLocalizations.of(context).getText(
+                                              'bhdaa857' /* Topics */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .titleMedium
                                                 .override(
@@ -723,7 +733,11 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                                     padding:
                                                         EdgeInsets.all(8.0),
                                                     child: Text(
-                                                      'All',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '7bqoknwi' /* All */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .labelSmall
@@ -808,7 +822,11 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                                     padding:
                                                         EdgeInsets.all(8.0),
                                                     child: Text(
-                                                      'Hot Flashes',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'n2sfxgdq' /* Hot Flashes */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -896,7 +914,11 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                                     padding:
                                                         EdgeInsets.all(8.0),
                                                     child: Text(
-                                                      'Sleep',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'uci0ijl2' /* Sleep */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -984,7 +1006,11 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                                     padding:
                                                         EdgeInsets.all(8.0),
                                                     child: Text(
-                                                      'Nutrition',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'oauisgud' /* Nutrition */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1072,7 +1098,11 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                                     padding:
                                                         EdgeInsets.all(8.0),
                                                     child: Text(
-                                                      'Mental Health',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '3xq8plx2' /* Mental Health */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1183,7 +1213,10 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Text(
-                                                    'Recent Posts',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'ziwfal1d' /* Recent Posts */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .titleMedium
@@ -1251,6 +1284,7 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
 
                                                 return ListView.builder(
                                                   padding: EdgeInsets.zero,
+                                                  primary: false,
                                                   shrinkWrap: true,
                                                   scrollDirection:
                                                       Axis.vertical,
@@ -1453,7 +1487,10 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Share your experience',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'ay3zvf4z' /* Share your experience */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1482,7 +1519,10 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
                                                         ),
                                               ),
                                               Text(
-                                                'Your story can help someone today 💛',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'cb46i2gb' /* Your story can help someone to... */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall

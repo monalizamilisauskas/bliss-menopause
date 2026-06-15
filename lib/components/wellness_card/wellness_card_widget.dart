@@ -54,10 +54,32 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      context.pushNamed(ArticleDetail01Widget.routeName);
+      context.pushNamed(
+        ArticleDetail1Widget.routeName,
+        queryParameters: {
+          'title': serializeParam(
+            'title',
+            ParamType.String,
+          ),
+          'content': serializeParam(
+            'content',
+            ParamType.String,
+          ),
+          'tag': serializeParam(
+            'tag',
+            ParamType.String,
+          ),
+          'readTime': serializeParam(
+            'readTime',
+            ParamType.String,
+          ),
+          'imageUrl': serializeParam(
+            'imageUrl',
+            ParamType.String,
+          ),
+        }.withoutNulls,
+      );
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -291,24 +313,47 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context
-                                  .pushNamed(ArticleDetail01Widget.routeName);
+                              context.pushNamed(
+                                ArticleDetail1Widget.routeName,
+                                queryParameters: {
+                                  'title': serializeParam(
+                                    'title',
+                                    ParamType.String,
+                                  ),
+                                  'content': serializeParam(
+                                    'content',
+                                    ParamType.String,
+                                  ),
+                                  'tag': serializeParam(
+                                    'tag',
+                                    ParamType.String,
+                                  ),
+                                  'readTime': serializeParam(
+                                    'readTime',
+                                    ParamType.String,
+                                  ),
+                                  'imageUrl': serializeParam(
+                                    'imageUrl',
+                                    ParamType.String,
+                                  ),
+                                }.withoutNulls,
+                              );
                             },
                             child: wrapWithModel(
                               model: _model.buttonModel,
                               updateCallback: () => safeSetState(() {}),
                               child: ButtonSkipWidget(
                                 content: 'Read More',
-                                icon_present: false,
-                                icon_end_present: false,
-                                on_tap: valueOrDefault<String>(
+                                iconResent: false,
+                                iconPresent: false,
+                                onTap: valueOrDefault<String>(
                                   widget.nav_target,
                                   'Nav Target',
                                 ),
-                                color: FlutterFlowTheme.of(context).primary,
+                                inColor: FlutterFlowTheme.of(context).primary,
                                 variant: 'ghost',
                                 size: 'small',
-                                full_width: false,
+                                fullWidth: false,
                                 loading: false,
                                 disabled: false,
                               ),

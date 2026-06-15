@@ -35,8 +35,6 @@ class _NutritionFollicularPageWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => NutritionFollicularPageModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -87,7 +85,9 @@ class _NutritionFollicularPageWidgetState
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      'Nutrition Guide',
+                      FFLocalizations.of(context).getText(
+                        'fcmc6677' /* Nutrition Guide */,
+                      ),
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).titleLarge.override(
                             font: GoogleFonts.plusJakartaSans(
@@ -109,7 +109,9 @@ class _NutritionFollicularPageWidgetState
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                       child: Text(
-                        'Eat for your cycle',
+                        FFLocalizations.of(context).getText(
+                          'yu3l744f' /* Eat for your cycle */,
+                        ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodySmall.override(
                               font: GoogleFonts.plusJakartaSans(
@@ -155,7 +157,9 @@ class _NutritionFollicularPageWidgetState
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 8.0, 16.0, 8.0),
                             child: Text(
-                              '🔴 Menstrual',
+                              FFLocalizations.of(context).getText(
+                                'mug73a4w' /* 🔴 Menstrual */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -189,7 +193,9 @@ class _NutritionFollicularPageWidgetState
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 8.0, 16.0, 8.0),
                             child: Text(
-                              '🌱 Follicular',
+                              FFLocalizations.of(context).getText(
+                                'gu8hpkoq' /* 🌱 Follicular */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -223,7 +229,9 @@ class _NutritionFollicularPageWidgetState
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 8.0, 16.0, 8.0),
                             child: Text(
-                              '✨ Ovulatory',
+                              FFLocalizations.of(context).getText(
+                                'edlpv29l' /* ✨ Ovulatory */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -261,7 +269,9 @@ class _NutritionFollicularPageWidgetState
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 8.0, 16.0, 8.0),
                             child: Text(
-                              '🌙 Luteal',
+                              FFLocalizations.of(context).getText(
+                                '6d6fjejg' /* 🌙 Luteal */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -329,7 +339,9 @@ class _NutritionFollicularPageWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Follicular Phase',
+                                    FFLocalizations.of(context).getText(
+                                      '2va8px1x' /* Follicular Phase */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -344,7 +356,9 @@ class _NutritionFollicularPageWidgetState
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Text(
-                                      'Focus on fresh light foods that support rising estrogen and boost your energy levels',
+                                      FFLocalizations.of(context).getText(
+                                        '5l05ro78' /* Focus on fresh light foods tha... */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -386,7 +400,9 @@ class _NutritionFollicularPageWidgetState
                   padding:
                       EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                   child: Text(
-                    'Best Foods This Phase',
+                    FFLocalizations.of(context).getText(
+                      'vi12jcbc' /* Best Foods This Phase */,
+                    ),
                     style: FlutterFlowTheme.of(context).titleMedium.override(
                           font: GoogleFonts.plusJakartaSans(
                             fontWeight: FontWeight.bold,
@@ -438,7 +454,9 @@ class _NutritionFollicularPageWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '🥚',
+                                    FFLocalizations.of(context).getText(
+                                      'xltyhs53' /* 🥚 */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -466,7 +484,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Eggs',
+                                    FFLocalizations.of(context).getText(
+                                      'bk85whxx' /* Eggs */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -489,7 +509,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Protein boost',
+                                    FFLocalizations.of(context).getText(
+                                      '06ri363h' /* Protein boost */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
@@ -548,7 +570,9 @@ class _NutritionFollicularPageWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '🥦',
+                                    FFLocalizations.of(context).getText(
+                                      '4hljdvev' /* 🥦 */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -576,7 +600,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Broccoli',
+                                    FFLocalizations.of(context).getText(
+                                      'mn9ve7an' /* Broccoli */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -599,7 +625,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Estrogen support',
+                                    FFLocalizations.of(context).getText(
+                                      'd4j2qaix' /* Estrogen support */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
@@ -658,7 +686,9 @@ class _NutritionFollicularPageWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '🍓',
+                                    FFLocalizations.of(context).getText(
+                                      'si0stla5' /* 🍓 */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -686,7 +716,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Strawberries',
+                                    FFLocalizations.of(context).getText(
+                                      'vfnyxe5g' /* Strawberries */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -709,7 +741,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Vitamin C',
+                                    FFLocalizations.of(context).getText(
+                                      'vynayw5k' /* Vitamin C */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
@@ -768,7 +802,9 @@ class _NutritionFollicularPageWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '🥑',
+                                    FFLocalizations.of(context).getText(
+                                      'i33w1f3t' /* 🥑 */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -796,7 +832,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Avocado',
+                                    FFLocalizations.of(context).getText(
+                                      'fzr7qwwp' /* Avocado */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -819,7 +857,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Healthy fats',
+                                    FFLocalizations.of(context).getText(
+                                      '3rrup1ji' /* Healthy fats */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
@@ -878,7 +918,9 @@ class _NutritionFollicularPageWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '🌾',
+                                    FFLocalizations.of(context).getText(
+                                      'fijeoa4i' /* 🌾 */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -906,7 +948,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Quinoa',
+                                    FFLocalizations.of(context).getText(
+                                      'ezxvyk6o' /* Quinoa */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -929,7 +973,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Complex carbs',
+                                    FFLocalizations.of(context).getText(
+                                      'j57sx77i' /* Complex carbs */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
@@ -973,7 +1019,9 @@ class _NutritionFollicularPageWidgetState
                   padding:
                       EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                   child: Text(
-                    'Foods to Avoid',
+                    FFLocalizations.of(context).getText(
+                      '0cv5izt7' /* Foods to Avoid */,
+                    ),
                     style: FlutterFlowTheme.of(context).titleMedium.override(
                           font: GoogleFonts.plusJakartaSans(
                             fontWeight: FontWeight.bold,
@@ -1025,7 +1073,9 @@ class _NutritionFollicularPageWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '🍔',
+                                    FFLocalizations.of(context).getText(
+                                      'z6bnz67k' /* 🍔 */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -1053,7 +1103,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Processed Food',
+                                    FFLocalizations.of(context).getText(
+                                      'vitfp3xm' /* Processed Food */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -1076,7 +1128,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Disrupts hormones',
+                                    FFLocalizations.of(context).getText(
+                                      '20ha9b4t' /* Disrupts hormones */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
@@ -1135,7 +1189,9 @@ class _NutritionFollicularPageWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '🧁',
+                                    FFLocalizations.of(context).getText(
+                                      '0hopmsjh' /* 🧁 */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -1163,7 +1219,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Refined Sugar',
+                                    FFLocalizations.of(context).getText(
+                                      '7kgefw7t' /* Refined Sugar */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -1186,7 +1244,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Causes inflammation',
+                                    FFLocalizations.of(context).getText(
+                                      'u5t3vp6w' /* Causes inflammation */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
@@ -1245,7 +1305,9 @@ class _NutritionFollicularPageWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '🥛',
+                                    FFLocalizations.of(context).getText(
+                                      '28dz5v2a' /* 🥛 */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -1273,7 +1335,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Dairy',
+                                    FFLocalizations.of(context).getText(
+                                      '7roge07a' /* Dairy */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -1296,7 +1360,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'May cause bloating',
+                                    FFLocalizations.of(context).getText(
+                                      '9doldeqk' /* May cause bloating */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
@@ -1355,7 +1421,9 @@ class _NutritionFollicularPageWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '🍟',
+                                    FFLocalizations.of(context).getText(
+                                      '9lozrzmk' /* 🍟 */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -1383,7 +1451,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Fried Foods',
+                                    FFLocalizations.of(context).getText(
+                                      'w8itpm2s' /* Fried Foods */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -1406,7 +1476,9 @@ class _NutritionFollicularPageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Increases estrogen',
+                                    FFLocalizations.of(context).getText(
+                                      '7skhoik6' /* Increases estrogen */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
@@ -1450,7 +1522,9 @@ class _NutritionFollicularPageWidgetState
                   padding:
                       EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                   child: Text(
-                    'Meal Ideas',
+                    FFLocalizations.of(context).getText(
+                      'pkjso4jk' /* Meal Ideas */,
+                    ),
                     style: FlutterFlowTheme.of(context).titleMedium.override(
                           font: GoogleFonts.plusJakartaSans(
                             fontWeight: FontWeight.bold,
@@ -1519,7 +1593,9 @@ class _NutritionFollicularPageWidgetState
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
-                                            '🍳',
+                                            FFLocalizations.of(context).getText(
+                                              'l7w3l899' /* 🍳 */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -1553,7 +1629,10 @@ class _NutritionFollicularPageWidgetState
                                           Padding(
                                             padding: EdgeInsets.all(4.0),
                                             child: Text(
-                                              'Breakfast',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'kzld2dpa' /* Breakfast */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
@@ -1572,7 +1651,9 @@ class _NutritionFollicularPageWidgetState
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
-                                          'Scrambled eggs with avocado toast and strawberries',
+                                          FFLocalizations.of(context).getText(
+                                            '6lt55knc' /* Scrambled eggs with avocado to... */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -1659,7 +1740,9 @@ class _NutritionFollicularPageWidgetState
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      '🥗',
+                                      FFLocalizations.of(context).getText(
+                                        'kacsn985' /* 🥗 */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1688,7 +1771,9 @@ class _NutritionFollicularPageWidgetState
                                     Padding(
                                       padding: EdgeInsets.all(4.0),
                                       child: Text(
-                                        'Lunch',
+                                        FFLocalizations.of(context).getText(
+                                          '9gj1cw1x' /* Lunch */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -1706,7 +1791,9 @@ class _NutritionFollicularPageWidgetState
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 0.0),
                                   child: Text(
-                                    'Quinoa bowl with broccoli and lemon tahini dressing',
+                                    FFLocalizations.of(context).getText(
+                                      's6er0o1q' /* Quinoa bowl with broccoli and ... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -1787,7 +1874,9 @@ class _NutritionFollicularPageWidgetState
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      '🍽️',
+                                      FFLocalizations.of(context).getText(
+                                        'bfn40478' /* 🍽️ */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1816,7 +1905,9 @@ class _NutritionFollicularPageWidgetState
                                     Padding(
                                       padding: EdgeInsets.all(4.0),
                                       child: Text(
-                                        'Dinner',
+                                        FFLocalizations.of(context).getText(
+                                          'kyjrbfwh' /* Dinner */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -1834,7 +1925,9 @@ class _NutritionFollicularPageWidgetState
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 0.0),
                                   child: Text(
-                                    'Grilled chicken with roasted vegetables and brown rice',
+                                    FFLocalizations.of(context).getText(
+                                      'obs16o6b' /* Grilled chicken with roasted v... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(

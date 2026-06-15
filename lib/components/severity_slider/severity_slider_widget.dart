@@ -113,7 +113,9 @@ class _SeveritySliderWidgetState extends State<SeveritySliderWidget> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Mild',
+              FFLocalizations.of(context).getText(
+                'u0967vhs' /* Mild */,
+              ),
               style: FlutterFlowTheme.of(context).labelSmall.override(
                     font: GoogleFonts.plusJakartaSans(
                       fontWeight:
@@ -131,7 +133,9 @@ class _SeveritySliderWidgetState extends State<SeveritySliderWidget> {
                   ),
             ),
             Text(
-              'Severe',
+              FFLocalizations.of(context).getText(
+                '43v3hl8l' /* Severe */,
+              ),
               style: FlutterFlowTheme.of(context).labelSmall.override(
                     font: GoogleFonts.plusJakartaSans(
                       fontWeight:

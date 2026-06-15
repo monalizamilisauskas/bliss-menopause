@@ -30,8 +30,6 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => VitaminShopModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -115,7 +113,9 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              'Your Wellness Kit',
+                              FFLocalizations.of(context).getText(
+                                'hu76iuv3' /* Your Wellness Kit */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
                                   .override(
@@ -136,7 +136,9 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
                                   ),
                             ),
                             Text(
-                              'Personalized for your menopause journey',
+                              FFLocalizations.of(context).getText(
+                                'nf80pcen' /* Personalized for your menopaus... */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -281,7 +283,9 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
                                           8.0, 4.0, 8.0, 4.0),
                                       child: Container(
                                         child: Text(
-                                          'AI RECOMMENDED',
+                                          FFLocalizations.of(context).getText(
+                                            'dbyyrzz1' /* AI RECOMMENDED */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelSmall
                                               .override(
@@ -310,7 +314,9 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
                                     ),
                                   ),
                                   Text(
-                                    'The Bliss Daily Pack',
+                                    FFLocalizations.of(context).getText(
+                                      'gymsexh4' /* The Bliss Daily Pack */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
@@ -333,7 +339,9 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Vitamin D3, Magnesium, and Black Cohosh tailored to your recent hot flash trends.',
+                                    FFLocalizations.of(context).getText(
+                                      '7xxkk1xl' /* Vitamin D3, Magnesium, and Bla... */,
+                                    ),
                                     maxLines: 3,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
@@ -367,14 +375,14 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
                                     updateCallback: () => safeSetState(() {}),
                                     child: ButtonSkipWidget(
                                       content: 'Get My Pack',
-                                      icon_present: false,
-                                      icon_end_present: false,
-                                      on_tap: 'navigate:HomeDashboard',
-                                      color:
+                                      iconResent: false,
+                                      iconPresent: false,
+                                      onTap: 'navigate:HomeDashboard',
+                                      inColor:
                                           FlutterFlowTheme.of(context).primary,
                                       variant: 'secondary',
                                       size: 'medium',
-                                      full_width: false,
+                                      fullWidth: false,
                                       loading: false,
                                       disabled: false,
                                     ),
@@ -420,7 +428,9 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            'Essential Supplements',
+                            FFLocalizations.of(context).getText(
+                              'cyure8ye' /* Essential Supplements */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
@@ -441,7 +451,9 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
                                 ),
                           ),
                           Text(
-                            'See All',
+                            FFLocalizations.of(context).getText(
+                              'jovm4zcu' /* See All */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
@@ -555,7 +567,9 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Bliss Tip',
+                                          FFLocalizations.of(context).getText(
+                                            'd7hrfsul' /* Bliss Tip */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
@@ -581,7 +595,9 @@ class _VitaminShopWidgetState extends State<VitaminShopWidget> {
                                               ),
                                         ),
                                         Text(
-                                          'Taking Magnesium before bed can help improve sleep quality and reduce night sweats.',
+                                          FFLocalizations.of(context).getText(
+                                            '5rfcv4q3' /* Taking Magnesium before bed ca... */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(

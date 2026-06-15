@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'trend_stat_card_model.dart';
 export 'trend_stat_card_model.dart';
 
@@ -12,15 +9,15 @@ class TrendStatCardWidget extends StatefulWidget {
   const TrendStatCardWidget({
     super.key,
     this.icon,
-    Color? icon_color,
+    Color? iconColor,
     String? label,
     String? value,
-  })  : this.icon_color = icon_color ?? FlutterFlowTheme.of(context).success,
+  })  : this.iconColor = iconColor ?? const Color(0xFF1D9E75),
         this.label = label ?? 'Sleep Quality',
         this.value = value ?? '68%';
 
   final Widget? icon;
-  final Color icon_color;
+  final Color iconColor;
   final String label;
   final String value;
 
@@ -41,8 +38,6 @@ class _TrendStatCardWidgetState extends State<TrendStatCardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TrendStatCardModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

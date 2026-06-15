@@ -15,11 +15,6 @@ class SymptomLogsRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "userId" field.
-  String? _userId;
-  String get userId => _userId ?? '';
-  bool hasUserId() => _userId != null;
-
   // "date" field.
   DateTime? _date;
   DateTime? get date => _date;
@@ -80,38 +75,17 @@ class SymptomLogsRecord extends FirestoreRecord {
   String get intensity => _intensity ?? '';
   bool hasIntensity() => _intensity != null;
 
-  // "email" field.
-  String? _email;
-  String get email => _email ?? '';
-  bool hasEmail() => _email != null;
+  // "userId" field.
+  String? _userId;
+  String get userId => _userId ?? '';
+  bool hasUserId() => _userId != null;
 
-  // "display_name" field.
-  String? _displayName;
-  String get displayName => _displayName ?? '';
-  bool hasDisplayName() => _displayName != null;
-
-  // "photo_url" field.
-  String? _photoUrl;
-  String get photoUrl => _photoUrl ?? '';
-  bool hasPhotoUrl() => _photoUrl != null;
-
-  // "uid" field.
-  String? _uid;
-  String get uid => _uid ?? '';
-  bool hasUid() => _uid != null;
-
-  // "created_time" field.
-  DateTime? _createdTime;
-  DateTime? get createdTime => _createdTime;
-  bool hasCreatedTime() => _createdTime != null;
-
-  // "phone_number" field.
-  String? _phoneNumber;
-  String get phoneNumber => _phoneNumber ?? '';
-  bool hasPhoneNumber() => _phoneNumber != null;
+  // "energy" field.
+  String? _energy;
+  String get energy => _energy ?? '';
+  bool hasEnergy() => _energy != null;
 
   void _initializeFields() {
-    _userId = snapshotData['userId'] as String?;
     _date = snapshotData['date'] as DateTime?;
     _mood = snapshotData['mood'] as String?;
     _hotFlashes = castToType<int>(snapshotData['hotFlashes']);
@@ -124,12 +98,8 @@ class SymptomLogsRecord extends FirestoreRecord {
     _bloating = snapshotData['bloating'] as bool?;
     _anxiety = snapshotData['anxiety'] as bool?;
     _intensity = snapshotData['intensity'] as String?;
-    _email = snapshotData['email'] as String?;
-    _displayName = snapshotData['display_name'] as String?;
-    _photoUrl = snapshotData['photo_url'] as String?;
-    _uid = snapshotData['uid'] as String?;
-    _createdTime = snapshotData['created_time'] as DateTime?;
-    _phoneNumber = snapshotData['phone_number'] as String?;
+    _userId = snapshotData['userId'] as String?;
+    _energy = snapshotData['energy'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -167,7 +137,6 @@ class SymptomLogsRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createSymptomLogsRecordData({
-  String? userId,
   DateTime? date,
   String? mood,
   int? hotFlashes,
@@ -180,16 +149,11 @@ Map<String, dynamic> createSymptomLogsRecordData({
   bool? bloating,
   bool? anxiety,
   String? intensity,
-  String? email,
-  String? displayName,
-  String? photoUrl,
-  String? uid,
-  DateTime? createdTime,
-  String? phoneNumber,
+  String? userId,
+  String? energy,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'userId': userId,
       'date': date,
       'mood': mood,
       'hotFlashes': hotFlashes,
@@ -202,12 +166,8 @@ Map<String, dynamic> createSymptomLogsRecordData({
       'bloating': bloating,
       'anxiety': anxiety,
       'intensity': intensity,
-      'email': email,
-      'display_name': displayName,
-      'photo_url': photoUrl,
-      'uid': uid,
-      'created_time': createdTime,
-      'phone_number': phoneNumber,
+      'userId': userId,
+      'energy': energy,
     }.withoutNulls,
   );
 
@@ -219,8 +179,7 @@ class SymptomLogsRecordDocumentEquality implements Equality<SymptomLogsRecord> {
 
   @override
   bool equals(SymptomLogsRecord? e1, SymptomLogsRecord? e2) {
-    return e1?.userId == e2?.userId &&
-        e1?.date == e2?.date &&
+    return e1?.date == e2?.date &&
         e1?.mood == e2?.mood &&
         e1?.hotFlashes == e2?.hotFlashes &&
         e1?.sleepQuality == e2?.sleepQuality &&
@@ -232,17 +191,12 @@ class SymptomLogsRecordDocumentEquality implements Equality<SymptomLogsRecord> {
         e1?.bloating == e2?.bloating &&
         e1?.anxiety == e2?.anxiety &&
         e1?.intensity == e2?.intensity &&
-        e1?.email == e2?.email &&
-        e1?.displayName == e2?.displayName &&
-        e1?.photoUrl == e2?.photoUrl &&
-        e1?.uid == e2?.uid &&
-        e1?.createdTime == e2?.createdTime &&
-        e1?.phoneNumber == e2?.phoneNumber;
+        e1?.userId == e2?.userId &&
+        e1?.energy == e2?.energy;
   }
 
   @override
   int hash(SymptomLogsRecord? e) => const ListEquality().hash([
-        e?.userId,
         e?.date,
         e?.mood,
         e?.hotFlashes,
@@ -255,12 +209,8 @@ class SymptomLogsRecordDocumentEquality implements Equality<SymptomLogsRecord> {
         e?.bloating,
         e?.anxiety,
         e?.intensity,
-        e?.email,
-        e?.displayName,
-        e?.photoUrl,
-        e?.uid,
-        e?.createdTime,
-        e?.phoneNumber
+        e?.userId,
+        e?.energy
       ]);
 
   @override

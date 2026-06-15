@@ -53,8 +53,6 @@ class _LoginInWidgetState extends State<LoginInWidget> {
 
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -114,7 +112,9 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'Welcome Back',
+                        FFLocalizations.of(context).getText(
+                          'e0le3gf5' /* Welcome Back */,
+                        ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
@@ -135,7 +135,9 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                             ),
                       ),
                       Text(
-                        'Your refuge to blossom with serenity',
+                        FFLocalizations.of(context).getText(
+                          'ksglcmly' /* Your refuge to blossom with se... */,
+                        ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               font: GoogleFonts.plusJakartaSans(
@@ -174,7 +176,9 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                             textInputAction: TextInputAction.next,
                             obscureText: false,
                             decoration: InputDecoration(
-                              hintText: 'Email address',
+                              hintText: FFLocalizations.of(context).getText(
+                                'lfymnsyb' /* Email address */,
+                              ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -263,7 +267,9 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                             textInputAction: TextInputAction.done,
                             obscureText: !_model.passwordVisibility,
                             decoration: InputDecoration(
-                              hintText: 'Password',
+                              hintText: FFLocalizations.of(context).getText(
+                                'a24kkvzh' /* Password */,
+                              ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -387,7 +393,9 @@ class _LoginInWidgetState extends State<LoginInWidget> {
 
                             safeSetState(() {});
                           },
-                          text: 'Sign In',
+                          text: FFLocalizations.of(context).getText(
+                            'pnqak33x' /* Sign In */,
+                          ),
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 52.0,
@@ -424,7 +432,9 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                       context.pushNamed(ForgotPasswordWidget.routeName);
                     },
                     child: Text(
-                      'Forgot Password?',
+                      FFLocalizations.of(context).getText(
+                        'l7z2nbr2' /* Forgot Password? */,
+                      ),
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             font: GoogleFonts.plusJakartaSans(
@@ -456,7 +466,9 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                         ),
                       ),
                       Text(
-                        'or',
+                        FFLocalizations.of(context).getText(
+                          'xfvkbu7l' /* or */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               font: GoogleFonts.plusJakartaSans(
                                 fontWeight: FlutterFlowTheme.of(context)
@@ -494,11 +506,18 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                       if (user == null) {
                         return;
                       }
-
-                      context.goNamedAuth(
-                          HomeDashboardWidget.routeName, context.mounted);
+                      if (valueOrDefault<bool>(
+                          currentUserDocument?.onboardingComplete, false)) {
+                        context.pushNamedAuth(
+                            HomeDashboardWidget.routeName, context.mounted);
+                      } else {
+                        context.pushNamedAuth(
+                            OnboardingQuiz1Widget.routeName, context.mounted);
+                      }
                     },
-                    text: 'Continue with Google',
+                    text: FFLocalizations.of(context).getText(
+                      '49s7vxn3' /* Continue with Google */,
+                    ),
                     icon: FaIcon(
                       FontAwesomeIcons.google,
                       size: 20.0,
@@ -540,7 +559,9 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: 'Don\'t have an account? ',
+                            text: FFLocalizations.of(context).getText(
+                              'rvb0i2y3' /* Don't have an account?  */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -564,7 +585,9 @@ class _LoginInWidgetState extends State<LoginInWidget> {
                                 ),
                           ),
                           TextSpan(
-                            text: 'Sign Up',
+                            text: FFLocalizations.of(context).getText(
+                              '723em2pl' /* Sign Up */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -67,8 +68,6 @@ class _SubscriptionSuccessPageWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => SubscriptionSuccessPageModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -142,7 +141,9 @@ class _SubscriptionSuccessPageWidgetState
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Text(
-                          'Welcome to Bliss!',
+                          FFLocalizations.of(context).getText(
+                            'f38ny5y7' /* Welcome to Bliss! */,
+                          ),
                           textAlign: TextAlign.center,
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
@@ -166,22 +167,28 @@ class _SubscriptionSuccessPageWidgetState
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                        child: Text(
-                          'Your Complete Plan is Active',
-                          textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.plusJakartaSans(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    color: Color(0xFF8B6F5E),
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
+                        child: AuthUserStreamWidget(
+                          builder: (context) => Text(
+                            () {
+                              if (valueOrDefault(
+                                      currentUserDocument?.subscriptionTier,
+                                      '') ==
+                                  'starter') {
+                                return 'Your Starter Plan is Active';
+                              } else if (valueOrDefault(
+                                      currentUserDocument?.subscriptionTier,
+                                      '') ==
+                                  'annual') {
+                                return 'Your Annual Plan is Active';
+                              } else {
+                                return 'Your Complete Plan is Active';
+                              }
+                            }(),
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  font: GoogleFonts.plusJakartaSans(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -189,6 +196,17 @@ class _SubscriptionSuccessPageWidgetState
                                         .bodyMedium
                                         .fontStyle,
                                   ),
+                                  color: Color(0xFF8B6F5E),
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                          ),
                         ),
                       ),
                       Padding(
@@ -206,7 +224,9 @@ class _SubscriptionSuccessPageWidgetState
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 15.0, 0.0, 16.0),
                         child: Text(
-                          'What\'s included in your plan:',
+                          FFLocalizations.of(context).getText(
+                            '7jgfhcxg' /* What's included in your plan: */,
+                          ),
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
@@ -256,7 +276,9 @@ class _SubscriptionSuccessPageWidgetState
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  '🤖',
+                                  FFLocalizations.of(context).getText(
+                                    'vf5w1hgv' /* 🤖 */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -290,7 +312,9 @@ class _SubscriptionSuccessPageWidgetState
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'AI Health Coach',
+                                          FFLocalizations.of(context).getText(
+                                            'hkuj9p6k' /* AI Health Coach */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -318,7 +342,9 @@ class _SubscriptionSuccessPageWidgetState
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Personal guidance available 24/7',
+                                            FFLocalizations.of(context).getText(
+                                              '8tevmo7u' /* Personal guidance available 24... */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -390,7 +416,9 @@ class _SubscriptionSuccessPageWidgetState
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  '🗺️',
+                                  FFLocalizations.of(context).getText(
+                                    'dc3w0kex' /* 🗺️ */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -424,7 +452,9 @@ class _SubscriptionSuccessPageWidgetState
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Hormonal Map',
+                                          FFLocalizations.of(context).getText(
+                                            '464cwhfc' /* Hormonal Map */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -452,7 +482,9 @@ class _SubscriptionSuccessPageWidgetState
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Understand your cycle deeply',
+                                            FFLocalizations.of(context).getText(
+                                              '561efzat' /* Understand your cycle deeply */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -524,7 +556,9 @@ class _SubscriptionSuccessPageWidgetState
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  '💊',
+                                  FFLocalizations.of(context).getText(
+                                    't3b7co6n' /* 💊 */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -558,7 +592,9 @@ class _SubscriptionSuccessPageWidgetState
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Vitamin Guide',
+                                          FFLocalizations.of(context).getText(
+                                            'j5if3e7o' /* Vitamin Guide */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -586,7 +622,9 @@ class _SubscriptionSuccessPageWidgetState
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Personalized supplement plan',
+                                            FFLocalizations.of(context).getText(
+                                              'u8bc48bb' /* Personalized supplement plan */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -658,7 +696,9 @@ class _SubscriptionSuccessPageWidgetState
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  '📋',
+                                  FFLocalizations.of(context).getText(
+                                    'k8y3yrsc' /* 📋 */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -692,7 +732,9 @@ class _SubscriptionSuccessPageWidgetState
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Medical Report',
+                                          FFLocalizations.of(context).getText(
+                                            'cb0qzjez' /* Medical Report */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -720,7 +762,9 @@ class _SubscriptionSuccessPageWidgetState
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            'Share insights with your doctor',
+                                            FFLocalizations.of(context).getText(
+                                              'ln2ldgl2' /* Share insights with your docto... */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -766,7 +810,9 @@ class _SubscriptionSuccessPageWidgetState
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                         child: Text(
-                          'Your wellness journey starts today 🌸',
+                          FFLocalizations.of(context).getText(
+                            'c1rd8pd8' /* Your wellness journey starts t... */,
+                          ),
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
@@ -796,7 +842,9 @@ class _SubscriptionSuccessPageWidgetState
                             }
                             context.pushNamed(HomeDashboardWidget.routeName);
                           },
-                          text: 'Start My Journey',
+                          text: FFLocalizations.of(context).getText(
+                            '64p4xuib' /* Start My Journey */,
+                          ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.9,
                             height: 56.0,
@@ -826,7 +874,9 @@ class _SubscriptionSuccessPageWidgetState
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 0.0, 32.0),
                         child: Text(
-                          'Billing managed securely by Stripe',
+                          FFLocalizations.of(context).getText(
+                            'xb045w65' /* Subscription managed via App S... */,
+                          ),
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
@@ -857,7 +907,7 @@ class _SubscriptionSuccessPageWidgetState
               Align(
                 alignment: AlignmentDirectional(0.0, -1.0),
                 child: Lottie.network(
-                  '\"https://assets9.lottiefiles.com/packages/lf20_u4yrau.json\"',
+                  'https://assets9.lottiefiles.com/packages/lf20_u4yrau.json',
                   width: double.infinity,
                   height: 400.0,
                   fit: BoxFit.cover,

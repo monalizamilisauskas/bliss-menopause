@@ -6,7 +6,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'hormonal_profile_model.dart';
@@ -48,7 +50,15 @@ class _HormonalProfileWidgetState extends State<HormonalProfileWidget> {
     super.initState();
     _model = createModel(context, () => HormonalProfileModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if ((valueOrDefault(currentUserDocument?.subscriptionTier, '') !=
+              'complete') &&
+          (valueOrDefault(currentUserDocument?.subscriptionTier, '') !=
+              'annual')) {
+        context.pushNamed(SubscriptionPlanpageWidget.routeName);
+      }
+    });
   }
 
   @override
@@ -121,52 +131,9 @@ class _HormonalProfileWidgetState extends State<HormonalProfileWidget> {
                   context.safePop();
                 },
               ),
-              title: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Text(
-                    'Hormonal Profile',
-                    textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.of(context).titleMedium.override(
-                          font: GoogleFonts.plusJakartaSans(
-                            fontWeight: FontWeight.bold,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleMedium
-                                .fontStyle,
-                          ),
-                          fontSize: 24.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.bold,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .titleMedium
-                              .fontStyle,
-                        ),
-                  ),
-                  Text(
-                    'Track your hormonal health',
-                    textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.of(context).bodySmall.override(
-                          font: GoogleFonts.plusJakartaSans(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodySmall
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodySmall
-                                .fontStyle,
-                          ),
-                          color: Color(0xFF8B6F5E),
-                          fontSize: 14.0,
-                          letterSpacing: 0.0,
-                          fontWeight:
-                              FlutterFlowTheme.of(context).bodySmall.fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodySmall.fontStyle,
-                        ),
-                  ),
-                ],
-              ),
               actions: [],
               centerTitle: true,
+              toolbarHeight: 60.0,
               elevation: 0.0,
             ),
             body: SafeArea(
@@ -181,6 +148,89 @@ class _HormonalProfileWidgetState extends State<HormonalProfileWidget> {
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    '63bm5c9y' /* Hormonal Profile */,
+                                  ),
+                                  textAlign: TextAlign.start,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                        font: GoogleFonts.plusJakartaSans(
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMedium
+                                                  .fontStyle,
+                                        ),
+                                        fontSize: 24.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontStyle,
+                                      ),
+                                ),
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    '6w838ze3' /* Track your hormonal health */,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        font: GoogleFonts.plusJakartaSans(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmall
+                                                  .fontStyle,
+                                        ),
+                                        color: Color(0xFF8B6F5E),
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontStyle,
+                                      ),
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 6.0, 0.0),
+                                      child: Icon(
+                                        Icons.cake,
+                                        color: Color(0xFFC9A84C),
+                                        size: 14.0,
+                                      ),
+                                    ),
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        'Age ${functions.calculateAge(currentUserDocument?.dateOfBirth).toString()}',
+                                        style: GoogleFonts.plusJakartaSans(
+                                          color: Color(0xFF8B6F5E),
+                                          fontSize: 13.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                             Padding(
                               padding: EdgeInsets.all(16.0),
                               child: ClipRRect(
@@ -218,7 +268,10 @@ class _HormonalProfileWidgetState extends State<HormonalProfileWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              'Estrogen Level',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'gy2o7q8x' /* Estrogen Level */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .titleMedium
@@ -388,7 +441,10 @@ class _HormonalProfileWidgetState extends State<HormonalProfileWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              'Progesterone Level',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'c9h5brpk' /* Progesterone Level */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .titleMedium
@@ -558,7 +614,10 @@ class _HormonalProfileWidgetState extends State<HormonalProfileWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              'FSH Level',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'lgxh6ln3' /* FSH Level */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .titleMedium
@@ -732,7 +791,9 @@ class _HormonalProfileWidgetState extends State<HormonalProfileWidget> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Current Phase',
+                                            FFLocalizations.of(context).getText(
+                                              '850bmm48' /* Current Phase */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .titleMedium
                                                 .override(
@@ -955,7 +1016,9 @@ class _HormonalProfileWidgetState extends State<HormonalProfileWidget> {
                             },
                           ).then((value) => safeSetState(() {}));
                         },
-                        text: 'Update Profile',
+                        text: FFLocalizations.of(context).getText(
+                          'e4u660ht' /* Update Profile */,
+                        ),
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 52.0,

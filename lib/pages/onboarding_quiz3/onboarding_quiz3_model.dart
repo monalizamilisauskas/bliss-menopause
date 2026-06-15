@@ -7,6 +7,10 @@ import 'onboarding_quiz3_widget.dart' show OnboardingQuiz3Widget;
 import 'package:flutter/material.dart';
 
 class OnboardingQuiz3Model extends FlutterFlowModel<OnboardingQuiz3Widget> {
+  ///  Local state fields for this page.
+
+  String? selectedRoutine;
+
   ///  State fields for stateful widgets in this page.
 
   // Model for Button.

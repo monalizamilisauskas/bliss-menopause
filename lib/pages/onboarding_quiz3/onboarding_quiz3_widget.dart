@@ -1,3 +1,5 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/components/button_skip/button_skip_widget.dart';
 import '/components/progress_step/progress_step_widget.dart';
 import '/components/quiz_option/quiz_option_widget.dart';
@@ -30,8 +32,6 @@ class _OnboardingQuiz3WidgetState extends State<OnboardingQuiz3Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OnboardingQuiz3Model());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -106,13 +106,14 @@ class _OnboardingQuiz3WidgetState extends State<OnboardingQuiz3Widget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: ButtonSkipWidget(
                                     content: 'Skip',
-                                    icon_present: false,
-                                    icon_end_present: false,
-                                    on_tap: 'navigate:HomeDashboard',
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    iconResent: false,
+                                    iconPresent: false,
+                                    onTap: 'navigate:HomeDashboard',
+                                    inColor:
+                                        FlutterFlowTheme.of(context).primary,
                                     variant: 'ghost',
                                     size: 'small',
-                                    full_width: false,
+                                    fullWidth: false,
                                     loading: false,
                                     disabled: false,
                                   ),
@@ -173,7 +174,9 @@ class _OnboardingQuiz3WidgetState extends State<OnboardingQuiz3Widget> {
                                 ].divide(SizedBox(width: 4.0)),
                               ),
                               Text(
-                                'Step 3 of 4',
+                                FFLocalizations.of(context).getText(
+                                  '4vmxmwiu' /* Step 3 of 4 */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -234,7 +237,9 @@ class _OnboardingQuiz3WidgetState extends State<OnboardingQuiz3Widget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'How would you describe your current wellness routine?',
+                            FFLocalizations.of(context).getText(
+                              'xz7x7o8u' /* How would you describe your cu... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
@@ -255,7 +260,9 @@ class _OnboardingQuiz3WidgetState extends State<OnboardingQuiz3Widget> {
                                 ),
                           ),
                           Text(
-                            'No judgment here! We just want to meet you where you are.',
+                            FFLocalizations.of(context).getText(
+                              'r033nf4i' /* No judgment here! We just want... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -289,40 +296,90 @@ class _OnboardingQuiz3WidgetState extends State<OnboardingQuiz3Widget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          wrapWithModel(
-                            model: _model.quizOption1Model1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: ' I exercise regularly',
-                              on_tap: 'On Tap',
-                              selected: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.selectedRoutine = 'exercise';
+                              safeSetState(() {});
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model1,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: ' I exercise regularly',
+                                on_tap: 'On Tap',
+                                selected: _model.selectedRoutine == 'exercise'
+                                    ? true
+                                    : false,
+                              ),
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.quizOption1Model2,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'I practice mindfulness/meditation',
-                              on_tap: 'On Tap',
-                              selected: true,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.selectedRoutine = 'mindfulness';
+                              safeSetState(() {});
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model2,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'I practice mindfulness/meditation',
+                                on_tap: 'On Tap',
+                                selected:
+                                    _model.selectedRoutine == 'mindfulness'
+                                        ? true
+                                        : false,
+                              ),
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.quizOption1Model3,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'I take supplements or HRT',
-                              on_tap: 'On Tap',
-                              selected: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.selectedRoutine = 'supplements';
+                              safeSetState(() {});
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model3,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'I take supplements or HRT',
+                                on_tap: 'On Tap',
+                                selected:
+                                    _model.selectedRoutine == 'supplements'
+                                        ? true
+                                        : false,
+                              ),
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.quizOption1Model4,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'I haven\'t started any routine yet',
-                              on_tap: 'On Tap',
-                              selected: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.selectedRoutine = 'no_routine';
+                              safeSetState(() {});
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model4,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'I haven\'t started any routine yet',
+                                on_tap: 'On Tap',
+                                selected: _model.selectedRoutine == 'no_routine'
+                                    ? true
+                                    : false,
+                              ),
                             ),
                           ),
                         ],
@@ -342,6 +399,11 @@ class _OnboardingQuiz3WidgetState extends State<OnboardingQuiz3Widget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              await currentUserReference!
+                                  .update(createUsersRecordData(
+                                wellnessRoutine: _model.selectedRoutine,
+                              ));
+
                               context
                                   .pushNamed(OnboardingQuiz4Widget.routeName);
                             },
@@ -350,13 +412,13 @@ class _OnboardingQuiz3WidgetState extends State<OnboardingQuiz3Widget> {
                               updateCallback: () => safeSetState(() {}),
                               child: ButtonSkipWidget(
                                 content: 'Continue',
-                                icon_present: false,
-                                icon_end_present: false,
-                                on_tap: 'navigate:HomeDashboard',
-                                color: FlutterFlowTheme.of(context).primary,
+                                iconResent: false,
+                                iconPresent: false,
+                                onTap: 'navigate:HomeDashboard',
+                                inColor: FlutterFlowTheme.of(context).primary,
                                 variant: 'primary',
                                 size: 'large',
-                                full_width: false,
+                                fullWidth: false,
                                 loading: false,
                                 disabled: false,
                               ),
@@ -391,7 +453,9 @@ class _OnboardingQuiz3WidgetState extends State<OnboardingQuiz3Widget> {
                                     Expanded(
                                       flex: 1,
                                       child: Text(
-                                        'Your data is encrypted and private. We use this only to personalize your Bliss experience.',
+                                        FFLocalizations.of(context).getText(
+                                          '1dfaxtd5' /* Your data is encrypted and pri... */,
+                                        ),
                                         maxLines: 2,
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall

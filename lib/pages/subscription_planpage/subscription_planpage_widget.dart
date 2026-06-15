@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -48,8 +49,6 @@ class _SubscriptionPlanpageWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => SubscriptionPlanpageModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -102,7 +101,9 @@ class _SubscriptionPlanpageWidgetState
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        'Choose Your Plan',
+                        FFLocalizations.of(context).getText(
+                          'xbxqnqmx' /* Choose Your Plan */,
+                        ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
@@ -126,7 +127,9 @@ class _SubscriptionPlanpageWidgetState
                         padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: Text(
-                          'Start your wellness journey',
+                          FFLocalizations.of(context).getText(
+                            'de9205ns' /* Start your wellness journey */,
+                          ),
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
@@ -159,7 +162,7 @@ class _SubscriptionPlanpageWidgetState
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            _model.selectedPlan = 'FREE';
+                            _model.selectedPlan = 'free';
                             safeSetState(() {});
                           },
                           child: Container(
@@ -187,7 +190,9 @@ class _SubscriptionPlanpageWidgetState
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Bliss Free',
+                                        FFLocalizations.of(context).getText(
+                                          'l1ij94vc' /* Bliss Free */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
@@ -212,7 +217,9 @@ class _SubscriptionPlanpageWidgetState
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
-                                          'Basic wellness tracking',
+                                          FFLocalizations.of(context).getText(
+                                            '1pp6q5tk' /* Basic wellness tracking */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -246,7 +253,9 @@ class _SubscriptionPlanpageWidgetState
                                     ],
                                   ),
                                   Text(
-                                    'Free',
+                                    FFLocalizations.of(context).getText(
+                                      '7wl929bv' /* Free */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
@@ -310,7 +319,9 @@ class _SubscriptionPlanpageWidgetState
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Bliss Starter',
+                                        FFLocalizations.of(context).getText(
+                                          '8a2e2mbm' /* Bliss Starter */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
@@ -335,7 +346,9 @@ class _SubscriptionPlanpageWidgetState
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
-                                          'Essential wellness features',
+                                          FFLocalizations.of(context).getText(
+                                            '4o4q2bl7' /* Essential wellness features */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -369,7 +382,9 @@ class _SubscriptionPlanpageWidgetState
                                     ],
                                   ),
                                   Text(
-                                    '\$29/month',
+                                    FFLocalizations.of(context).getText(
+                                      '411l63ek' /* $29/month */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
@@ -456,7 +471,10 @@ class _SubscriptionPlanpageWidgetState
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              'Most Popular',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'kljm2t1x' /* Most Popular */,
+                                              ),
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -503,7 +521,10 @@ class _SubscriptionPlanpageWidgetState
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Bliss Complete',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'hldk322x' /* Bliss Complete */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .titleMedium
@@ -533,7 +554,10 @@ class _SubscriptionPlanpageWidgetState
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
-                                                'Full wellness experience',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'iq7ydyat' /* Full wellness experience */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -571,7 +595,9 @@ class _SubscriptionPlanpageWidgetState
                                           ],
                                         ),
                                         Text(
-                                          '\$49/month',
+                                          FFLocalizations.of(context).getText(
+                                            '8o60ray0' /* $49/month */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
@@ -640,7 +666,9 @@ class _SubscriptionPlanpageWidgetState
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Bliss Annual',
+                                        FFLocalizations.of(context).getText(
+                                          '0kx12b1h' /* Bliss Annual */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
@@ -665,7 +693,9 @@ class _SubscriptionPlanpageWidgetState
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
-                                          '2 months free - Best value',
+                                          FFLocalizations.of(context).getText(
+                                            'yr910ntb' /* 2 months free - Best value */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -699,7 +729,9 @@ class _SubscriptionPlanpageWidgetState
                                     ],
                                   ),
                                   Text(
-                                    '\$399/year',
+                                    FFLocalizations.of(context).getText(
+                                      'f2snh11i' /* $399/year */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
@@ -737,11 +769,48 @@ class _SubscriptionPlanpageWidgetState
                                 if (_model.selectedPlan == 'free') {
                                   context.pushNamed(QuizIntroWidget.routeName);
                                 } else {
-                                  context.pushNamed(
-                                      SubscriptionSuccessPageWidget.routeName);
+                                  if (_model.selectedPlan == 'starter') {
+                                    _model.purchaseResultStarter =
+                                        await revenue_cat.purchasePackage(
+                                            'bliss_starter_monthly');
+                                    if (Navigator.of(context).canPop()) {
+                                      context.pop();
+                                    }
+                                    context.pushNamed(
+                                        SubscriptionSuccessPageWidget
+                                            .routeName);
+                                  } else {
+                                    if (_model.selectedPlan == 'complete') {
+                                      _model.purchaseResultComplete =
+                                          await revenue_cat.purchasePackage(
+                                              'bliss_complete_monthly');
+                                      if (Navigator.of(context).canPop()) {
+                                        context.pop();
+                                      }
+                                      context.pushNamed(
+                                          SubscriptionSuccessPageWidget
+                                              .routeName);
+                                    } else {
+                                      if (_model.selectedPlan == 'annual') {
+                                        _model.purchaseResultAnnual =
+                                            await revenue_cat.purchasePackage(
+                                                'bliss_annual');
+                                        if (Navigator.of(context).canPop()) {
+                                          context.pop();
+                                        }
+                                        context.pushNamed(
+                                            SubscriptionSuccessPageWidget
+                                                .routeName);
+                                      }
+                                    }
+                                  }
                                 }
+
+                                safeSetState(() {});
                               },
-                              text: 'Get Started',
+                              text: FFLocalizations.of(context).getText(
+                                'i24rx3na' /* Get Started */,
+                              ),
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 52.0,
@@ -773,11 +842,15 @@ class _SubscriptionPlanpageWidgetState
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  await revenue_cat.restorePurchases();
+
                                   context
                                       .pushNamed(HomeDashboardWidget.routeName);
                                 },
                                 child: Text(
-                                  'Restore Purchase',
+                                  FFLocalizations.of(context).getText(
+                                    'fv2qe5v6' /* Restore Purchase */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall

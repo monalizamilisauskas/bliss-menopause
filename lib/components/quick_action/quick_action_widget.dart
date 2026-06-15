@@ -41,8 +41,6 @@ class _QuickActionWidgetState extends State<QuickActionWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => QuickActionModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

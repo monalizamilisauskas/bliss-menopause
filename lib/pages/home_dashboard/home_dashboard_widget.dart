@@ -38,10 +38,9 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await currentUserReference!.update(createUsersRecordData(
         lastSeen: getCurrentTimestamp,
+        lastOpenedAt: getCurrentTimestamp,
       ));
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -108,7 +107,9 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
               ),
               elevation: 0.0,
               label: Text(
-                'Ask Bliss AI',
+                FFLocalizations.of(context).getText(
+                  'jp884bd7' /* Ask Bliss AI */,
+                ),
                 style: FlutterFlowTheme.of(context).labelLarge.override(
                       font: GoogleFonts.plusJakartaSans(
                         fontWeight:
@@ -241,8 +242,13 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                         .toString(),
                                                     'EEEE, MMMM d',
                                                   )),
-                                                  dateTimeFormat("MMMMEEEEd",
-                                                      getCurrentTimestamp),
+                                                  dateTimeFormat(
+                                                    "MMMMEEEEd",
+                                                    getCurrentTimestamp,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -415,7 +421,11 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                               .start,
                                                       children: [
                                                         Text(
-                                                          'Current Streak',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'greq3xil' /* Current Streak */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelSmall
@@ -508,7 +518,11 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                             Text(
                                                               key: ValueKey(
                                                                   'streak\" Days\"'),
-                                                              ' Days',
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                '9c97q1he' /*  Days */,
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .titleMedium
@@ -568,7 +582,11 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                               .start,
                                                       children: [
                                                         Text(
-                                                          'Hormonal Balance',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '7sq1sorj' /* Hormonal Balance */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelSmall
@@ -684,7 +702,9 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Daily Rituals',
+                                  FFLocalizations.of(context).getText(
+                                    'iiwz4vzh' /* Daily Rituals */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
@@ -828,49 +848,48 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                     width: 1.0,
                                   ),
                                 ),
-                                child: Padding(
-                                  padding: EdgeInsets.all(24.0),
-                                  child: Container(
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed(
-                                            SymptomTrendsWidget.routeName);
-                                      },
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.stretch,
-                                        children: [
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                'Symptom Overview',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .plusJakartaSans(
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          letterSpacing: 0.0,
+                                child: Visibility(
+                                  visible: (homeDashboardSymptomLogsRecord !=
+                                          null) ==
+                                      true,
+                                  child: Padding(
+                                    padding: EdgeInsets.all(24.0),
+                                    child: Container(
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                              SymptomTrendsWidget.routeName);
+                                        },
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.stretch,
+                                          children: [
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'ftduxayb' /* Symptom Overview */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleMedium
+                                                      .override(
+                                                        font: GoogleFonts
+                                                            .plusJakartaSans(
                                                           fontWeight:
                                                               FontWeight.w600,
                                                           fontStyle:
@@ -878,119 +897,143 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                                       context)
                                                                   .titleMedium
                                                                   .fontStyle,
-                                                          lineHeight: 1.35,
                                                         ),
-                                              ),
-                                              InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  context.pushNamed(
-                                                      SymptomTrendsWidget
-                                                          .routeName);
-                                                },
-                                                child: wrapWithModel(
-                                                  model: _model.buttonModel1,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontStyle,
+                                                        lineHeight: 1.35,
+                                                      ),
+                                                ),
+                                                InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                        SymptomTrendsWidget
+                                                            .routeName);
+                                                  },
+                                                  child: wrapWithModel(
+                                                    model: _model.buttonModel1,
+                                                    updateCallback: () =>
+                                                        safeSetState(() {}),
+                                                    child: ButtonSkipWidget(
+                                                      content: 'See Trends',
+                                                      iconResent: false,
+                                                      iconPresent: false,
+                                                      onTap:
+                                                          'navigate:SymptomTrends',
+                                                      inColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      variant: 'ghost',
+                                                      size: 'small',
+                                                      fullWidth: false,
+                                                      loading: false,
+                                                      disabled: false,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                wrapWithModel(
+                                                  model:
+                                                      _model.symptomStatModel1,
                                                   updateCallback: () =>
                                                       safeSetState(() {}),
-                                                  child: ButtonSkipWidget(
-                                                    content: 'See Trends',
-                                                    icon_present: false,
-                                                    icon_end_present: false,
-                                                    on_tap:
-                                                        'navigate:SymptomTrends',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    variant: 'ghost',
-                                                    size: 'small',
-                                                    full_width: false,
-                                                    loading: false,
-                                                    disabled: false,
+                                                  child: SymptomStatWidget(
+                                                    icon: Icon(
+                                                      Icons.hot_tub_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      size: 20.0,
+                                                    ),
+                                                    label: 'Hot Flashes',
+                                                    progress:
+                                                        homeDashboardSymptomLogsRecord
+                                                            ?.hotFlashes
+                                                            .toDouble(),
+                                                    value: functions
+                                                        .getSymptomLabel(
+                                                            homeDashboardSymptomLogsRecord!
+                                                                .hotFlashes),
                                                   ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                          Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              wrapWithModel(
-                                                model: _model.symptomStatModel1,
-                                                updateCallback: () =>
-                                                    safeSetState(() {}),
-                                                child: SymptomStatWidget(
-                                                  icon: Icon(
-                                                    Icons.hot_tub_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    size: 20.0,
+                                                wrapWithModel(
+                                                  model:
+                                                      _model.symptomStatModel2,
+                                                  updateCallback: () =>
+                                                      safeSetState(() {}),
+                                                  child: SymptomStatWidget(
+                                                    icon: Icon(
+                                                      Icons
+                                                          .brightness_3_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      size: 20.0,
+                                                    ),
+                                                    label: 'Sleep Quality',
+                                                    progress:
+                                                        homeDashboardSymptomLogsRecord
+                                                            .sleepQuality
+                                                            .toDouble(),
+                                                    value: functions
+                                                        .getSymptomLabel(
+                                                            homeDashboardSymptomLogsRecord
+                                                                .sleepQuality),
                                                   ),
-                                                  label: 'Hot Flashes',
-                                                  progress:
-                                                      homeDashboardSymptomLogsRecord
-                                                          ?.hotFlashes
-                                                          .toDouble(),
-                                                  value: functions.getSymptomLabel(
-                                                      homeDashboardSymptomLogsRecord!
-                                                          .hotFlashes),
                                                 ),
-                                              ),
-                                              wrapWithModel(
-                                                model: _model.symptomStatModel2,
-                                                updateCallback: () =>
-                                                    safeSetState(() {}),
-                                                child: SymptomStatWidget(
-                                                  icon: Icon(
-                                                    Icons.brightness_3_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    size: 20.0,
+                                                wrapWithModel(
+                                                  model:
+                                                      _model.symptomStatModel3,
+                                                  updateCallback: () =>
+                                                      safeSetState(() {}),
+                                                  child: SymptomStatWidget(
+                                                    icon: Icon(
+                                                      Icons.bolt_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      size: 20.0,
+                                                    ),
+                                                    label: 'Energy Levels',
+                                                    progress:
+                                                        homeDashboardSymptomLogsRecord
+                                                            .energyLevel
+                                                            .toDouble(),
+                                                    value: functions
+                                                        .getSymptomLabel(
+                                                            homeDashboardSymptomLogsRecord
+                                                                .energyLevel),
                                                   ),
-                                                  label: 'Sleep Quality',
-                                                  progress:
-                                                      homeDashboardSymptomLogsRecord
-                                                          .sleepQuality
-                                                          .toDouble(),
-                                                  value: functions.getSymptomLabel(
-                                                      homeDashboardSymptomLogsRecord
-                                                          .sleepQuality),
                                                 ),
-                                              ),
-                                              wrapWithModel(
-                                                model: _model.symptomStatModel3,
-                                                updateCallback: () =>
-                                                    safeSetState(() {}),
-                                                child: SymptomStatWidget(
-                                                  icon: Icon(
-                                                    Icons.bolt_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    size: 20.0,
-                                                  ),
-                                                  label: 'Energy Levels',
-                                                  progress:
-                                                      homeDashboardSymptomLogsRecord
-                                                          .energyLevel
-                                                          .toDouble(),
-                                                  value: functions.getSymptomLabel(
-                                                      homeDashboardSymptomLogsRecord
-                                                          .energyLevel),
-                                                ),
-                                              ),
-                                            ].divide(SizedBox(height: 16.0)),
-                                          ),
-                                        ].divide(SizedBox(height: 24.0)),
+                                              ].divide(SizedBox(height: 16.0)),
+                                            ),
+                                          ].divide(SizedBox(height: 24.0)),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -1089,7 +1132,11 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                                       8.0),
                                                           child: Container(
                                                             child: Text(
-                                                              'TIP OF THE DAY',
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'cax6vp5o' /* TIP OF THE DAY */,
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .labelSmall
@@ -1124,7 +1171,11 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                         ),
                                                       ),
                                                       Text(
-                                                        'Magnesium rich foods can help improve your sleep cycle during menopause.',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '2hen3jya' /* Magnesium rich foods can help ... */,
+                                                        ),
                                                         maxLines: 3,
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -1189,7 +1240,9 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'Recommended for You',
+                                        FFLocalizations.of(context).getText(
+                                          'ocgvx9yr' /* Recommended for You */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
@@ -1227,14 +1280,15 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                               safeSetState(() {}),
                                           child: ButtonSkipWidget(
                                             content: 'Shop All',
-                                            icon_present: false,
-                                            icon_end_present: false,
-                                            on_tap: 'navigate:VitaminShop',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
+                                            iconResent: false,
+                                            iconPresent: false,
+                                            onTap: 'navigate:VitaminShop',
+                                            inColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
                                             variant: 'ghost',
                                             size: 'small',
-                                            full_width: false,
+                                            fullWidth: false,
                                             loading: false,
                                             disabled: false,
                                           ),
@@ -1310,7 +1364,10 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                     ),
                                                   ),
                                                   Text(
-                                                    'Menopause Support',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'vblo3kuz' /* Menopause Support */,
+                                                    ),
                                                     maxLines: 1,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1340,7 +1397,10 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                         TextOverflow.ellipsis,
                                                   ),
                                                   Text(
-                                                    '\$24.00',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'l472a5gb' /* $24.00 */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelSmall
@@ -1441,7 +1501,10 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                     ),
                                                   ),
                                                   Text(
-                                                    'Vitamin D3 + K2',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'lp8ceu22' /* Vitamin D3 + K2 */,
+                                                    ),
                                                     maxLines: 1,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1471,7 +1534,10 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
                                                         TextOverflow.ellipsis,
                                                   ),
                                                   Text(
-                                                    '\$18.00',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '62idfs0m' /* $18.00 */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelSmall

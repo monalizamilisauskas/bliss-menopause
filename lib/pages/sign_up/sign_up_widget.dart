@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -49,10 +50,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
     super.initState();
     _model = createModel(context, () => SignUpModel());
 
-    _model.emailTextController ??= TextEditingController();
+    _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController1 ??= TextEditingController();
+    _model.emailTextController ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
     _model.passwordTextController ??= TextEditingController();
@@ -60,8 +61,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
 
     _model.confirmPasswordTextController ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -120,7 +119,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'Create Account',
+                        FFLocalizations.of(context).getText(
+                          'ljs7t48b' /* Create Account */,
+                        ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
@@ -141,7 +142,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             ),
                       ),
                       Text(
-                        'Start your wellness journey today',
+                        FFLocalizations.of(context).getText(
+                          'v3a3f2gk' /* Start your wellness journey to... */,
+                        ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               font: GoogleFonts.plusJakartaSans(
@@ -168,14 +171,17 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   Container(
                     width: double.infinity,
                     child: TextFormField(
-                      controller: _model.emailTextController,
+                      key: ValueKey('fullName'),
+                      controller: _model.textController1,
                       focusNode: _model.textFieldFocusNode1,
                       autofocus: false,
                       textCapitalization: TextCapitalization.words,
                       textInputAction: TextInputAction.next,
                       obscureText: false,
                       decoration: InputDecoration(
-                        hintText: 'Full Name',
+                        hintText: FFLocalizations.of(context).getText(
+                          'hzdw67ui' /* Full Name */,
+                        ),
                         hintStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
                                   font: GoogleFonts.plusJakartaSans(
@@ -247,8 +253,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 .fontStyle,
                           ),
                       keyboardType: TextInputType.name,
-                      validator: _model.emailTextControllerValidator
-                          .asValidator(context),
+                      validator:
+                          _model.textController1Validator.asValidator(context),
                       inputFormatters: [
                         if (!isAndroid && !isiOS)
                           TextInputFormatter.withFunction((oldValue, newValue) {
@@ -264,13 +270,16 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   Container(
                     width: double.infinity,
                     child: TextFormField(
-                      controller: _model.textController1,
+                      key: ValueKey('email'),
+                      controller: _model.emailTextController,
                       focusNode: _model.textFieldFocusNode2,
                       autofocus: false,
                       textInputAction: TextInputAction.next,
                       obscureText: false,
                       decoration: InputDecoration(
-                        hintText: 'Email address',
+                        hintText: FFLocalizations.of(context).getText(
+                          'm388iv35' /* Email address */,
+                        ),
                         hintStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
                                   font: GoogleFonts.plusJakartaSans(
@@ -342,20 +351,23 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 .fontStyle,
                           ),
                       keyboardType: TextInputType.emailAddress,
-                      validator:
-                          _model.textController1Validator.asValidator(context),
+                      validator: _model.emailTextControllerValidator
+                          .asValidator(context),
                     ),
                   ),
                   Container(
                     width: double.infinity,
                     child: TextFormField(
+                      key: ValueKey('password'),
                       controller: _model.passwordTextController,
                       focusNode: _model.textFieldFocusNode3,
                       autofocus: false,
                       textInputAction: TextInputAction.next,
                       obscureText: !_model.passwordVisibility1,
                       decoration: InputDecoration(
-                        hintText: 'Password',
+                        hintText: FFLocalizations.of(context).getText(
+                          'qw1jeshv' /* Password */,
+                        ),
                         hintStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
                                   font: GoogleFonts.plusJakartaSans(
@@ -447,13 +459,16 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   Container(
                     width: double.infinity,
                     child: TextFormField(
+                      key: ValueKey('confirmPassword'),
                       controller: _model.confirmPasswordTextController,
                       focusNode: _model.textFieldFocusNode4,
                       autofocus: false,
                       textInputAction: TextInputAction.done,
                       obscureText: !_model.passwordVisibility2,
                       decoration: InputDecoration(
-                        hintText: 'Confirm Password',
+                        hintText: FFLocalizations.of(context).getText(
+                          'xs49q4uu' /* Confirm Password */,
+                        ),
                         hintStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
                                   font: GoogleFonts.plusJakartaSans(
@@ -566,10 +581,18 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         return;
                       }
 
+                      await UsersRecord.collection
+                          .doc(user.uid)
+                          .update(createUsersRecordData(
+                            displayName: _model.textController1.text,
+                          ));
+
                       context.goNamedAuth(
                           HomeDashboardWidget.routeName, context.mounted);
                     },
-                    text: 'Create Account',
+                    text: FFLocalizations.of(context).getText(
+                      'tpb4cvxj' /* Create Account */,
+                    ),
                     options: FFButtonOptions(
                       width: double.infinity,
                       height: 52.0,
@@ -609,7 +632,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             12.0, 0.0, 12.0, 0.0),
                         child: Text(
-                          'or',
+                          FFLocalizations.of(context).getText(
+                            '4p2i6u5u' /* or */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     font: GoogleFonts.plusJakartaSans(
@@ -649,11 +674,18 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       if (user == null) {
                         return;
                       }
-
-                      context.goNamedAuth(
-                          HomeDashboardWidget.routeName, context.mounted);
+                      if (valueOrDefault<bool>(
+                          currentUserDocument?.onboardingComplete, false)) {
+                        context.pushNamedAuth(
+                            HomeDashboardWidget.routeName, context.mounted);
+                      } else {
+                        context.pushNamedAuth(
+                            OnboardingQuiz1Widget.routeName, context.mounted);
+                      }
                     },
-                    text: 'Continue with Google',
+                    text: FFLocalizations.of(context).getText(
+                      'w6lj2023' /* Continue with Google */,
+                    ),
                     options: FFButtonOptions(
                       width: double.infinity,
                       height: 52.0,
@@ -691,7 +723,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: 'Already have an account?  ',
+                              text: FFLocalizations.of(context).getText(
+                                'weripzln' /* Already have an account?   */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -715,7 +749,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   ),
                             ),
                             TextSpan(
-                              text: 'Sign In',
+                              text: FFLocalizations.of(context).getText(
+                                '5h8ckram' /* Sign In */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

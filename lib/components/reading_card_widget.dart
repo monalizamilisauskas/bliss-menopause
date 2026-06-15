@@ -33,8 +33,6 @@ class _ReadingCardWidgetState extends State<ReadingCardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ReadingCardModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -107,7 +105,9 @@ class _ReadingCardWidgetState extends State<ReadingCardWidget> {
                           ),
                     ),
                     Text(
-                      '5 min read',
+                      FFLocalizations.of(context).getText(
+                        'pauokvi1' /* 5 min read */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodySmall.override(
                             font: GoogleFonts.plusJakartaSans(
                               fontWeight: FlutterFlowTheme.of(context)

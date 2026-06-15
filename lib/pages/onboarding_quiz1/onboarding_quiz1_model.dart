@@ -7,6 +7,10 @@ import 'onboarding_quiz1_widget.dart' show OnboardingQuiz1Widget;
 import 'package:flutter/material.dart';
 
 class OnboardingQuiz1Model extends FlutterFlowModel<OnboardingQuiz1Widget> {
+  ///  Local state fields for this page.
+
+  String? selectedOption;
+
   ///  State fields for stateful widgets in this page.
 
   // Model for Button.

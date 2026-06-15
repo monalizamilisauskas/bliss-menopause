@@ -29,8 +29,6 @@ class _ProgressStepWidgetState extends State<ProgressStepWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ProgressStepModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

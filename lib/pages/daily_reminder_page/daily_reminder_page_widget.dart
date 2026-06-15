@@ -73,8 +73,6 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
     _model.switchValue = true;
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -111,19 +109,6 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
               context.pushNamed(HomeDashboardWidget.routeName);
             },
           ),
-          title: Text(
-            'Daily Reminder',
-            style: FlutterFlowTheme.of(context).titleMedium.override(
-                  font: GoogleFonts.plusJakartaSans(
-                    fontWeight: FontWeight.bold,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                  ),
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                ),
-          ),
           actions: [],
           centerTitle: false,
           elevation: 0.0,
@@ -137,8 +122,36 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Container(
+                    width: 352.6,
+                    height: 42.55,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primaryBackground,
+                    ),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'i1re7msc' /* Daily Reminder */,
+                      ),
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            font: GoogleFonts.plusJakartaSans(
+                              fontWeight: FontWeight.bold,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .fontStyle,
+                            ),
+                            fontSize: 22.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .fontStyle,
+                          ),
+                    ),
+                  ),
                   Padding(
-                    padding: EdgeInsets.all(12.0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -166,7 +179,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Enable Reminders',
+                                  FFLocalizations.of(context).getText(
+                                    'ntz6ghye' /* Enable Reminders */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
@@ -185,7 +200,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                       ),
                                 ),
                                 Text(
-                                  'Get gentle daily check-in nudges 💛',
+                                  FFLocalizations.of(context).getText(
+                                    'v843fvan' /* Get gentle daily check-in nudg... */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
@@ -287,7 +304,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                   ),
                                 ),
                                 Text(
-                                  'Reminder Time',
+                                  FFLocalizations.of(context).getText(
+                                    '5ie0aq9s' /* Reminder Time */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
@@ -413,7 +432,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                           size: 28.0,
                                         ),
                                         Text(
-                                          '09:00 AM',
+                                          FFLocalizations.of(context).getText(
+                                            '9x4fcl9g' /* 09:00 AM */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
                                               .override(
@@ -520,7 +541,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                 }
                               },
                               child: Text(
-                                'Tap to change time',
+                                FFLocalizations.of(context).getText(
+                                  'clw95izu' /* Tap to change time */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
@@ -596,7 +619,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                   ),
                                 ),
                                 Text(
-                                  'Frequency',
+                                  FFLocalizations.of(context).getText(
+                                    'jxbos6ld' /* Frequency */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
@@ -618,9 +643,15 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                             ),
                             FlutterFlowChoiceChips(
                               options: [
-                                ChipData('Daily'),
-                                ChipData('Weekdays'),
-                                ChipData('Custom')
+                                ChipData(FFLocalizations.of(context).getText(
+                                  'h15zd2ur' /* Daily */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  'ybn1iede' /* Weekdays */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  '1d10szx1' /* Custom */,
+                                ))
                               ],
                               onChanged: (val) async {
                                 safeSetState(() =>
@@ -700,7 +731,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Select days',
+                                          FFLocalizations.of(context).getText(
+                                            'odto25xx' /* Select days */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -764,7 +797,11 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     padding:
                                                         EdgeInsets.all(8.0),
                                                     child: Text(
-                                                      'S',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'yct6342m' /* S */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -833,7 +870,11 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     padding:
                                                         EdgeInsets.all(8.0),
                                                     child: Text(
-                                                      'M',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'g4b8mxeq' /* M */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -902,7 +943,11 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     padding:
                                                         EdgeInsets.all(8.0),
                                                     child: Text(
-                                                      'T',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'mzdni6il' /* T */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -971,7 +1016,11 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     padding:
                                                         EdgeInsets.all(8.0),
                                                     child: Text(
-                                                      'W',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '4ysbwmrl' /* W */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1040,7 +1089,11 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     padding:
                                                         EdgeInsets.all(8.0),
                                                     child: Text(
-                                                      'T',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'u4f75xck' /* T */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1109,7 +1162,11 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     padding:
                                                         EdgeInsets.all(8.0),
                                                     child: Text(
-                                                      'F',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'w2wzhrw2' /* F */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1178,7 +1235,11 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                     padding:
                                                         EdgeInsets.all(8.0),
                                                     child: Text(
-                                                      'S',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'w96bg6rr' /* S */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1270,7 +1331,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                   ),
                                 ),
                                 Text(
-                                  'Reminder Message',
+                                  FFLocalizations.of(context).getText(
+                                    'hcvl43ar' /* Reminder Message */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
@@ -1302,7 +1365,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText: 'Write your reminder message...',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'i9is6jeo' /* Write your reminder message... */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -1384,7 +1449,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                   .asValidator(context),
                             ),
                             Text(
-                              'Quick suggestions:',
+                              FFLocalizations.of(context).getText(
+                                '7ms3sve8' /* Quick suggestions: */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -1453,7 +1520,10 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                           children: [
                                             Expanded(
                                               child: Text(
-                                                'Time to check in with your body 💛',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'adtrwkux' /* Time to check in with your bod... */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -1560,7 +1630,10 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                           children: [
                                             Expanded(
                                               child: Text(
-                                                'How are you feeling today? 🌸',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  't25p6uzr' /* How are you feeling today? 🌸 */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -1668,7 +1741,10 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                           children: [
                                             Expanded(
                                               child: Text(
-                                                'Your daily wellness moment awaits ✨',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'dwi6q2fl' /* Your daily wellness moment awa... */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -1783,7 +1859,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                   ),
                                 ),
                                 Text(
-                                  'Notification Preview',
+                                  FFLocalizations.of(context).getText(
+                                    'y0inm0a9' /* Notification Preview */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
@@ -1850,7 +1928,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Bliss Menopause',
+                                            FFLocalizations.of(context).getText(
+                                              'cxk3687e' /* Bliss Menopause */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
@@ -1860,7 +1940,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                 ),
                                           ),
                                           Text(
-                                            'Time to check in with your body 💛',
+                                            FFLocalizations.of(context).getText(
+                                              'af4o97h3' /* Time to check in with your bod... */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1894,7 +1976,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                                                 ),
                                           ),
                                           Text(
-                                            '09:00 AM · Daily',
+                                            FFLocalizations.of(context).getText(
+                                              '5dwq99g9' /* 09:00 AM · Daily */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1961,7 +2045,9 @@ class _DailyReminderPageWidgetState extends State<DailyReminderPageWidget> {
                         ),
                       );
                     },
-                    text: 'Save Reminder',
+                    text: FFLocalizations.of(context).getText(
+                      '9f8kv22a' /* Save Reminder */,
+                    ),
                     options: FFButtonOptions(
                       width: double.infinity,
                       height: 56.0,

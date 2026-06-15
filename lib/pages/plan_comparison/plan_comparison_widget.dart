@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -51,8 +52,6 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PlanComparisonModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -84,7 +83,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
           },
         ),
         title: Text(
-          'Compare Plans',
+          FFLocalizations.of(context).getText(
+            '37utmg1k' /* Compare Plans */,
+          ),
           style: FlutterFlowTheme.of(context).titleLarge.override(
                 font: GoogleFonts.plusJakartaSans(
                   fontWeight: FontWeight.bold,
@@ -162,7 +163,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                         child: Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            'Features',
+                                            FFLocalizations.of(context).getText(
+                                              '741qim51' /* Features */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -208,7 +211,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                         child: Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            'Free',
+                                            FFLocalizations.of(context).getText(
+                                              'lw5v8m6d' /* Free */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
@@ -234,7 +239,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                         child: Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            'Starter',
+                                            FFLocalizations.of(context).getText(
+                                              '58r9qxj0' /* Starter */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
@@ -300,7 +307,11 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                                                   6.0,
                                                                   2.0),
                                                       child: Text(
-                                                        'Most Popular',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'fbemuaea' /* Most Popular */,
+                                                        ),
                                                         textAlign:
                                                             TextAlign.center,
                                                         style: FlutterFlowTheme
@@ -352,7 +363,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                         child: Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            'Annual',
+                                            FFLocalizations.of(context).getText(
+                                              'e4ht8dzy' /* Annual */,
+                                            ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
@@ -389,7 +402,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                         child: Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            'Symptom Tracker',
+                                            FFLocalizations.of(context).getText(
+                                              '26wt5r2j' /* Symptom Tracker */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -522,7 +537,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                         child: Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            'AI Health Coach',
+                                            FFLocalizations.of(context).getText(
+                                              'wrq48t5l' /* AI Health Coach */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -655,7 +672,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                         child: Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            'Hormonal Map',
+                                            FFLocalizations.of(context).getText(
+                                              'shif7mo6' /* Hormonal Map */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -788,7 +807,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                         child: Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            'Vitamin Guide',
+                                            FFLocalizations.of(context).getText(
+                                              '7i2zb1d8' /* Vitamin Guide */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -921,7 +942,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                         child: Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            'Nutrition Plan',
+                                            FFLocalizations.of(context).getText(
+                                              'dzu40tcf' /* Nutrition Plan */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1054,7 +1077,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                         child: Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            'Skin & Hair Guide',
+                                            FFLocalizations.of(context).getText(
+                                              'hwjm6i3y' /* Skin & Hair Guide */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1187,7 +1212,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                         child: Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            'Medical Report',
+                                            FFLocalizations.of(context).getText(
+                                              '18g1p83k' /* Medical Report */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1315,7 +1342,9 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                         child: Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            'Price',
+                                            FFLocalizations.of(context).getText(
+                                              'qzhh3oif' /* Price */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1359,7 +1388,10 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                                     SubscriptionPlanpageWidget
                                                         .routeName);
                                               },
-                                              text: 'Free',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'irkbf8yh' /* Free */,
+                                              ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
                                                 padding: EdgeInsetsDirectional
@@ -1403,11 +1435,24 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                           children: [
                                             FFButtonWidget(
                                               onPressed: () async {
+                                                _model.purchaseResult =
+                                                    await revenue_cat
+                                                        .purchasePackage(
+                                                            'bliss_starter_monthly');
+                                                if (Navigator.of(context)
+                                                    .canPop()) {
+                                                  context.pop();
+                                                }
                                                 context.pushNamed(
-                                                    SubscriptionPlanpageWidget
+                                                    SubscriptionSuccessPageWidget
                                                         .routeName);
+
+                                                safeSetState(() {});
                                               },
-                                              text: '\$29/mo',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                '87oyg1m8' /* $29/mo */,
+                                              ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
                                                 padding: EdgeInsetsDirectional
@@ -1454,11 +1499,25 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                               children: [
                                                 FFButtonWidget(
                                                   onPressed: () async {
+                                                    _model.purchaseResult2 =
+                                                        await revenue_cat
+                                                            .purchasePackage(
+                                                                'bliss_complete_monthly');
+                                                    if (Navigator.of(context)
+                                                        .canPop()) {
+                                                      context.pop();
+                                                    }
                                                     context.pushNamed(
-                                                        SubscriptionPlanpageWidget
+                                                        SubscriptionSuccessPageWidget
                                                             .routeName);
+
+                                                    safeSetState(() {});
                                                   },
-                                                  text: '\$49/mo',
+                                                  text: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '570anc9i' /* $49/mo */,
+                                                  ),
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
@@ -1513,11 +1572,24 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
                                           ),
                                           child: FFButtonWidget(
                                             onPressed: () async {
+                                              _model.purchaseResult3 =
+                                                  await revenue_cat
+                                                      .purchasePackage(
+                                                          'bliss_annual');
+                                              if (Navigator.of(context)
+                                                  .canPop()) {
+                                                context.pop();
+                                              }
                                               context.pushNamed(
-                                                  SubscriptionPlanpageWidget
+                                                  SubscriptionSuccessPageWidget
                                                       .routeName);
+
+                                              safeSetState(() {});
                                             },
-                                            text: '\$399/yr',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              '6el71e7w' /* $399/yr */,
+                                            ),
                                             options: FFButtonOptions(
                                               height: 40.0,
                                               padding: EdgeInsetsDirectional

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'serialization_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -122,7 +123,15 @@ final parametersBuilderMap =
   'AIHealthCoach': ParameterData.none(),
   'SymptomTrends': ParameterData.none(),
   'UserProfileSettings': ParameterData.none(),
-  'ArticleDetail01': ParameterData.none(),
+  'ArticleDetail1': (data) async => ParameterData(
+        allParams: {
+          'title': getParameter<String>(data, 'title'),
+          'content': getParameter<String>(data, 'content'),
+          'tag': getParameter<String>(data, 'tag'),
+          'readTime': getParameter<String>(data, 'readTime'),
+          'imageUrl': getParameter<String>(data, 'imageUrl'),
+        },
+      ),
   'OnboardingQuiz2': ParameterData.none(),
   'OnboardingQuiz3': ParameterData.none(),
   'OnboardingQuiz4': ParameterData.none(),
@@ -149,11 +158,20 @@ final parametersBuilderMap =
   'DailyReminderPage': ParameterData.none(),
   'WeeklyInsightPage': ParameterData.none(),
   'CommunityForumPage': ParameterData.none(),
-  'StreakTrackerPage': ParameterData.none(),
+  'MyStreakPage': ParameterData.none(),
   'SymptomDetailPage': ParameterData.none(),
   'SubscriptionWinBackPag': ParameterData.none(),
   'PersonalizedRecommendationsPag': ParameterData.none(),
   'CreatePostPage': ParameterData.none(),
+  'AllreadingsPage': ParameterData.none(),
+  'PrivacySecurity': ParameterData.none(),
+  'AppearancePage': ParameterData.none(),
+  'HelpCenterPage': ParameterData.none(),
+  'ProfileVisibilityPage': ParameterData.none(),
+  'ChangePassword': ParameterData.none(),
+  'TwoFactorAuthentication': ParameterData.none(),
+  'ReportPage': ParameterData.none(),
+  'LastWeekPage': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

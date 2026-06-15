@@ -45,8 +45,6 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -127,7 +125,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                         ),
                       ),
                       Text(
-                        'Forgot Password?',
+                        FFLocalizations.of(context).getText(
+                          'elb9krzi' /* Forgot Password? */,
+                        ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
@@ -151,7 +151,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: Text(
-                          'Enter your email and we will send you a reset link',
+                          FFLocalizations.of(context).getText(
+                            'b52m2out' /* Enter your email and we will s... */,
+                          ),
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -185,7 +187,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           textInputAction: TextInputAction.done,
                           obscureText: false,
                           decoration: InputDecoration(
-                            hintText: 'Email address',
+                            hintText: FFLocalizations.of(context).getText(
+                              'l6elacpb' /* Email address */,
+                            ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -294,7 +298,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           }
                           context.pushNamed(LoginInWidget.routeName);
                         },
-                        text: 'Send Reset Link',
+                        text: FFLocalizations.of(context).getText(
+                          '67ui0fcq' /* Send Reset Link */,
+                        ),
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 52.0,
@@ -326,7 +332,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Remember your password? ',
+                              FFLocalizations.of(context).getText(
+                                'fgb5gqwa' /* Remember your password?  */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -358,7 +366,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                 context.pushNamed(LoginInWidget.routeName);
                               },
                               child: Text(
-                                'Sign In',
+                                FFLocalizations.of(context).getText(
+                                  'lq86w5w4' /* Sign In */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

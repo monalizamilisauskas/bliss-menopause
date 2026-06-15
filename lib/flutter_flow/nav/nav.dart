@@ -7,6 +7,7 @@ import '/auth/base_auth_user_provider.dart';
 
 import '/backend/push_notifications/push_notifications_handler.dart'
     show PushNotificationsHandler;
+import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -77,16 +78,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? HomeDashboardWidget()
-          : SplashScreenWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? NavBarPage() : SplashScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? HomeDashboardWidget()
-              : SplashScreenWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? NavBarPage() : SplashScreenWidget(),
         ),
         FFRoute(
           name: OnboardingQuiz1Widget.routeName,
@@ -96,12 +95,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: HomeDashboardWidget.routeName,
           path: HomeDashboardWidget.routePath,
-          builder: (context, params) => HomeDashboardWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'HomeDashboard')
+              : HomeDashboardWidget(),
         ),
         FFRoute(
           name: DailySymptomTrackerWidget.routeName,
           path: DailySymptomTrackerWidget.routePath,
-          builder: (context, params) => DailySymptomTrackerWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'DailySymptomTracker')
+              : DailySymptomTrackerWidget(),
         ),
         FFRoute(
           name: WellnessHubWidget.routeName,
@@ -126,12 +129,35 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: UserProfileSettingsWidget.routeName,
           path: UserProfileSettingsWidget.routePath,
-          builder: (context, params) => UserProfileSettingsWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'UserProfileSettings')
+              : UserProfileSettingsWidget(),
         ),
         FFRoute(
-          name: ArticleDetail01Widget.routeName,
-          path: ArticleDetail01Widget.routePath,
-          builder: (context, params) => ArticleDetail01Widget(),
+          name: ArticleDetail1Widget.routeName,
+          path: ArticleDetail1Widget.routePath,
+          builder: (context, params) => ArticleDetail1Widget(
+            title: params.getParam(
+              'title',
+              ParamType.String,
+            ),
+            content: params.getParam(
+              'content',
+              ParamType.String,
+            ),
+            tag: params.getParam(
+              'tag',
+              ParamType.String,
+            ),
+            readTime: params.getParam(
+              'readTime',
+              ParamType.String,
+            ),
+            imageUrl: params.getParam(
+              'imageUrl',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: OnboardingQuiz2Widget.routeName,
@@ -261,12 +287,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: CommunityForumPageWidget.routeName,
           path: CommunityForumPageWidget.routePath,
-          builder: (context, params) => CommunityForumPageWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'CommunityForumPage')
+              : CommunityForumPageWidget(),
         ),
         FFRoute(
-          name: StreakTrackerPageWidget.routeName,
-          path: StreakTrackerPageWidget.routePath,
-          builder: (context, params) => StreakTrackerPageWidget(),
+          name: MyStreakPageWidget.routeName,
+          path: MyStreakPageWidget.routePath,
+          builder: (context, params) => MyStreakPageWidget(),
         ),
         FFRoute(
           name: SymptomDetailPageWidget.routeName,
@@ -287,6 +315,51 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: CreatePostPageWidget.routeName,
           path: CreatePostPageWidget.routePath,
           builder: (context, params) => CreatePostPageWidget(),
+        ),
+        FFRoute(
+          name: AllreadingsPageWidget.routeName,
+          path: AllreadingsPageWidget.routePath,
+          builder: (context, params) => AllreadingsPageWidget(),
+        ),
+        FFRoute(
+          name: PrivacySecurityWidget.routeName,
+          path: PrivacySecurityWidget.routePath,
+          builder: (context, params) => PrivacySecurityWidget(),
+        ),
+        FFRoute(
+          name: AppearancePageWidget.routeName,
+          path: AppearancePageWidget.routePath,
+          builder: (context, params) => AppearancePageWidget(),
+        ),
+        FFRoute(
+          name: HelpCenterPageWidget.routeName,
+          path: HelpCenterPageWidget.routePath,
+          builder: (context, params) => HelpCenterPageWidget(),
+        ),
+        FFRoute(
+          name: ProfileVisibilityPageWidget.routeName,
+          path: ProfileVisibilityPageWidget.routePath,
+          builder: (context, params) => ProfileVisibilityPageWidget(),
+        ),
+        FFRoute(
+          name: ChangePasswordWidget.routeName,
+          path: ChangePasswordWidget.routePath,
+          builder: (context, params) => ChangePasswordWidget(),
+        ),
+        FFRoute(
+          name: TwoFactorAuthenticationWidget.routeName,
+          path: TwoFactorAuthenticationWidget.routePath,
+          builder: (context, params) => TwoFactorAuthenticationWidget(),
+        ),
+        FFRoute(
+          name: ReportPageWidget.routeName,
+          path: ReportPageWidget.routePath,
+          builder: (context, params) => ReportPageWidget(),
+        ),
+        FFRoute(
+          name: LastWeekPageWidget.routeName,
+          path: LastWeekPageWidget.routePath,
+          builder: (context, params) => LastWeekPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

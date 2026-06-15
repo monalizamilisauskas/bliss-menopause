@@ -32,8 +32,6 @@ class _SuggestionChipWidgetState extends State<SuggestionChipWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SuggestionChipModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

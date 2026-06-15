@@ -61,8 +61,6 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
 
     _model.inputTextController ??= TextEditingController(text: widget.value);
     _model.inputFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

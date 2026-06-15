@@ -1,3 +1,5 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/components/button_skip/button_skip_widget.dart';
 import '/components/progress_step/progress_step_widget.dart';
 import '/components/quiz_option/quiz_option_widget.dart';
@@ -30,8 +32,6 @@ class _OnboardingQuiz1WidgetState extends State<OnboardingQuiz1Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OnboardingQuiz1Model());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -105,13 +105,14 @@ class _OnboardingQuiz1WidgetState extends State<OnboardingQuiz1Widget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: ButtonSkipWidget(
                                     content: 'Skip',
-                                    icon_present: false,
-                                    icon_end_present: false,
-                                    on_tap: 'navigate:HomeDashboard',
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    iconResent: false,
+                                    iconPresent: false,
+                                    onTap: 'navigate:HomeDashboard',
+                                    inColor:
+                                        FlutterFlowTheme.of(context).primary,
                                     variant: 'ghost',
                                     size: 'small',
-                                    full_width: false,
+                                    fullWidth: false,
                                     loading: false,
                                     disabled: false,
                                   ),
@@ -172,7 +173,9 @@ class _OnboardingQuiz1WidgetState extends State<OnboardingQuiz1Widget> {
                                 ].divide(SizedBox(width: 4.0)),
                               ),
                               Text(
-                                'Step 1 of 4',
+                                FFLocalizations.of(context).getText(
+                                  '5uhjys85' /* Step 1 of 4 */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -234,7 +237,9 @@ class _OnboardingQuiz1WidgetState extends State<OnboardingQuiz1Widget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Where are you in your menopause journey?',
+                            FFLocalizations.of(context).getText(
+                              '9irmcmxq' /* Where are you in your menopaus... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
@@ -255,7 +260,9 @@ class _OnboardingQuiz1WidgetState extends State<OnboardingQuiz1Widget> {
                                 ),
                           ),
                           Text(
-                            'Understanding your stage helps us personalize your experience and recommendations.',
+                            FFLocalizations.of(context).getText(
+                              'qxknyex9' /* Understanding your stage helps... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -289,40 +296,91 @@ class _OnboardingQuiz1WidgetState extends State<OnboardingQuiz1Widget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          wrapWithModel(
-                            model: _model.quizOption1Model1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'Still having regular periods',
-                              on_tap: 'On Tap',
-                              selected: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.selectedOption = 'regular';
+                              safeSetState(() {});
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model1,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'Still having regular periods',
+                                on_tap: 'On Tap',
+                                selected: _model.selectedOption == 'regular'
+                                    ? true
+                                    : false,
+                              ),
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.quizOption1Model2,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'Irregular periods (perimenopause)',
-                              on_tap: 'On Tap',
-                              selected: true,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.selectedOption = 'perimenopause';
+                              safeSetState(() {});
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model2,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'Irregular periods (perimenopause)',
+                                on_tap: 'On Tap',
+                                selected:
+                                    _model.selectedOption == 'perimenopause'
+                                        ? true
+                                        : false,
+                              ),
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.quizOption1Model3,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'No periods for less than 1 year',
-                              on_tap: 'On Tap',
-                              selected: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.selectedOption = 'early menopause';
+                              safeSetState(() {});
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model3,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'No periods for less than 1 year',
+                                on_tap: 'On Tap',
+                                selected:
+                                    _model.selectedOption == 'early menopause'
+                                        ? true
+                                        : false,
+                              ),
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.quizOption1Model4,
-                            updateCallback: () => safeSetState(() {}),
-                            child: QuizOptionWidget(
-                              label: 'Postmenopause (1+ years no period)',
-                              on_tap: 'On Tap',
-                              selected: false,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.selectedOption = 'postmenopause';
+                              safeSetState(() {});
+                            },
+                            child: wrapWithModel(
+                              model: _model.quizOption1Model4,
+                              updateCallback: () => safeSetState(() {}),
+                              child: QuizOptionWidget(
+                                label: 'Postmenopause (1+ years no period)',
+                                on_tap: 'On Tap',
+                                selected:
+                                    _model.selectedOption == 'postmenopause'
+                                        ? true
+                                        : false,
+                              ),
                             ),
                           ),
                         ],
@@ -341,6 +399,11 @@ class _OnboardingQuiz1WidgetState extends State<OnboardingQuiz1Widget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              await currentUserReference!
+                                  .update(createUsersRecordData(
+                                currentPhase: _model.selectedOption,
+                              ));
+
                               context
                                   .pushNamed(OnboardingQuiz2Widget.routeName);
                             },
@@ -349,15 +412,17 @@ class _OnboardingQuiz1WidgetState extends State<OnboardingQuiz1Widget> {
                               updateCallback: () => safeSetState(() {}),
                               child: ButtonSkipWidget(
                                 content: 'Continue',
-                                icon_present: false,
-                                icon_end_present: false,
-                                on_tap: 'navigate:HomeDashboard',
-                                color: FlutterFlowTheme.of(context).primary,
+                                iconResent: false,
+                                iconPresent: false,
+                                onTap: 'navigate:HomeDashboard',
+                                inColor: FlutterFlowTheme.of(context).primary,
                                 variant: 'primary',
                                 size: 'large',
-                                full_width: false,
+                                fullWidth: false,
                                 loading: false,
-                                disabled: false,
+                                disabled: !(_model.selectedOption == ''
+                                    ? false
+                                    : true),
                               ),
                             ),
                           ),
@@ -389,7 +454,9 @@ class _OnboardingQuiz1WidgetState extends State<OnboardingQuiz1Widget> {
                                     Expanded(
                                       flex: 1,
                                       child: Text(
-                                        'Your data is encrypted and private. We use this only to personalize your Bliss experience.',
+                                        FFLocalizations.of(context).getText(
+                                          'srmeziyj' /* Your data is encrypted and pri... */,
+                                        ),
                                         maxLines: 2,
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall

@@ -38,8 +38,6 @@ class _SettingsItemWidgetState extends State<SettingsItemWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SettingsItemModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
