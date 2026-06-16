@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bliss Menopause – Your Hormonal Wellness Companion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FDF6F0;
+      --gold: #C9A84C;
+      --dark: #2D1B0E;
+      --secondary: #8B6F5E;
+      --border: #F0E6D3;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(253, 246, 240, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--white);
+      border: none;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50px;
+      padding: 6px 18px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--dark);
+      max-width: 720px;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--secondary);
+      max-width: 520px;
+      margin-bottom: 40px;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: #1a0f07; }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--dark);
+      padding: 14px 32px;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    /* STATS STRIP */
+    .stats {
+      background: var(--dark);
+      padding: 40px 48px;
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item { text-align: center; }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* FEATURES */
+    .section {
+      padding: 96px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--dark);
+      max-width: 560px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      color: var(--secondary);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 56px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 32px rgba(45,27,14,0.08);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .feature-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      line-height: 1.65;
+    }
+
+    /* ABOUT */
+    .about {
+      background: var(--dark);
+      padding: 96px 48px;
+      text-align: center;
+    }
+
+    .about-inner { max-width: 680px; margin: 0 auto; }
+
+    .about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 20px;
+      line-height: 1.25;
+    }
+
+    .about h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .about p {
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+    }
+
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-text {
+      font-size: 0.95rem;
+      color: var(--dark);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--secondary);
+      letter-spacing: 0.04em;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, #C9A84C 0%, #a8873a 100%);
+      padding: 80px 48px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 36px;
+      font-size: 1rem;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--dark);
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a0f07;
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-copy {
+      color: rgba(255,255,255,0.3);
+      font-size: 0.75rem;
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .section { padding: 64px 20px; }
+      .stats { padding: 32px 20px; gap: 32px; }
+      .about { padding: 64px 20px; }
+      .cta-section { padding: 64px 20px; }
+      footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Bliss<span>.</span></div>
+  <a href="#download" class="nav-cta">Download Free</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Women's Hormonal Wellness App</div>
+  <h1>Navigate menopause with <em>clarity</em> and confidence</h1>
+  <p class="hero-sub">Track symptoms, understand your hormonal patterns, and get personalized AI-powered guidance — all in one beautiful app designed for women like you.</p>
+  <div class="hero-buttons">
+    <a href="#download" class="btn-primary">
+      🍎 Download on App Store
+    </a>
+    <a href="#features" class="btn-secondary">Learn more</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item">
+    <div class="stat-number">34+</div>
+    <div class="stat-label">Symptoms Tracked</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">AI</div>
+    <div class="stat-label">Health Coach</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">100%</div>
+    <div class="stat-label">Private & Secure</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">Free</div>
+    <div class="stat-label">To Get Started</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-label">Everything you need</div>
+  <h2 class="section-title">Your complete menopause companion</h2>
+  <p class="section-desc">Bliss brings together symptom tracking, hormonal insights, and personalized coaching to help you feel informed and in control.</p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <div class="feature-title">Daily Symptom Tracking</div>
+      <p class="feature-desc">Log over 34 symptoms with ease. See patterns emerge over time with beautiful, easy-to-read charts and weekly insights.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🤖</div>
+      <div class="feature-title">AI Health Coach</div>
+      <p class="feature-desc">Chat with your personal Bliss Coach, powered by advanced AI, for evidence-based guidance tailored to your hormonal profile.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📈</div>
+      <div class="feature-title">Hormonal Reports</div>
+      <p class="feature-desc">Generate detailed health reports you can share with your doctor. Finally have the data to make informed conversations happen.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔥</div>
+      <div class="feature-title">Streak & Milestones</div>
+      <p class="feature-desc">Stay motivated with daily tracking streaks and milestone celebrations that make building healthy habits feel rewarding.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <div class="feature-title">Private & Secure</div>
+      <p class="feature-desc">Your health data is yours. Bliss uses industry-standard encryption and never sells your personal information to third parties.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💛</div>
+      <div class="feature-title">Community Insights</div>
+      <p class="feature-desc">See anonymized data from thousands of women navigating the same journey. You're not alone — and the data proves it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-inner">
+    <h2>Built by a woman who <em>lives it</em></h2>
+    <p>Bliss Menopause was created because we couldn't find an app that truly understood what perimenopause and menopause feel like from the inside — the brain fog, the sleepless nights, the moments of feeling like a stranger in your own body.</p>
+    <p>So we built it. Bliss is designed with empathy, grounded in science, and developed specifically for women who deserve better tools for this chapter of their lives.</p>
+    <p style="color: rgba(255,255,255,0.35); font-size: 0.85rem; margin-top: 8px;">Developed by Apoena LLC</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="section-label">Early users love it</div>
+  <h2 class="section-title">Women finally feel understood</h2>
+  <p class="section-desc">Hear from women who've been tracking with Bliss during our beta period.</p>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"I finally have language for what I've been experiencing. The weekly reports helped me show my doctor exactly what was happening."</p>
+      <div class="testimonial-author">Sarah M., 49 — California</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"The AI coach answered questions at 2am when I couldn't sleep and was spiraling. It felt like talking to someone who actually got it."</p>
+      <div class="testimonial-author">Claire D., 52 — New York</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Seeing my symptom trends made everything make sense. Hot flashes, mood shifts, fatigue — it was all connected in ways I hadn't seen."</p>
+      <div class="testimonial-author">Patricia R., 47 — Texas</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="download">
+  <h2>Start your wellness journey today</h2>
+  <p>Free to download. No credit card required. Just clarity.</p>
+  <a href="#" class="btn-white">Download on the App Store</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Bliss<span>.</span></div>
+  <div class="footer-links">
+    <a href="mailto:support@blissmenopause.com">Contact</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+  </div>
+  <div class="footer-copy">© 2025 Apoena LLC. All rights reserved. Bliss Menopause is not a medical device and does not provide medical advice.</div>
+</footer>
+
+</body>
+</html>
