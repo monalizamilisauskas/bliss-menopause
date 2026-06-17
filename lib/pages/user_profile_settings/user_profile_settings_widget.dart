@@ -40,6 +40,8 @@ class _UserProfileSettingsWidgetState extends State<UserProfileSettingsWidget> {
     _model.textController ??=
         TextEditingController(text: currentUserDisplayName);
     _model.textFieldFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -41,6 +41,8 @@ class _MilestoneItemWidgetState extends State<MilestoneItemWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MilestoneItemModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

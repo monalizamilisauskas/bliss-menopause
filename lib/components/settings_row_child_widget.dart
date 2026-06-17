@@ -23,6 +23,8 @@ class _SettingsRowChildWidgetState extends State<SettingsRowChildWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SettingsRowChildModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

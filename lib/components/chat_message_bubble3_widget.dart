@@ -38,6 +38,8 @@ class _ChatMessageBubble3WidgetState extends State<ChatMessageBubble3Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ChatMessageBubble3Model());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

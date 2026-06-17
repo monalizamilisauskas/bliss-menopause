@@ -33,6 +33,8 @@ class _PasswordFieldWidgetState extends State<PasswordFieldWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PasswordFieldModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

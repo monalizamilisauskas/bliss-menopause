@@ -108,6 +108,8 @@ class _SymptomDetailPageWidgetState extends State<SymptomDetailPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SymptomDetailPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

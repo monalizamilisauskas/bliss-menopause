@@ -96,6 +96,8 @@ class _ReportPageWidgetState extends State<ReportPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ReportPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -39,6 +39,8 @@ class _RecommendationCardWidgetState extends State<RecommendationCardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => RecommendationCardModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

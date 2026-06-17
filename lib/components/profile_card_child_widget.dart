@@ -24,6 +24,8 @@ class _ProfileCardChildWidgetState extends State<ProfileCardChildWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ProfileCardChildModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

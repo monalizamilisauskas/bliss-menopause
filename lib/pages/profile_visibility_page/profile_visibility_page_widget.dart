@@ -156,6 +156,8 @@ class _ProfileVisibilityPageWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => ProfileVisibilityPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

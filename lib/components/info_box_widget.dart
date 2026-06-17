@@ -48,6 +48,8 @@ class _InfoBoxWidgetState extends State<InfoBoxWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => InfoBoxModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

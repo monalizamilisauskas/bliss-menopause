@@ -41,6 +41,8 @@ class _HomeDashboardWidgetState extends State<HomeDashboardWidget> {
         lastOpenedAt: getCurrentTimestamp,
       ));
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

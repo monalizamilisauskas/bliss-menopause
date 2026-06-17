@@ -35,6 +35,8 @@ class _ComparisonRowWidgetState extends State<ComparisonRowWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ComparisonRowModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

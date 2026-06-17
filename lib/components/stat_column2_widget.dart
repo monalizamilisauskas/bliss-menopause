@@ -33,6 +33,8 @@ class _StatColumn2WidgetState extends State<StatColumn2Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => StatColumn2Model());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -39,6 +39,8 @@ class _VisibilityToggleWidgetState extends State<VisibilityToggleWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => VisibilityToggleModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

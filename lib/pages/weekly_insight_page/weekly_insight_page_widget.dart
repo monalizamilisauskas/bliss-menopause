@@ -136,6 +136,8 @@ class _WeeklyInsightPageWidgetState extends State<WeeklyInsightPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => WeeklyInsightPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

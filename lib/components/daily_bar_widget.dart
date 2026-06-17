@@ -33,6 +33,8 @@ class _DailyBarWidgetState extends State<DailyBarWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DailyBarModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

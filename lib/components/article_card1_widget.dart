@@ -36,6 +36,8 @@ class _ArticleCard1WidgetState extends State<ArticleCard1Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ArticleCard1Model());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

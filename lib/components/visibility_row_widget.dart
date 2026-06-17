@@ -39,6 +39,8 @@ class _VisibilityRowWidgetState extends State<VisibilityRowWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => VisibilityRowModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

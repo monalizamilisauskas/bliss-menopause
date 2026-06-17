@@ -120,6 +120,7 @@ class _TwoFactorAuthenticationWidgetState
     _model = createModel(context, () => TwoFactorAuthenticationModel());
 
     _model.switchValue = false;
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -75,6 +75,8 @@ class _NutritionLutealPageWidgetState extends State<NutritionLutealPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NutritionLutealPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

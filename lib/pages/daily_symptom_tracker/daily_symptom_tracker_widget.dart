@@ -33,6 +33,8 @@ class _DailySymptomTrackerWidgetState extends State<DailySymptomTrackerWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DailySymptomTrackerModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

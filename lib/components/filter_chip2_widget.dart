@@ -33,6 +33,8 @@ class _FilterChip2WidgetState extends State<FilterChip2Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FilterChip2Model());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

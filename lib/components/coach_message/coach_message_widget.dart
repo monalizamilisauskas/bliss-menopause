@@ -37,6 +37,8 @@ class _CoachMessageWidgetState extends State<CoachMessageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CoachMessageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

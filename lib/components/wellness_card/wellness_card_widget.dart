@@ -80,6 +80,8 @@ class _WellnessCardWidgetState extends State<WellnessCardWidget> {
         }.withoutNulls,
       );
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

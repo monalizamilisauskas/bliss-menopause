@@ -96,6 +96,8 @@ class _MyStreakPageWidgetState extends State<MyStreakPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MyStreakPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

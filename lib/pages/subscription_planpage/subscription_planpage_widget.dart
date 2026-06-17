@@ -49,6 +49,8 @@ class _SubscriptionPlanpageWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => SubscriptionPlanpageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

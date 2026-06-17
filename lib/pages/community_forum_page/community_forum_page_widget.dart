@@ -92,6 +92,8 @@ class _CommunityForumPageWidgetState extends State<CommunityForumPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CommunityForumPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

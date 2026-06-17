@@ -63,6 +63,8 @@ class _AppearancePageWidgetState extends State<AppearancePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AppearancePageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

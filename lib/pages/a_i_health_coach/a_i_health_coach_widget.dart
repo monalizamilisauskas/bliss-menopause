@@ -43,6 +43,8 @@ class _AIHealthCoachWidgetState extends State<AIHealthCoachWidget> {
         context.pushNamed(SubscriptionPlanpageWidget.routeName);
       }
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -35,6 +35,8 @@ class _NutritionFollicularPageWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => NutritionFollicularPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -33,6 +33,8 @@ class _ReadingCardWidgetState extends State<ReadingCardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ReadingCardModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

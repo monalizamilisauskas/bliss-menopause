@@ -41,6 +41,7 @@ class _VisibilityRow2WidgetState extends State<VisibilityRow2Widget> {
     _model = createModel(context, () => VisibilityRow2Model());
 
     _model.switchValue = widget.isActive;
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

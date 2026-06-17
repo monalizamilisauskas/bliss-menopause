@@ -38,6 +38,7 @@ class _SwitchComponentWidgetState extends State<SwitchComponentWidget> {
     _model = createModel(context, () => SwitchComponentModel());
 
     _model.switchValue = widget.active ? true : false;
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

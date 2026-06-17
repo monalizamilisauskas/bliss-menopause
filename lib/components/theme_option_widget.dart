@@ -38,6 +38,8 @@ class _ThemeOptionWidgetState extends State<ThemeOptionWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ThemeOptionModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

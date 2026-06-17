@@ -30,6 +30,8 @@ class _SectionLabelWidgetState extends State<SectionLabelWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SectionLabelModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

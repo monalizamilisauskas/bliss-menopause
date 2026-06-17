@@ -59,6 +59,8 @@ class _HormonalProfileWidgetState extends State<HormonalProfileWidget> {
         context.pushNamed(SubscriptionPlanpageWidget.routeName);
       }
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

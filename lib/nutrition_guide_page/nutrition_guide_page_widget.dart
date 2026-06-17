@@ -48,6 +48,8 @@ class _NutritionGuidePageWidgetState extends State<NutritionGuidePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NutritionGuidePageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

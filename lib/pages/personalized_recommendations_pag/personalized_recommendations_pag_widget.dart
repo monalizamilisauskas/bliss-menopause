@@ -97,6 +97,8 @@ class _PersonalizedRecommendationsPagWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => PersonalizedRecommendationsPagModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

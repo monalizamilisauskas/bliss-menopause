@@ -36,6 +36,8 @@ class _TrendRowWidgetState extends State<TrendRowWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TrendRowModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

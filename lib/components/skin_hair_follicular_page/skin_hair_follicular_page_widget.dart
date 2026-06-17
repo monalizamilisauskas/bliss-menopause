@@ -126,6 +126,8 @@ class _SkinHairFollicularPageWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => SkinHairFollicularPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

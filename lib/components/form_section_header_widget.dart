@@ -31,6 +31,8 @@ class _FormSectionHeaderWidgetState extends State<FormSectionHeaderWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FormSectionHeaderModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

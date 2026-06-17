@@ -53,6 +53,8 @@ class _SubscriptionWinBackPagWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => SubscriptionWinBackPagModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

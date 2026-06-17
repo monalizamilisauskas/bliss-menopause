@@ -41,6 +41,8 @@ class _HelpItemWidgetState extends State<HelpItemWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HelpItemModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

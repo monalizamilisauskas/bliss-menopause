@@ -114,6 +114,8 @@ class _LastWeekPageWidgetState extends State<LastWeekPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LastWeekPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

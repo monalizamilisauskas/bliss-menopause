@@ -36,6 +36,8 @@ class _LogEntryWidgetState extends State<LogEntryWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LogEntryModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

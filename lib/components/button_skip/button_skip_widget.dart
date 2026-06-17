@@ -62,6 +62,8 @@ class _ButtonSkipWidgetState extends State<ButtonSkipWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ButtonSkipModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

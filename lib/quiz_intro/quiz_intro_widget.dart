@@ -46,6 +46,8 @@ class _QuizIntroWidgetState extends State<QuizIntroWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => QuizIntroModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

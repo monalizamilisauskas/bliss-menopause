@@ -52,6 +52,8 @@ class _PlanComparisonWidgetState extends State<PlanComparisonWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PlanComparisonModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

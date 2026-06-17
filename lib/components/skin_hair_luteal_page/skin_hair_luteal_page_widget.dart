@@ -116,6 +116,8 @@ class _SkinHairLutealPageWidgetState extends State<SkinHairLutealPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SkinHairLutealPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

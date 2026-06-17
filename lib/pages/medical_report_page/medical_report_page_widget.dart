@@ -54,6 +54,8 @@ class _MedicalReportPageWidgetState extends State<MedicalReportPageWidget> {
         context.pushNamed(SubscriptionPlanpageWidget.routeName);
       }
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

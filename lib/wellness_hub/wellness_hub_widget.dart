@@ -32,6 +32,8 @@ class _WellnessHubWidgetState extends State<WellnessHubWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => WellnessHubModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

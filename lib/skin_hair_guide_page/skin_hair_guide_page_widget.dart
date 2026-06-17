@@ -43,6 +43,8 @@ class _SkinHairGuidePageWidgetState extends State<SkinHairGuidePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SkinHairGuidePageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -28,6 +28,8 @@ class _HeaderIconBoxWidgetState extends State<HeaderIconBoxWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HeaderIconBoxModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

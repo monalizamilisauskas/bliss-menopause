@@ -116,6 +116,8 @@ class _SkinHairOvulatoryWidgetState extends State<SkinHairOvulatoryWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SkinHairOvulatoryModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

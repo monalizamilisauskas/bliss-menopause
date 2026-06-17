@@ -76,6 +76,8 @@ class _NutritionOvulatoryPageWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => NutritionOvulatoryPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

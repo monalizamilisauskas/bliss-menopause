@@ -31,6 +31,8 @@ class _ColorCircleWidgetState extends State<ColorCircleWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ColorCircleModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -44,6 +44,8 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
         context.pushNamed(LoginInWidget.routeName);
       }
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

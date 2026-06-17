@@ -33,6 +33,8 @@ class _FontSizeBtnWidgetState extends State<FontSizeBtnWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FontSizeBtnModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

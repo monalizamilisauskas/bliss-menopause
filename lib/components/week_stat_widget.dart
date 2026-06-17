@@ -33,6 +33,8 @@ class _WeekStatWidgetState extends State<WeekStatWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => WeekStatModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

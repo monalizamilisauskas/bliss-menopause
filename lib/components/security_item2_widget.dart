@@ -41,6 +41,8 @@ class _SecurityItem2WidgetState extends State<SecurityItem2Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SecurityItem2Model());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
